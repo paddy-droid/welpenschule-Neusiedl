@@ -1,3 +1,10 @@
+# Welpenschule Neusiedl am See
+
+This project is hosted on GitHub. You can find the repository here:
+[https://github.com/paddy-droid/welpenschule-Neusiedl](https://github.com/paddy-droid/welpenschule-Neusiedl)
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
