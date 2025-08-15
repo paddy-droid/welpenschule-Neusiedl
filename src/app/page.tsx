@@ -30,7 +30,7 @@ export default function Home() {
             Welpenschule Neusiedl am See mit <span className="text-yellow-400">Willenskraft</span>
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
-            Dein ganzheitlicher und gewaltfreier Weg zum Dream-Team. Für Welpen bis 5 Monate im Bezirk Bruck an der Leitha, Wien & Nordburgenland.
+            Dein ganzheitlicher und gewaltfreier Weg zum Dream-Team. Für Welpen bis 5 Monate im Bezirk Bruck an der Leitha & Nordburgenland.
           </p>
           <Button asChild size="lg" className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-bold">
             <Link href="/kontakt">Melde dich und deinen Welpen an</Link>
@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
                 <div>
                     <Image
-                        src="https://www.willenskraft.co.at/wp-content/uploads/2024/05/Hundetrainer-Schwechat-Welpenschule.webp"
+                        src="/Welpenschule Neusiedl Sozialisierung.webp"
                         alt="Welpen lernen Kommunikation in der Hundeschule"
                         width={600}
                         height={600}
