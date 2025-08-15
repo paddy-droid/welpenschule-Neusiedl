@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle2, Star, Users, Zap, Heart, GitCommit } from 'lucide-react';
+import { CheckCircle2, Star, Users, Zap, Heart } from 'lucide-react';
 import Reviews from '@/components/Reviews';
 
 const willenskraftPillars = [
@@ -98,7 +98,7 @@ export default function Home() {
                   <CardTitle>Dein Sonderangebot</CardTitle>
                     <CardDescription className="text-black">Exklusiv für Welpeneltern</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="text-center">
                   <p className="font-bold text-lg">Eine Einzelstunde zum Sonderpreis</p>
                   <p className="text-4xl font.extrabold my-2">nur 55€</p>
                   <p>Perfekt, um spezifische Fragen zu klären und deinem Welpen den besten Start zu ermöglichen.</p>
