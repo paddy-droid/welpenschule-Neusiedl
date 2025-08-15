@@ -182,7 +182,7 @@ export default function Home() {
                    <tr className="hover:bg-slate-50">
                     <td className="py-4 px-4 border-b">Auf die Waage</td>
                     <td className="py-4 px-4 border-b">Der Hund lernt, ruhig auf der Waage zu stehen.</td>
-                    <td className="py-4 px-4 border-b hidden md:table-cell">Mit einem "Plattform"-Signal trainieren.</td>
+                    <td className="py-4 px-4 border-b hidden md:table-cell">Mit einem &quot;Plattform&quot;-Signal trainieren.</td>
                   </tr>
                 </tbody>
               </table>
