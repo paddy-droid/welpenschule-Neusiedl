@@ -143,6 +143,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Medical Training Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Vorbereitung auf den Tierarzt: Medical Training</h2>
+            <p className="text-lg text-gray-700">
+              Ein entspannter Tierarztbesuch ist kein Zufall. Mit unserem Medical Training bereiten wir deinen Welpen spielerisch und positiv auf Untersuchungen vor. Das Ziel ist es, Vertrauen aufzubauen und Stress für alle Beteiligten zu reduzieren.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold text-center mb-6">Einführung ins Medical Training: Schritt für Schritt</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr>
+                    <th className="py-3 px-4 bg-slate-100 font-bold uppercase text-sm text-gray-600 border-b">Übung</th>
+                    <th className="py-3 px-4 bg-slate-100 font-bold uppercase text-sm text-gray-600 border-b">Ziel</th>
+                    <th className="py-3 px-4 bg-slate-100 font-bold uppercase text-sm text-gray-600 border-b hidden md:table-cell">Wichtige Hinweise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-4 px-4 border-b">Körper-Check</td>
+                    <td className="py-4 px-4 border-b">Der Welpe lernt, sich überall entspannt anfassen zu lassen.</td>
+                    <td className="py-4 px-4 border-b hidden md:table-cell">Kurze Einheiten, viel Lob und Leckerlis.</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-4 px-4 border-b">Ohren & Augen inspizieren</td>
+                    <td className="py-4 px-4 border-b">Vorbereitung auf Untersuchungen und die Gabe von Medikamenten.</td>
+                    <td className="py-4 px-4 border-b hidden md:table-cell">Sanfte Berührungen, niemals den Hund zwingen.</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50">
+                    <td className="py-4 px-4 border-b">Pfotenpflege</td>
+                    <td className="py-4 px-4 border-b">Krallen schneiden und Pfoten kontrollieren ohne Stress.</td>
+                    <td className="py-4 px-4 border-b hidden md:table-cell">Paw-Target aufbauen und positiv verknüpfen.</td>
+                  </tr>
+                   <tr className="hover:bg-slate-50">
+                    <td className="py-4 px-4 border-b">Auf die Waage</td>
+                    <td className="py-4 px-4 border-b">Der Hund lernt, ruhig auf der Waage zu stehen.</td>
+                    <td className="py-4 px-4 border-b hidden md:table-cell">Mit einem "Plattform"-Signal trainieren.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
