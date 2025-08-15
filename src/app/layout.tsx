@@ -17,6 +17,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Welpenschule Neusiedl am See | Hundeschule Willenskraft',
   description: 'Profi-Training für deinen Welpen in der Welpenschule Neusiedl am See. Ganzheitlich & gewaltfrei. Jetzt zur Anmeldung!',
+  openGraph: {
+    title: 'Welpenschule Neusiedl am See | Hundeschule Willenskraft',
+    description: 'Profi-Training für deinen Welpen in der Welpenschule Neusiedl am See. Ganzheitlich & gewaltfrei. Jetzt zur Anmeldung!',
+    url: 'https://welpenschule-neusiedl.at',
+    siteName: 'Welpenschule Neusiedl am See',
+    images: [
+      {
+        url: 'https://www.willenskraft.co.at/wp-content/uploads/2024/07/Welpenschule-Neusiedl-am-See.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Ein glücklicher Welpe auf einer Wiese in Neusiedl am See',
+      },
+    ],
+    locale: 'de_AT',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Welpenschule Neusiedl am See | Hundeschule Willenskraft',
+    description: 'Profi-Training für deinen Welpen in der Welpenschule Neusiedl am See. Ganzheitlich & gewaltfrei. Jetzt zur Anmeldung!',
+    images: ['https://www.willenskraft.co.at/wp-content/uploads/2024/07/Welpenschule-Neusiedl-am-See.webp'],
+  },
 };
 
 export default function RootLayout({
