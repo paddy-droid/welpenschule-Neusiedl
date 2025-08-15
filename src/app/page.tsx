@@ -99,9 +99,9 @@ export default function Home() {
                     <CardDescription className="text-black">Exklusiv für Welpeneltern</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col items-center text-center">
-                  <p className="font-bold text-lg">Eine Einzelstunde zum Sonderpreis</p>
-                  <p className="text-4xl font.extrabold my-2">nur 55€</p>
-                  <p>Perfekt, um spezifische Fragen zu klären und deinem Welpen den besten Start zu ermöglichen.</p>
+                  <p className="font-bold text-lg text-center">Eine Einzelstunde zum Sonderpreis</p>
+                  <p className="text-4xl font-extrabold my-2 text-center">nur 55€</p>
+                  <p className="text-center">Perfekt, um spezifische Fragen zu klären und deinem Welpen den besten Start zu ermöglichen.</p>
                 </CardContent>
               </Card>
           </div>
