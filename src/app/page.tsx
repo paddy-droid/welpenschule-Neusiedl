@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle2, Star, Users, Zap, Heart } from 'lucide-react';
+import { CheckCircle2, Star, Users, Zap, Heart, Gift } from 'lucide-react';
 import Reviews from '@/components/Reviews';
 
 const willenskraftPillars = [
@@ -93,17 +93,21 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
-             <Card className="bg-yellow-400 md:col-span-2 lg:col-span-1 flex flex-col justify-center items-center text-center p-6">
-                <CardHeader>
-                  <CardTitle>Dein Sonderangebot</CardTitle>
-                    <CardDescription className="text-black">Exklusiv für Welpeneltern</CardDescription>
+             <Card className="bg-yellow-400 md:col-span-2 lg:col-span-1 flex flex-col items-center justify-center p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                <CardHeader className="items-center">
+                    <Gift className="w-12 h-12 text-white mb-2" />
+                    <CardTitle className="text-2xl font-bold text-black">Dein Sonderangebot</CardTitle>
+                    <CardDescription className="text-gray-800 font-semibold">Exklusiv für Welpeneltern</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="font-bold text-lg">Eine Einzelstunde zum Sonderpreis</p>
-                  <p className="text-4xl font-extrabold my-2">nur 55€</p>
-                  <p>Perfekt, um spezifische Fragen zu klären und deinem Welpen den besten Start zu ermöglichen.</p>
+                <CardContent className="flex flex-col items-center">
+                    <p className="font-bold text-xl text-black">Eine private Einzelstunde</p>
+                    <p className="text-5xl font-extrabold my-3 text-white drop-shadow-md">nur 55€</p>
+                    <p className="text-black mb-6">Perfekt, um spezifische Fragen zu klären und deinem Welpen den besten Start zu ermöglichen.</p>
+                    <Button asChild className="bg-black hover:bg-gray-800 text-yellow-400 font-bold shadow-md">
+                        <Link href="/kontakt?angebot=einzelstunde">Jetzt Angebot sichern</Link>
+                    </Button>
                 </CardContent>
-              </Card>
+            </Card>
           </div>
         </div>
       </section>
