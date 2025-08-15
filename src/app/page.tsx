@@ -136,7 +136,7 @@ export default function Home() {
                     </div>
                      <div>
                         <h3 className="text-2xl font-bold">Kleine Gruppen, große Wirkung</h3>
-                        <p className="text-lg mt-2">Um eine qualitativ hochwertige Betreuung zu gewährleisten, ist die Anzahl auf maximal <b>vier Mensch-Hund-Teams</b> beschränkt. So erhält jedes Team die nötige Aufmerksamkeit, während wir an sorgfältig ausgewählten Standorten trainieren.</p>
+                        <p className="text-lg mt-2">Um eine qualitativ hochwertige Betreuung zu gewährleisten, ist die Anzahl auf maximal <b>vier Mensch-Hund-Teams</b> beschränkt. Wir stellen die Kleingruppen sorgfältig nach Rasse, Größe und Temperament zusammen, damit dein Welpe die besten Spiel- und Lernpartner hat. So erhält jedes Team die nötige Aufmerksamkeit, während wir an sorgfältig ausgewählten Standorten trainieren.</p>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">Vorbereitung auf den Tierarzt: Medical Training</h2>
             <p className="text-lg text-gray-700">
-              Ein entspannter Tierarztbesuch ist kein Zufall. Mit unserem Medical Training bereiten wir deinen Welpen spielerisch und positiv auf Untersuchungen vor. Das Ziel ist es, Vertrauen aufzubauen und Stress für alle Beteiligten zu reduzieren.
+              Ein entspannter Tierarztbesuch ist kein Zufall. Im Rahmen unserer Welpenschule bieten wir eine spielerische Einführung in das Medical Training, um deinen Welpen positiv auf Untersuchungen vorzubereiten. Das Ziel ist es, von Anfang an Vertrauen aufzubauen und Stress für alle Beteiligten zu reduzieren.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -191,6 +191,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Häufig gestellte Fragen (FAQ)</h2>
+            <p className="text-lg text-gray-700">Die wichtigsten Antworten rund um den Start in der Welpenschule Neusiedl am See.</p>
+          </div>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-bold mb-2">Ab wann ist die Welpenschule sinnvoll?</h3>
+              <p className="text-lg text-gray-700">Der ideale Zeitpunkt für den Start in der Welpenschule ist so früh wie möglich, typischerweise ab der 8. Lebenswoche, kurz nachdem der Welpe bei Ihnen eingezogen ist. Die sensible Phase der Sozialisierung endet etwa mit der 16. Woche. In dieser Zeit ist es entscheidend, positive Erfahrungen mit Artgenossen, Menschen und verschiedenen Umweltreizen zu sammeln. Ein früher Start legt den Grundstein für einen gut sozialisierten und selbstsicheren Hund. Voraussetzung ist die erste Grundimmunisierung, damit Ihr Welpe geschützt ist.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Was kostet die Welpenschule?</h3>
+              <p className="text-lg text-gray-700">Unser Welpen-Gruppenkurs umfasst 6 Trainingseinheiten zu je einer Stunde und kostet 195€. Dieser Preis beinhaltet nicht nur das praktische Training, sondern auch wertvolle theoretische Grundlagen, individuelle Betreuung in Kleingruppen und die Möglichkeit, jederzeit Fragen zu stellen. Wir legen Wert auf Transparenz und Qualität. Für spezielle Bedürfnisse oder eine intensivere Betreuung bieten wir zudem exklusive Einzelstunden für Welpeneltern zu einem Sonderpreis von 55€ an, um gezielt auf Ihre Themen einzugehen.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Wie lange dauert ein Welpenkurs?</h3>
+              <p className="text-lg text-gray-700">Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale wie „Sitz“ und „Komm“ aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach Abschluss des Kurses haben Sie das Rüstzeug, um die Erziehung selbstbewusst fortzusetzen oder an einem weiterführenden Junghundekurs teilzunehmen, um das Gelernte zu vertiefen und altersgerecht zu erweitern.</p>
+            </div>
+             <div>
+              <h3 className="text-xl font-bold mb-2">Was lernt mein Welpe in der Hundeschule?</h3>
+              <p className="text-lg text-gray-700">In unserer Welpenschule lernt Ihr Hund weit mehr als nur Grundkommandos. Im Zentrum steht die Sozialisierung: das sichere und entspannte Umgehen mit anderen Hunden und Menschen. Wir üben erste wichtige Signale wie den Rückruf und das Gehen an der lockeren Leine mittels positiver Verstärkung. Zudem lernen Sie als Halter, die Körpersprache Ihres Welpen zu deuten und seine Bedürfnisse zu verstehen. Eine Einführung in das Medical Training bereitet Ihren Vierbeiner außerdem spielerisch auf Tierarztbesuche vor und fördert das Vertrauen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Ab wann ist die Welpenschule sinnvoll?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Der ideale Zeitpunkt für den Start in der Welpenschule ist so früh wie möglich, typischerweise ab der 8. Lebenswoche, kurz nachdem der Welpe bei Ihnen eingezogen ist. Die sensible Phase der Sozialisierung endet etwa mit der 16. Woche. In dieser Zeit ist es entscheidend, positive Erfahrungen mit Artgenossen, Menschen und verschiedenen Umweltreizen zu sammeln. Ein früher Start legt den Grundstein für einen gut sozialisierten und selbstsicheren Hund. Voraussetzung ist die erste Grundimmunisierung."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was kostet die Welpenschule?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Unser Welpen-Gruppenkurs umfasst 6 Trainingseinheiten zu je einer Stunde und kostet 195€. Dieser Preis beinhaltet nicht nur das praktische Training, sondern auch wertvolle theoretische Grundlagen, individuelle Betreuung in Kleingruppen und die Möglichkeit, jederzeit Fragen zu stellen. Für spezielle Bedürfnisse bieten wir zudem exklusive Einzelstunden für Welpeneltern zu einem Sonderpreis von 55€ an."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert ein Welpenkurs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach dem Kurs können Sie an einem weiterführenden Junghundekurs teilnehmen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was lernt mein Welpe in der Hundeschule?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In unserer Welpenschule steht die Sozialisierung im Zentrum: das sichere Umgehen mit anderen Hunden und Menschen. Wir üben erste wichtige Signale wie den Rückruf und Leinenführigkeit mittels positiver Verstärkung. Zudem lernen Sie als Halter, die Körpersprache Ihres Welpen zu deuten. Eine Einführung in das Medical Training bereitet Ihren Vierbeiner außerdem spielerisch auf Tierarztbesuche vor."
+                }
+              }
+            ]
+          })
+        }}
+      />
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
