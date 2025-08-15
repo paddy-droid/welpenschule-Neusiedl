@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
                 <div>
                     <Image
-                        src="/Welpenschule Neusiedl Sozialisierung.webp"
+                        src="/Welpenschule Welpenkurs Neusiedl.webp"
                         alt="Welpen lernen Kommunikation in der Hundeschule"
                         width={600}
                         height={600}
