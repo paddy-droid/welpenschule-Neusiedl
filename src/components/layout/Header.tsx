@@ -67,7 +67,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed inset-0 bg-white z-40 h-full md:hidden transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex justify-end p-4">
               <button onClick={() => setIsMenuOpen(false)} className="text-gray-800">
                   <X size={28} />
