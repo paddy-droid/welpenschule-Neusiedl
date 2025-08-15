@@ -94,7 +94,7 @@ export default function Home() {
               </Card>
             ))}
              <Card className="bg-yellow-400 md:col-span-2 lg:col-span-1 flex flex-col items-center justify-center p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                <CardHeader className="items-center">
+                <CardHeader className="flex flex-col items-center">
                     <Gift className="w-12 h-12 text-white mb-2" />
                     <CardTitle className="text-2xl font-bold text-black">Dein Sonderangebot</CardTitle>
                     <CardDescription className="text-gray-800 font-semibold">Exklusiv für Welpeneltern</CardDescription>
