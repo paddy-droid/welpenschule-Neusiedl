@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, Star, Users, Zap, Heart, Gift } from 'lucide-react';
 import Reviews from '@/components/Reviews';
+import WillenskraftSection from '@/components/WillenskraftSection';
 
 const willenskraftPillars = [
     { icon: <Heart className="text-yellow-500" />, title: "Grundbedürfnisse", description: "Futter, Schlaf & Sicherheit: Wir zeigen dir, wie du die Basis für Gesundheit und Wohlbefinden deines Welpen sicherstellst." },
@@ -25,7 +26,7 @@ export default function Home() {
           className="object-cover absolute z-0 brightness-75"
           priority
         />
-        <div className="relative z-20 text-center p-4 max-w-4xl">
+        <div className="relative z-20 text-center p-6 md:p-8 bg-black/20 rounded-lg shadow-lg max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
             Welpenschule Neusiedl am See mit <span className="text-yellow-400">Willenskraft</span>
           </h1>
@@ -324,6 +325,7 @@ export default function Home() {
             </div>
         </div>
       </section>
+    <WillenskraftSection />
     </div>
   );
 }
