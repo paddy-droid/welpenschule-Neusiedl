@@ -2,9 +2,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle2, Star, Users, Zap, Heart, Gift } from 'lucide-react';
+import { CheckCircle2, Star, Users, Zap, Heart, Gift, ChevronDown } from 'lucide-react';
 import Reviews from '@/components/Reviews';
 import WillenskraftSection from '@/components/WillenskraftSection';
+import * as Accordion from '@radix-ui/react-accordion';
 
 const willenskraftPillars = [
     { icon: <Heart className="text-yellow-500" />, title: "Grundbedürfnisse", description: "Futter, Schlaf & Sicherheit: Wir zeigen dir, wie du die Basis für Gesundheit und Wohlbefinden deines Welpen sicherstellst." },
@@ -144,6 +145,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Expertinnen-Talk: Ganzheitliche Welpenerziehung</h2>
+            <p className="text-lg text-gray-700">Tauche ein in unser Gespräch mit Bianca Willen und Martha Höhr von der Hundeschule Willenskraft und erfahre mehr über unsere gewaltfreie Philosophie. Entdecke, wie wir Welpen ganzheitlich auf ihr Leben vorbereiten und dir helfen, eine tiefe Bindung zu deinem neuen Familienmitglied aufzubauen.</p>
+          </div>
+          <div className="flex justify-center">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/yyp4gCZdwK4?si=GsCgdrcyf1KDSXaH"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-lg shadow-xl"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Medical Training Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -192,6 +216,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* YouTube Shorts Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Kurze Einblicke in unser Training</h2>
+            <p className="text-lg text-gray-700">Entdecke in diesen Shorts, wie viel Freude und Lernfortschritt unsere Welpen im Training erleben.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/e-V0mN-gP-I?si=vfI702gsB-6WWNRV"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/-ORnMT0oMHk?si=xfppXZQC6Dr-ukZ7"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -199,24 +261,47 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4">Häufig gestellte Fragen (FAQ)</h2>
             <p className="text-lg text-gray-700">Die wichtigsten Antworten rund um den Start in der Welpenschule Neusiedl am See.</p>
           </div>
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Ab wann ist die Welpenschule sinnvoll?</h3>
-              <p className="text-lg text-gray-700">Der ideale Zeitpunkt für den Start in der Welpenschule ist so früh wie möglich, typischerweise ab der 8. Lebenswoche, kurz nachdem der Welpe bei Ihnen eingezogen ist. Die sensible Phase der Sozialisierung endet etwa mit der 16. Woche. In dieser Zeit ist es entscheidend, positive Erfahrungen mit Artgenossen, Menschen und verschiedenen Umweltreizen zu sammeln. Ein früher Start legt den Grundstein für einen gut sozialisierten und selbstsicheren Hund. Voraussetzung ist die erste Grundimmunisierung, damit Ihr Welpe geschützt ist.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Was kostet die Welpenschule?</h3>
-              <p className="text-lg text-gray-700">Unser Welpen-Gruppenkurs umfasst 6 Trainingseinheiten zu je einer Stunde und kostet 195€. Dieser Preis beinhaltet nicht nur das praktische Training, sondern auch wertvolle theoretische Grundlagen, individuelle Betreuung in Kleingruppen und die Möglichkeit, jederzeit Fragen zu stellen. Wir legen Wert auf Transparenz und Qualität. Für spezielle Bedürfnisse oder eine intensivere Betreuung bieten wir zudem exklusive Einzelstunden für Welpeneltern zu einem Sonderpreis von 55€ an, um gezielt auf Ihre Themen einzugehen.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Wie lange dauert ein Welpenkurs?</h3>
-              <p className="text-lg text-gray-700">Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale wie „Sitz“ und „Komm“ aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach Abschluss des Kurses haben Sie das Rüstzeug, um die Erziehung selbstbewusst fortzusetzen oder an einem weiterführenden Junghundekurs teilzunehmen, um das Gelernte zu vertiefen und altersgerecht zu erweitern.</p>
-            </div>
-             <div>
-              <h3 className="text-xl font-bold mb-2">Was lernt mein Welpe in der Hundeschule?</h3>
-              <p className="text-lg text-gray-700">In unserer Welpenschule lernt Ihr Hund weit mehr als nur Grundkommandos. Im Zentrum steht die Sozialisierung: das sichere und entspannte Umgehen mit anderen Hunden und Menschen. Wir üben erste wichtige Signale wie den Rückruf und das Gehen an der lockeren Leine mittels positiver Verstärkung. Zudem lernen Sie als Halter, die Körpersprache Ihres Welpen zu deuten und seine Bedürfnisse zu verstehen. Eine Einführung in das Medical Training bereitet Ihren Vierbeiner außerdem spielerisch auf Tierarztbesuche vor und fördert das Vertrauen.</p>
-            </div>
-          </div>
+          <Accordion.Root type="single" collapsible className="space-y-4">
+            <Accordion.Item value="faq-1" className="border rounded-lg overflow-hidden">
+              <Accordion.Trigger className="flex w-full items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors">
+                Ab wann ist die Welpenschule sinnvoll?
+                <ChevronDown className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </Accordion.Trigger>
+              <Accordion.Content className="px-6 pb-6 text-gray-700">
+                Der ideale Zeitpunkt für den Start in der Welpenschule ist so früh wie möglich, typischerweise ab der 8. Lebenswoche, kurz nachdem der Welpe bei dir eingezogen ist. Die sensible Phase der Sozialisierung endet etwa mit der 16. Woche. In dieser Zeit ist es entscheidend, positive Erfahrungen mit Artgenossen, Menschen und verschiedenen Umweltreizen zu sammeln. Ein früher Start legt den Grundstein für einen gut sozialisierten und selbstsicheren Hund. Voraussetzung ist die erste Grundimmunisierung, damit dein Welpe geschützt ist.
+              </Accordion.Content>
+            </Accordion.Item>
+
+            <Accordion.Item value="faq-2" className="border rounded-lg overflow-hidden">
+              <Accordion.Trigger className="flex w-full items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors">
+                Was kostet die Welpenschule?
+                <ChevronDown className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </Accordion.Trigger>
+              <Accordion.Content className="px-6 pb-6 text-gray-700">
+                Unser Welpen-Gruppenkurs umfasst 6 Trainingseinheiten zu je einer Stunde und kostet 195€. Dieser Preis beinhaltet nicht nur das praktische Training, sondern auch wertvolle theoretische Grundlagen, individuelle Betreuung in Kleingruppen und die Möglichkeit, jederzeit Fragen zu stellen. Wir legen Wert auf Transparenz und Qualität. Für spezielle Bedürfnisse oder eine intensivere Betreuung bieten wir zudem exklusive Einzelstunden für Welpeneltern zu einem Sonderpreis von 55€ an, um gezielt auf deine Themen einzugehen.
+              </Accordion.Content>
+            </Accordion.Item>
+
+            <Accordion.Item value="faq-3" className="border rounded-lg overflow-hidden">
+              <Accordion.Trigger className="flex w-full items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors">
+                Wie lange dauert ein Welpenkurs?
+                <ChevronDown className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </Accordion.Trigger>
+              <Accordion.Content className="px-6 pb-6 text-gray-700">
+                Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale wie „Sitz" und „Komm" aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach Abschluss des Kurses hast du das Rüstzeug, um die Erziehung selbstbewusst fortzusetzen oder an einem weiterführenden Junghundekurs teilzunehmen, um das Gelernte zu vertiefen und altersgerecht zu erweitern.
+              </Accordion.Content>
+            </Accordion.Item>
+
+            <Accordion.Item value="faq-4" className="border rounded-lg overflow-hidden">
+              <Accordion.Trigger className="flex w-full items-center justify-between p-6 text-left font-bold text-lg hover:bg-slate-50 transition-colors">
+                Was lernt mein Welpe in der Hundeschule?
+                <ChevronDown className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </Accordion.Trigger>
+              <Accordion.Content className="px-6 pb-6 text-gray-700">
+                In unserer Welpenschule lernt dein Hund weit mehr als nur Grundkommandos. Im Zentrum steht die Sozialisierung: das sichere und entspannte Umgehen mit anderen Hunden und Menschen. Wir üben erste wichtige Signale wie den Rückruf und das Gehen an der lockeren Leine mittels positiver Verstärkung. Zudem lernst du als Halter, die Körpersprache deines Welpen zu deuten und seine Bedürfnisse zu verstehen. Eine Einführung in das Medical Training bereitet deinen Vierbeiner außerdem spielerisch auf Tierarztbesuche vor und fördert das Vertrauen.
+              </Accordion.Content>
+            </Accordion.Item>
+          </Accordion.Root>
         </div>
       </section>
       
