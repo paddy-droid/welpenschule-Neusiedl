@@ -31,7 +31,7 @@ export default function Home() {
             Welpenschule Neusiedl am See mit <span className="text-yellow-400">Willenskraft</span>
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
-            Dein ganzheitlicher und gewaltfreier Weg zum Dream-Team. Für Welpen bis 5 Monate im Bezirk Bruck an der Leitha & Nordburgenland.
+            Dein ganzheitlicher und gewaltfreier Weg zum Dream-Team. Für Welpen bis 5 Monate in Neusiedl am See & Umgebung.
           </p>
           <Button asChild size="lg" className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-black font-bold">
             <Link href="/kontakt">Melde dich und deinen Welpen an</Link>
