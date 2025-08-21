@@ -288,7 +288,7 @@ export default function Home() {
                 <ChevronDown className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </Accordion.Trigger>
               <Accordion.Content className="px-6 pb-6 text-gray-700">
-                Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale wie „Sitz" und „Komm" aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach Abschluss des Kurses hast du das Rüstzeug, um die Erziehung selbstbewusst fortzusetzen oder an einem weiterführenden Junghundekurs teilzunehmen, um das Gelernte zu vertiefen und altersgerecht zu erweitern.
+                Ein vollständiger Welpenkurs bei uns erstreckt sich über 6 Wochen, mit einer wöchentlichen Trainingseinheit von 60 Minuten. Diese Dauer ist ideal, um die grundlegenden Signale wie &bdquo;Sitz&ldquo; und &bdquo;Komm&ldquo; aufzubauen, die Sozialkompetenz zu fördern und eine starke Bindung zu festigen, ohne den jungen Hund zu überfordern. Nach Abschluss des Kurses hast du das Rüstzeug, um die Erziehung selbstbewusst fortzusetzen oder an einem weiterführenden Junghundekurs teilzunehmen, um das Gelernte zu vertiefen und altersgerecht zu erweitern.
               </Accordion.Content>
             </Accordion.Item>
 
