@@ -11,6 +11,21 @@ const navItems = [
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
+const mobileTrainingLocations = [
+  { href: '/mobiles-hundetraining', label: 'Neusiedl am See' },
+  { href: '/mobiles-hundetraining/gols', label: 'Gols' },
+  { href: '/mobiles-hundetraining/frauenkirchen', label: 'Frauenkirchen' },
+  { href: '/mobiles-hundetraining/parndorf', label: 'Parndorf' },
+  { href: '/mobiles-hundetraining/weiden-am-see', label: 'Weiden am See' },
+  { href: '/mobiles-hundetraining/illmitz', label: 'Illmitz' },
+  { href: '/mobiles-hundetraining/andau', label: 'Andau' },
+];
+
+const legalItems = [
+  { href: '/impressum', label: 'Impressum' },
+  { href: '/datenschutz', label: 'Datenschutz' },
+];
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,26 +79,66 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white z-40 h-screen md:hidden transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 w-3/5 max-w-xs bg-white z-40 h-screen md:hidden transition-transform duration-300 ease-in-out shadow-xl ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex justify-end p-4">
               <button onClick={() => setIsMenuOpen(false)} className="text-gray-800">
                   <X size={28} />
               </button>
           </div>
-          <nav className="flex flex-col items-center justify-center h-full space-y-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-800 hover:text-yellow-500 text-2xl font-semibold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-             <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold mt-8">
-               <Link href="/kontakt" onClick={() => setIsMenuOpen(false)}>Anmeldung</Link>
-            </Button>
+          <nav className="flex flex-col items-start justify-start h-full px-6 py-8 space-y-6 overflow-y-auto">
+            <div className="w-full">
+              <h3 className="font-bold text-lg mb-3 text-gray-800">Navigation</h3>
+              <div className="flex flex-col space-y-3">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-800 hover:text-yellow-500 text-base font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <div className="w-full">
+              <h3 className="font-bold text-lg mb-3 text-gray-800">Mobiles Hundetraining</h3>
+              <div className="flex flex-col space-y-2">
+                {mobileTrainingLocations.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 hover:text-yellow-500 text-sm"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <div className="w-full">
+              <h3 className="font-bold text-lg mb-3 text-gray-800">Rechtliches</h3>
+              <div className="flex flex-col space-y-2">
+                {legalItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 hover:text-yellow-500 text-sm"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <div className="w-full mt-6">
+              <Button asChild size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold w-full">
+                <Link href="/kontakt" onClick={() => setIsMenuOpen(false)}>Anmeldung</Link>
+              </Button>
+            </div>
           </nav>
       </div>
     </header>
