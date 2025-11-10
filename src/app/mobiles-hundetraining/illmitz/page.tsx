@@ -104,6 +104,156 @@ export default function MobileHundetrainingIllmitzPage() {
           </div>
         </div>
       </section>
+
+      {/* Herausforderungen und Lösungen Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-gray-800">Dein Weg zum perfekten Mensch-Hund-Team</h2>
+            <p className="text-xl text-gray-600">Willenskraft Hundetraining - Wir begleiten dich und deinen Vierbeiner in Illmitz</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Herausforderungen */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-red-500">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Herausforderungen</h3>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Welpentraining</h4>
+                      <p className="text-gray-600">Junge Hunde benötigen klare Grenzen und Konsequenz. Die Sozialisationsphase ist entscheidend für ein ausgeglichenes Sozialverhalten.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Tierschutzhunde</h4>
+                      <p className="text-gray-600">Hunde mit schwieriger Vergangenheit brauchen geduldigen Aufbau von Vertrauen und Sicherheit in ihrer neuen Umgebung.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Leinenführigkeit</h4>
+                      <p className="text-gray-600">Ziehen an der Leine macht Spaziergänge zum Stress. Entspanntes Gehen nebeneinander erfordert Konsequenz und die richtigen Techniken.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Rückruf</h4>
+                      <p className="text-gray-600">Ein zuverlässiger Rückruf ist lebenswichtig. Viele Hunde lassen sich durch Reize ablenken und kommen nicht auf Kommando.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Alltagstauglichkeit</h4>
+                      <p className="text-gray-600">Hunde sollen sich in verschiedenen Situationen sicher und ruhig verhalten – vom Tierarztbesuch bis zur Begegnung mit Artgenossen.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Lösungen */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-green-500">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Lösungen</h3>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Welpenschule</h4>
+                      <p className="text-gray-600">Spielerisches Lernen in kleinen Gruppen. Wir vermitteln Grundkommandos und fördern die richtige Sozialisierung für einen souveränen Hund.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Einzeltraining</h4>
+                      <p className="text-gray-600">Individuelle Betreuung für spezifische Probleme. Wir entwickeln maßgeschneiderte Lösungsstrategien für deine besondere Situation in Illmitz.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Leinenführigkeitstraining</h4>
+                      <p className="text-gray-600">Positive Verstärkungstechniken für lockeres Gehen. Dein Hund lernt, auf dich zu achten und freiwillig bei dir zu bleiben.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Rückruftraining</h4>
+                      <p className="text-gray-600">Schrittweiser Aufbau zuverlässiger Kommandos. Wir trainieren mit unterschiedlichen Ablenkungen für einen sicheren Rückruf in jeder Situation.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1">Alltagstraining</h4>
+                      <p className="text-gray-600">Praktische Übungen für reale Lebenssituationen. Wir bereiten dich und deinen Hund auf alltägliche Herausforderungen vor.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <div className="bg-yellow-400 rounded-2xl p-8 max-w-2xl mx-auto shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Bereit für die Veränderung?</h3>
+              <p className="text-gray-700 mb-6">Gemeinsam finden wir den richtigen Weg für dich und deinen Hund in Illmitz</p>
+              <Button asChild size="lg" className="bg-gray-800 hover:bg-gray-900 text-white font-bold shadow-lg">
+                <Link href="/kontakt?service=mobiles-training-illmitz">Jetzt Training in Illmitz anfragen</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* YouTube Shorts Section */}
       <section className="py-20 bg-slate-50">
