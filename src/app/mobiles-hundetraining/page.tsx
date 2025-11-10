@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, Star, Users, Zap, Heart, Gift, ChevronDown, MapPin } from 'lucide-react';
-import WillenskraftSection from '@/components/WillenskraftSection';
+import Reviews from '@/components/Reviews';
 import * as Accordion from '@radix-ui/react-accordion';
 
 const mobileTrainingPillars = [
@@ -20,7 +20,7 @@ export default function MobileHundetrainingPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center text-white">
         <Image
-          src="/mobiles-hundetraining-neusiedl.webp" // Platzhalter-Bild
+          src="https://www.willenskraft.co.at/wp-content/uploads/2020/06/DSC09452-845x684.jpg"
           alt="Mobiles Hundetraining in Neusiedl am See"
           fill
           className="object-cover absolute z-0 brightness-75"
@@ -65,7 +65,7 @@ export default function MobileHundetrainingPage() {
                 </div>
                 <div>
                     <Image
-                        src="/mobiles-hundetraining-zuhause.webp" // Platzhalter-Bild
+                        src="https://www.willenskraft.co.at/wp-content/uploads/2020/06/DSC09452-845x684.jpg"
                         alt="Hund und Besitzerin trainieren zuhause"
                         width={600}
                         height={600}
@@ -113,6 +113,44 @@ export default function MobileHundetrainingPage() {
         </div>
       </section>
       
+      {/* YouTube Shorts Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Kurze Einblicke in unser Training</h2>
+            <p className="text-lg text-gray-700">Entdecke in diesen Shorts, wie viel Freude und Lernfortschritt unsere Welpen im Training erleben.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/e-V0mN-gP-I?si=vfI702gsB-6WWNRV"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/-ORnMT0oMHk?si=xfppXZQC6Dr-ukZ7"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Locations Section */}
       <section className="bg-slate-50 py-20">
         <div className="container mx-auto px-4">
@@ -122,11 +160,15 @@ export default function MobileHundetrainingPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
             {['Gols', 'Frauenkirchen', 'Parndorf', 'Weiden am See', 'Illmitz', 'Andau'].map(ort => (
-              <Link key={ort} href={`/mobiles-hundetraining/${ort.toLowerCase().replace(/ /g, '-')}`} legacyBehavior>
-                <a className="bg-white p-4 rounded-lg shadow-md hover:bg-yellow-100 transition-colors flex items-center justify-center gap-2">
+              <Link
+                key={ort}
+                href={`/mobiles-hundetraining/${ort.toLowerCase().replace(/ /g, '-')}`}
+                className="block"
+              >
+                <div className="bg-white p-4 rounded-lg shadow-md hover:bg-yellow-100 transition-colors flex items-center justify-center gap-2">
                   <MapPin className="w-5 h-5 text-yellow-500" />
                   <span className="font-semibold">{ort}</span>
-                </a>
+                </div>
               </Link>
             ))}
             <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center gap-2 font-semibold">
@@ -163,7 +205,18 @@ export default function MobileHundetrainingPage() {
             </div>
         </div>
       </section>
-    <WillenskraftSection />
+      
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Was unsere Kunden sagen</h2>
+            <p className="text-lg text-gray-700">Echte Erfahrungen von glücklichen Mensch-Hund-Teams.</p>
+          </div>
+          <Reviews />
+        </div>
+      </section>
+      
     </div>
   );
 }

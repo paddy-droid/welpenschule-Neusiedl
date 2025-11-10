@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, Star, Users, Zap, Heart, ArrowLeft } from 'lucide-react';
-import WillenskraftSection from '@/components/WillenskraftSection';
+import Reviews from '@/components/Reviews';
 
 const mobileTrainingPillars = [
     { icon: <Heart className="text-yellow-500" />, title: "Individuelles Training in Parndorf", description: "Wir gehen gezielt auf deine Wünsche und die Bedürfnisse deines Hundes in eurer gewohnten Umgebung in Parndorf ein." },
@@ -19,7 +19,7 @@ export default function MobileHundetrainingParndorfPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center text-white">
         <Image
-          src="/mobiles-hundetraining-parndorf.webp" // Platzhalter-Bild
+          src="https://www.willenskraft.co.at/wp-content/uploads/2020/06/DSC09452-845x684.jpg"
           alt="Mobiles Hundetraining in Parndorf"
           fill
           className="object-cover absolute z-0 brightness-75"
@@ -64,7 +64,7 @@ export default function MobileHundetrainingParndorfPage() {
                 </div>
                 <div>
                     <Image
-                        src="/mobiles-hundetraining-zuhause.webp" 
+                        src="https://www.willenskraft.co.at/wp-content/uploads/2020/06/DSC09452-845x684.jpg"
                         alt="Hund und Besitzerin trainieren zuhause in Parndorf"
                         width={600}
                         height={600}
@@ -105,6 +105,44 @@ export default function MobileHundetrainingParndorfPage() {
         </div>
       </section>
       
+      {/* YouTube Shorts Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Kurze Einblicke in unser Training</h2>
+            <p className="text-lg text-gray-700">Entdecke in diesen Shorts, wie viel Freude und Lernfortschritt unsere Welpen im Training erleben.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/e-V0mN-gP-I?si=vfI702gsB-6WWNRV"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+            <div className="flex justify-center">
+              <iframe
+                width="315"
+                height="560"
+                src="https://www.youtube.com/embed/-ORnMT0oMHk?si=xfppXZQC6Dr-ukZ7"
+                title="YouTube short video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="rounded-lg shadow-xl"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Contact Section */}
       <section className="bg-slate-50 py-20">
         <div className="bg-white p-8 rounded-lg shadow-2xl flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
@@ -132,7 +170,18 @@ export default function MobileHundetrainingParndorfPage() {
             </div>
         </div>
       </section>
-    <WillenskraftSection />
+      
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Was unsere Kunden sagen</h2>
+            <p className="text-lg text-gray-700">Echte Erfahrungen von glücklichen Mensch-Hund-Teams.</p>
+          </div>
+          <Reviews />
+        </div>
+      </section>
+      
     </div>
   );
 }

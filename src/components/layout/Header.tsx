@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Logo from '@/components/Logo';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -25,17 +26,17 @@ export default function Header() {
   }, []);
 
   const headerClasses = `fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-transparent'
+    isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-white/95 shadow-sm'
   }`;
   
-  // Adjusted linkColor to handle menu open state on transparent background
-  const linkColor = isScrolled || isMenuOpen ? 'text-gray-800' : 'text-white';
+  // Adjusted linkColor to handle menu open state
+  const linkColor = 'text-gray-800';
 
   return (
     <header className={headerClasses}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className={`text-2xl font-bold transition-colors ${linkColor}`}>
-          Welpenschule Neusiedl
+        <Link href="/" className="flex items-center">
+          <Logo width={180} height={70} />
         </Link>
         
         {/* Desktop Navigation */}
@@ -44,11 +45,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`font-medium transition-colors ${
-                isScrolled
-                  ? 'text-gray-600 hover:text-yellow-500'
-                  : 'text-white hover:text-yellow-300 drop-shadow-sm'
-              }`}
+              className="font-medium text-gray-600 hover:text-yellow-500 transition-colors"
             >
               {item.label}
             </Link>
