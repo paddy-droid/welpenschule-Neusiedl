@@ -29,8 +29,10 @@ const legalItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -41,7 +43,7 @@ export default function Header() {
   }, []);
 
   const headerClasses = `fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-white/95 shadow-sm'
+    isClient && isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-white/95 shadow-sm'
   }`;
   
   // Adjusted linkColor to handle menu open state
@@ -79,7 +81,8 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed top-0 right-0 w-3/5 max-w-xs bg-white z-40 h-screen md:hidden transition-transform duration-300 ease-in-out shadow-xl ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {isClient && (
+        <div className={`fixed top-0 right-0 w-3/5 max-w-xs bg-white z-40 h-screen md:hidden transition-transform duration-300 ease-in-out shadow-xl ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex justify-end p-4">
               <button onClick={() => setIsMenuOpen(false)} className="text-gray-800">
                   <X size={28} />
@@ -140,7 +143,8 @@ export default function Header() {
               </Button>
             </div>
           </nav>
-      </div>
+        </div>
+      )}
     </header>
   );
 }

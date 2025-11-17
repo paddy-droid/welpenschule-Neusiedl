@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, Star, Users, Zap, Heart, ArrowLeft } from 'lucide-react';
 import Reviews from '@/components/Reviews';
+import WillenskraftSection from '@/components/WillenskraftSection';
+import { getLocationConfig } from '@/components/WillenskraftSection/config/locations';
 
 const mobileTrainingPillars = [
     { icon: <Heart className="text-yellow-500" />, title: "Individuelles Training in Illmitz", description: "Wir gehen gezielt auf deine Wünsche und die Bedürfnisse deines Hundes in eurer gewohnten Umgebung in Illmitz ein." },
@@ -254,6 +256,9 @@ export default function MobileHundetrainingIllmitzPage() {
           </div>
         </div>
       </section>
+      
+      {/* Willenskraft Section */}
+      <WillenskraftSection content={getLocationConfig('illmitz')} />
       
       {/* YouTube Shorts Section */}
       <section className="py-20 bg-slate-50">
