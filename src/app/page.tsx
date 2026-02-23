@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle2, Star, Users, Zap, Heart, Gift, ChevronDown, CheckCircle } from 'lucide-react';
+import { Star, Users, Zap, Heart, Gift, ChevronDown, CheckCircle } from 'lucide-react';
 import Reviews from '@/components/Reviews';
 import WillenskraftSection from '@/components/WillenskraftSection';
 import * as Accordion from '@radix-ui/react-accordion';

@@ -62,7 +62,7 @@ export default function SeoRegionSection({ region }: SeoRegionSectionProps) {
 
                     <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Mache den ersten Schritt zu einem harmonischen Alltag</h3>
                     <p className="text-gray-300 mb-0 max-w-2xl mx-auto relative z-10 text-lg">
-                        Ganz gleich, ob du einen Welpen hast oder einen erwachsenen Hund mit kleinen "Baustellen" – unser Hundetraining in {region} passt sich euch an.
+                        Ganz gleich, ob du einen Welpen hast oder einen erwachsenen Hund mit kleinen &quot;Baustellen&quot; – unser Hundetraining in {region} passt sich euch an.
                     </p>
                 </div>
             </div>
