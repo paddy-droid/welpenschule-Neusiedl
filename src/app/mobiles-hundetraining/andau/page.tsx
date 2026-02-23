@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, Star, Users, Zap, Heart, ArrowLeft } from 'lucide-react';
 import Reviews from '@/components/Reviews';
+import SeoRegionSection from '@/components/SeoRegionSection';
 import WillenskraftSection from '@/components/WillenskraftSection';
 import { getLocationConfig } from '@/components/WillenskraftSection/config/locations';
 
@@ -297,6 +298,8 @@ export default function MobileHundetrainingAndauPage() {
           </div>
         </div>
       </section>
+      
+      <SeoRegionSection region="Andau" />
       
       {/* Contact Section */}
       <section className="bg-slate-50 py-20">
