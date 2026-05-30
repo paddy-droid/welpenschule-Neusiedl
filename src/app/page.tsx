@@ -27,9 +27,9 @@ import WillenskraftSection from '@/components/WillenskraftSection';
 import * as Accordion from '@radix-ui/react-accordion';
 
 export const metadata: Metadata = {
-  title: 'Welpenschule Neusiedl am See – Hundeschule Willenskraft | Pannonisch & Gewaltfrei',
+  title: 'Hundeschule & Welpenschule Neusiedl am See | Willenskraft',
   description:
-    'Welpenschule Neusiedl am See ✓ Gewaltfrei & ganzheitlich ✓ Pannonisches Training am UNESCO-Welterbe Neusiedlersee ✓ Max. 4 Teams pro Gruppe ✓ 6 Einheiten ab 195€ ✓ Tel: +43 664 3903673',
+    'Hundeschule & Hundetrainerin in Neusiedl am See ✓ vom Welpen bis zum Senior ✓ Welpenkurs, Einzel- & mobiles Hundetraining ✓ gewaltfrei am Neusiedlersee ✓ Max. 4 Teams ✓ Tel: +43 664 3903673',
   alternates: {
     canonical: 'https://welpenschule-neusiedl.at',
   },
@@ -85,6 +85,22 @@ const faqJsonLd = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Ja, gerade am Neusiedlersee mit seiner enormen Vogeldichte ist Impulskontroll-Training ein zentraler Schwerpunkt. Wir arbeiten mit Distanz, Alternativ-Verhalten und positiver Verstärkung — schrittweise und ohne Druck.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Seid ihr eine Welpenschule oder eine Hundeschule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Beides. Unser Herzstück ist die Welpenschule am Neusiedlersee — als Hundeschule und Hundetrainerin begleiten wir Mensch und Hund aber in jeder Lebensphase: vom Welpen über den Junghund bis zum Senior. Neben dem Welpen-Gruppenkurs bieten wir Junghundekurse, Einzelstunden und mobiles Hundetraining in Neusiedl am See und der gesamten Region rund um den Neusiedlersee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Bietet ihr auch Training für erwachsene und ältere Hunde an?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Wir trainieren Hunde jeden Alters. Für erwachsene und ältere Hunde arbeiten wir vor allem mit Einzeltraining und mobilem Hundetraining bei dir vor Ort: Alltagstraining, Leinenführigkeit, Rückruf, Impulskontrolle sowie Problemverhalten wie Leinenpöbeln, Bellen oder Jagdverhalten. Bei Senioren legen wir den Fokus auf schonende Bewegung, geistige Auslastung und Medical Training.',
       },
     },
   ],
@@ -259,6 +275,81 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= HUNDESCHULE – ALLE LEBENSPHASEN (SEO: Hundeschule / Hundetrainer Neusiedl) ================= */}
+      <section id="hundeschule" className="wk-section">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="wk-eyebrow mb-5">Hundeschule Neusiedl am See</span>
+            <h2 className="wk-display text-4xl md:text-5xl lg:text-6xl text-ink-950">
+              Deine Hundeschule in Neusiedl —
+              <br />
+              <span className="wk-text-gradient">vom Welpen bis zum Senior.</span>
+            </h2>
+            <p className="mt-6 text-lg text-ink-600 leading-relaxed">
+              Wir sind weit mehr als eine Welpenschule: Als <strong>Hundeschule und Hundetrainerin in
+              Neusiedl am See</strong> begleiten wir Mensch und Hund in jeder Lebensphase — vom ersten
+              Welpentag über den wilden Junghund bis zum souveränen Senior. Gruppenkurse, Einzeltraining
+              und mobiles Hundetraining in der ganzen Region rund um den Neusiedlersee.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { phase: 'Welpe', age: '8 Wochen – 5 Monate', icon: Heart, text: 'Sozialisierung, Grundsignale & Bindung in der wichtigsten Prägephase — unser Welpen-Gruppenkurs in Kleingruppen.' },
+              { phase: 'Junghund', age: '5 – 18 Monate', icon: Zap, text: 'Die Pubertät souverän meistern: Impulskontrolle, Rückruf, Leinenführigkeit und Frust-Toleranz, wenn es spannend wird.' },
+              { phase: 'Erwachsener Hund', age: '1,5 – 8 Jahre', icon: ShieldCheck, text: 'Alltag & Problemverhalten — Leinenpöbeln, Jagdverhalten, Bellen oder Unsicherheit. Einzeln & mobil bei dir vor Ort.' },
+              { phase: 'Senior', age: 'ab 8 Jahren', icon: Star, text: 'Schonendes Training mit geistiger Auslastung, Medical Training und Bewegung, die guttut — für entspannte gemeinsame Jahre.' },
+            ].map((s, i) => (
+              <div key={s.phase} className="wk-card p-7 group">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center group-hover:bg-lake-500 group-hover:text-cream transition-colors">
+                    <s.icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">0{i + 1}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-ink-950 tracking-tight">{s.phase}</h3>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-600 mt-1 mb-3">{s.age}</p>
+                <p className="text-ink-600 leading-relaxed text-sm">{s.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-3xl bg-cream-soft border border-ink-200/60 p-8 md:p-10">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <span className="wk-eyebrow-lake mb-4">Hundetraining in Neusiedl</span>
+                <h3 className="wk-display text-2xl md:text-3xl text-ink-950">
+                  Ein Thema, ein Plan — für jeden Hund.
+                </h3>
+                <p className="mt-4 text-ink-600 leading-relaxed">
+                  Egal ob junger Wirbelwind oder erfahrener Begleiter: Als deine Hundetrainerin in
+                  Neusiedl am See finde ich für jedes Anliegen den passenden Weg — gewaltfrei,
+                  wissenschaftlich fundiert und alltagstauglich.
+                </p>
+              </div>
+              <div className="lg:col-span-7">
+                <div className="flex flex-wrap gap-2.5">
+                  {['Alltagstraining', 'Leinenführigkeit', 'Rückruf', 'Impulskontrolle', 'Leinenpöbeln', 'Jagdverhalten', 'Anti-Bell-Training', 'Medical Training', 'Mobiles Training', 'Einzelstunden', 'Welpenkurs', 'Junghundekurs'].map((t) => (
+                    <span key={t} className="inline-flex items-center gap-2 rounded-full border border-lake-300/50 bg-cream px-4 py-2 text-sm font-medium text-ink-800">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-lake-600 shrink-0" />
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                  <Link href="/kontakt" className="wk-btn-primary inline-flex items-center justify-center gap-2 px-7 h-13 rounded-full font-semibold">
+                    Unverbindlich anfragen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link href="/mobiles-hundetraining" className="wk-btn-ghost inline-flex items-center justify-center gap-2 px-7 h-13 rounded-full font-semibold">
+                    Mobiles Hundetraining
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -787,6 +878,39 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SEO TEXT: Hundeschule & Hundetrainer Neusiedl ================= */}
+      <section className="wk-section bg-card">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <span className="wk-eyebrow mb-5">Region &amp; Angebot</span>
+          <h2 className="wk-display text-3xl md:text-4xl lg:text-5xl text-ink-950">
+            Hundeschule &amp; Hundetrainer in Neusiedl am See.
+          </h2>
+          <div className="mt-7 space-y-5 text-lg text-ink-600 leading-relaxed">
+            <p>
+              Du suchst eine <strong>Hundeschule in Neusiedl am See</strong>, die mehr kann als nur
+              Welpen? Bei Willenskraft begleiten wir dich und deinen Hund durch jede Lebensphase —
+              gewaltfrei, wissenschaftlich fundiert und mit viel Gespür für eure individuelle Situation.
+              Vom ersten Welpenkurs über die turbulente Junghundzeit bis zum entspannten Training mit
+              dem Senior.
+            </p>
+            <p>
+              Als <strong>Hundetrainerin in Neusiedl</strong> arbeite ich ausschließlich mit positiver
+              Verstärkung — ohne Stachelhalsband, Würger oder Schreckmittel. Ob Leinenführigkeit, ein
+              zuverlässiger Rückruf, Impulskontrolle am vogelreichen Seeufer oder Problemverhalten wie
+              Leinenpöbeln und Jagdverhalten: Für jedes Thema gibt es einen klaren, alltagstauglichen
+              Plan — für den Welpen genauso wie für den erfahrenen Senior.
+            </p>
+            <p>
+              Trainiert wird in Kleingruppen am Neusiedlersee sowie als Einzel- und{' '}
+              <Link href="/mobiles-hundetraining" className="wk-link font-semibold">mobiles Hundetraining</Link>{' '}
+              direkt bei dir zuhause — in Neusiedl am See, Gols, Parndorf, Weiden am See, Frauenkirchen,
+              Illmitz, Andau und der gesamten Region rund um den See. So lernt dein Hund genau dort, wo
+              euer Alltag wirklich stattfindet.
+            </p>
           </div>
         </div>
       </section>
