@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Instagram, Facebook, ArrowUpRight, Waves } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, ArrowUpRight, Waves } from 'lucide-react';
 import { serviceLocations } from '@/lib/regionData';
 
 const regionLinks = serviceLocations.map((loc) => ({
@@ -53,6 +53,15 @@ export default function Footer() {
                 <Facebook className="w-4 h-4" />
               </a>
               <a
+                href="https://www.youtube.com/@hundeschulewillenskraft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-10 h-10 rounded-full border border-ink-700 hover:border-lake-500 hover:bg-lake-500/10 hover:text-lake-300 flex items-center justify-center transition-all"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
                 href="https://www.willenskraft.co.at"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,15 +73,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation + Kurse */}
           <div className="lg:col-span-2">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-400 mb-5">Navigation</p>
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="hover:text-lake-300 transition-colors">Startseite</Link></li>
               <li><Link href="/mobiles-hundetraining" className="hover:text-lake-300 transition-colors">Mobiles Training</Link></li>
+              <li><Link href="/kurse" className="hover:text-lake-300 transition-colors">Alle Kurse</Link></li>
               <li><Link href="/kontakt" className="hover:text-lake-300 transition-colors">Kontakt</Link></li>
               <li><Link href="/impressum" className="hover:text-lake-300 transition-colors">Impressum</Link></li>
               <li><Link href="/datenschutz" className="hover:text-lake-300 transition-colors">Datenschutz</Link></li>
+            </ul>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-400 mt-7 mb-4">Gruppenkurse</p>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/kurse/welpenkurs" className="hover:text-lake-300 transition-colors">Welpenkurs</Link></li>
+              <li><Link href="/kurse/junghundekurs" className="hover:text-lake-300 transition-colors">Junghundekurs</Link></li>
+              <li><Link href="/kurse/begegnungstraining" className="hover:text-lake-300 transition-colors">Begegnungstraining</Link></li>
+              <li><Link href="/kurse/dummytraining" className="hover:text-lake-300 transition-colors">Dummytraining</Link></li>
+              <li><Link href="/kurse/medical-training" className="hover:text-lake-300 transition-colors">Medical Training</Link></li>
             </ul>
           </div>
 

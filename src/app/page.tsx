@@ -30,6 +30,7 @@ import WillenskraftSection from '@/components/WillenskraftSection';
 import GoogleBadge from '@/components/GoogleBadge';
 import JessySection from '@/components/JessySection';
 import CtaBanner from '@/components/CtaBanner';
+import ShortsSection from '@/components/ShortsSection';
 import { serviceLocations } from '@/lib/regionData';
 import * as Accordion from '@radix-ui/react-accordion';
 
@@ -857,29 +858,8 @@ export default function Home() {
         text="Welpenkurs, Einzeltraining oder mobile Erstberatung — Jessy meldet sich innerhalb von 24 Stunden an Werktagen."
       />
 
-      {/* ================= SHORTS ================= */}
-      <section className="wk-section bg-card">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="wk-eyebrow mb-5">Trainings-Shorts</span>
-            <h2 className="wk-display text-4xl md:text-5xl text-ink-950">Echte Momente aus dem Training.</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6 md:gap-10 justify-center max-w-3xl mx-auto">
-            {['e-V0mN-gP-I', '-ORnMT0oMHk'].map((id) => (
-              <div key={id} className="flex justify-center">
-                <iframe
-                  width="100%"
-                  className="max-w-[320px] h-[560px] rounded-[2rem] shadow-xl border border-ink-200"
-                  src={`https://www.youtube.com/embed/${id}`}
-                  title="YouTube short"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ================= SHORTS + Kanal-CTA ================= */}
+      <ShortsSection />
 
       {/* ================= FAQ ================= */}
       <section className="wk-section">
@@ -941,6 +921,20 @@ export default function Home() {
                 Jeden Monat startet mindestens ein neuer Welpenkurs — an sorgfältig ausgewählten
                 Outdoor-Treffpunkten in der Region Neusiedl am See. Den genauen Treffpunkt erfährst du bei der Anmeldung.
               </p>
+              <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+                <Link
+                  href="/kurse/welpenkurs"
+                  className="wk-btn-primary inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full font-semibold text-sm"
+                >
+                  Zum Welpenkurs im Detail <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/kurse"
+                  className="inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-ink-900/60 border border-ink-700 hover:border-lake-500 hover:bg-lake-500/10 hover:text-lake-300 text-cream font-semibold text-sm transition-all"
+                >
+                  Alle Gruppenkurse ansehen
+                </Link>
+              </div>
               <div className="mt-6 flex justify-center">
                 <GoogleBadge variant="dark" />
               </div>

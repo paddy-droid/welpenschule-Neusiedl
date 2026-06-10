@@ -2,13 +2,23 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Youtube } from 'lucide-react';
 import Logo from '@/components/Logo';
+
+const youtubeChannelUrl = 'https://www.youtube.com/@hundeschulewillenskraft';
 
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/mobiles-hundetraining', label: 'Mobiles Training' },
-  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const kursLinks = [
+  { href: '/kurse', label: 'Alle Kurse im Überblick', hint: 'Übersicht & Preise' },
+  { href: '/kurse/welpenkurs', label: 'Welpenkurs', hint: 'Welpen bis ~5 Monate · 195 €' },
+  { href: '/kurse/junghundekurs', label: 'Junghundekurs', hint: 'Souverän durch die Pubertät · 195 €' },
+  { href: '/kurse/begegnungstraining', label: 'Begegnungstraining', hint: 'Entspannt an der Leine · 260 €' },
+  { href: '/kurse/dummytraining', label: 'Dummytraining', hint: 'Apport & Nasenarbeit · 220 €' },
+  { href: '/kurse/medical-training', label: 'Medical Training', hint: 'Stressfrei zum Tierarzt · 220 €' },
 ];
 
 const mobileTrainingLocations = [
@@ -50,6 +60,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Offenes Menü: Escape schließt, Hintergrund-Scroll gesperrt
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-[padding,background-color,box-shadow,border-color] duration-500 ease-out ${
@@ -76,6 +101,34 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+
+          {/* Kurse Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50">
+              Kurse
+              <ChevronDown size={14} className="opacity-60 group-hover:rotate-180 transition-transform duration-300" />
+            </button>
+            <div className="absolute top-full -left-4 pt-3 w-[320px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
+              <div className="bg-card/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.18)] border border-ink-200 overflow-hidden p-2">
+                <div className="px-3 pt-2 pb-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-brand-700">Gruppenkurse mit Jessy</p>
+                  <p className="text-xs text-ink-500 mt-0.5">An Outdoor-Treffpunkten in deiner Region</p>
+                </div>
+                <div className="space-y-0.5">
+                  {kursLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group/item block px-3 py-2 rounded-lg text-sm text-ink-700 hover:bg-lake-50 hover:text-lake-800 transition-colors"
+                    >
+                      <span className="block font-medium">{item.label}</span>
+                      <span className="block text-[10px] text-ink-400 group-hover/item:text-lake-700">{item.hint}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Regionen Dropdown */}
           <div className="relative group">
@@ -105,9 +158,26 @@ export default function Header() {
             </div>
           </div>
 
+          <Link
+            href="/kontakt"
+            className="relative px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50"
+          >
+            Kontakt
+          </Link>
+
+          <a
+            href={youtubeChannelUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Willenskraft auf YouTube"
+            className="ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full text-ink-600 hover:text-[#FF0000] hover:bg-lake-50 transition-colors"
+          >
+            <Youtube size={18} />
+          </a>
+
           <a
             href="tel:+436643903673"
-            className="ml-2 hidden xl:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-ink-600 hover:text-lake-700 transition-colors"
+            className="ml-1 hidden xl:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-ink-600 hover:text-lake-700 transition-colors"
           >
             <Phone size={13} /> +43 664 3903673
           </a>
@@ -120,12 +190,13 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center z-50 relative">
+        {/* Mobile Menu Button — z-[60], damit er ÜBER dem Drawer (z-50) bleibt und Schließen immer möglich ist */}
+        <div className="lg:hidden flex items-center z-[60] relative">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 -mr-2 text-ink-900 hover:bg-lake-50 rounded-full transition-colors"
             aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -146,8 +217,15 @@ export default function Header() {
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="px-6 pt-6 pb-4 border-b border-ink-200/60">
+            <div className="px-6 pt-6 pb-4 border-b border-ink-200/60 flex items-center justify-between">
               <span className="wk-eyebrow-lake !py-1.5 !text-[10px]">Willenskraft Neusiedl</span>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 -mr-2 text-ink-900 hover:bg-lake-50 rounded-full transition-colors"
+                aria-label="Menü schließen"
+              >
+                <X size={22} />
+              </button>
             </div>
 
             <nav className="flex-1 overflow-y-auto px-6 py-7 flex flex-col gap-7">
@@ -163,6 +241,30 @@ export default function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <Link
+                  href="/kontakt"
+                  className="block text-2xl font-semibold text-ink-900 hover:text-lake-700 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Kontakt
+                </Link>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700">Gruppenkurse</h3>
+                <div className="space-y-2.5 pl-3 border-l border-brand-300/60">
+                  {kursLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block text-base font-medium text-ink-700 hover:text-lake-700 py-1 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                      <span className="block text-[10px] text-ink-400 mt-0.5">{item.hint}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <div className="space-y-3">
@@ -196,6 +298,15 @@ export default function Header() {
               </div>
 
               <div className="space-y-4 mt-auto">
+                <a
+                  href={youtubeChannelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold border border-ink-200 text-ink-700 hover:border-[#FF0000]/40 hover:text-[#FF0000] transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Youtube className="w-4 h-4" /> Willenskraft auf YouTube
+                </a>
                 <a
                   href="tel:+436643903673"
                   className="block text-center wk-btn-ghost rounded-full py-3.5 text-sm font-semibold"

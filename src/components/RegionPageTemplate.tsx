@@ -44,6 +44,7 @@ import { getFachwissen, studies } from '@/lib/studies';
 import { getMapSpots } from '@/lib/mapSpots';
 import RegionMap from '@/components/RegionMap';
 import CtaBanner from '@/components/CtaBanner';
+import ShortsSection from '@/components/ShortsSection';
 import { WhatsAppIcon, waHref } from '@/components/WhatsAppFloat';
 import * as Accordion from '@radix-ui/react-accordion';
 
@@ -903,29 +904,8 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
       {/* ============== WILLENSKRAFT BRAND ============== */}
       <WillenskraftSection content={willenskraftConfig} />
 
-      {/* ============== YouTube Shorts ============== */}
-      <section className="wk-section bg-card">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="wk-eyebrow mb-5">Trainings-Shorts</span>
-            <h2 className="wk-display text-4xl md:text-5xl text-ink-950">Echte Momente aus dem Training.</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6 md:gap-10 justify-center max-w-3xl mx-auto">
-            {['e-V0mN-gP-I', '-ORnMT0oMHk'].map((id) => (
-              <div key={id} className="flex justify-center">
-                <iframe
-                  width="100%"
-                  className="max-w-[320px] h-[560px] rounded-[2rem] shadow-xl border border-ink-200"
-                  src={`https://www.youtube.com/embed/${id}`}
-                  title="YouTube short"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ============== YouTube Shorts + Kanal-CTA ============== */}
+      <ShortsSection />
 
       {/* ============== REGION DEEP DIVE ============== */}
       <section className="wk-section relative overflow-hidden">

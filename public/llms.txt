@@ -27,6 +27,18 @@
 - **Welpen-Gruppenkurs:** 6 Einheiten à 60 Minuten · max. 4 Mensch-Hund-Teams · 195 € · Welpen 8 Wochen bis 5 Monate
 - **Anfahrt:** kostenlos im gesamten Bezirk Neusiedl am See
 
+## Gruppenkurse (je eigene Detailseite unter /kurse/)
+
+Alle Kurse an Outdoor-Treffpunkten in der Region Neusiedl am See / Nordburgenland, Trainerin Jessica Pusch:
+
+1. **Welpenkurs** (/kurse/welpenkurs): 6 Einheiten à 60 Min., max. 4 Teams, 195 € — Welpen bis ~5 Monate
+2. **Junghundekurs** (/kurse/junghundekurs): 6 Einheiten à 60 Min., 195 € — Pubertät, Rückruf, Impulskontrolle
+3. **Begegnungstraining** (/kurse/begegnungstraining): 8 Einheiten à 60 Min., max. 4 Teams, 260 € — entspannte Hundebegegnungen, 5 Begegnungszonen, Leinenhandling
+4. **Dummytraining** (/kurse/dummytraining): 8 Einheiten à 60 Min., 3–6 Teams, 220 € — Hunde ab ca. 10 Monaten, Apport & Nasenarbeit
+5. **Medical Training** (/kurse/medical-training): Basis- & Fortgeschrittenenkurs, je 8 Einheiten, je 220 € — kooperative Tierarzt- & Pflegevorbereitung (Chinrest, Targets)
+
+YouTube-Kanal: https://www.youtube.com/@hundeschulewillenskraft (Trainings-Shorts & Expertinnen-Talks)
+
 ## Einsatzorte (mobiles Hundetraining — wir kommen zu dir)
 
 17 Orte im Bezirk Neusiedl am See, je mit eigener Detailseite unter /mobiles-hundetraining/:
