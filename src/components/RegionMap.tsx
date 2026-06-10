@@ -74,7 +74,7 @@ export default function RegionMap({ regionName, center, spots }: RegionMapProps)
         .bindPopup(
           popupHtml(
             `🏠 Bei dir zuhause in ${regionName}`,
-            'Hier findet dein mobiles Einzeltraining statt — wir kommen zu dir. Anfahrt kostenlos.'
+            'Mobiles Einzeltraining, Welpenberatung, Medical Training & Trennungsstress-Coaching — Jessy kommt zu dir. Anfahrt kostenlos.'
           )
         );
 

@@ -203,9 +203,10 @@ export default function Home() {
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 wk-mesh" />
         <Image
-          src="/Welpenschule Neusiedl.webp"
-          alt="Glücklicher Welpe am Neusiedlersee – Welpenschule Willenskraft"
+          src="/heroes/hero-see.webp"
+          alt="Glücklicher Welpe am Neusiedlersee im Abendlicht – mobile Welpenschule Willenskraft"
           fill
+          sizes="100vw"
           className="object-cover absolute inset-0 z-0 opacity-[0.55] mix-blend-multiply"
           priority
         />

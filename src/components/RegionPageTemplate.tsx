@@ -45,8 +45,55 @@ import { getMapSpots } from '@/lib/mapSpots';
 import RegionMap from '@/components/RegionMap';
 import * as Accordion from '@radix-ui/react-accordion';
 
-const heroImage = '/Welpenschule Welpenkurs Neusiedl.webp';
 const profileImage = 'https://www.willenskraft.co.at/wp-content/uploads/2020/02/Hundeschule-Willenskraft-ButtonFINAL.png';
+
+/** Hero-Motiv passend zur Landschaft des jeweiligen Orts (Gemini-generiert, Brand-Look). */
+const heroThemes: Record<string, { src: string; alt: (ort: string) => string }> = {
+  see: {
+    src: '/heroes/hero-see.webp',
+    alt: (ort) => `Welpe am Neusiedlersee bei goldenem Abendlicht — mobiles Hundetraining in ${ort}`,
+  },
+  weinberge: {
+    src: '/heroes/hero-weinberge.webp',
+    alt: (ort) => `Hundetrainerin geht mit Hund an lockerer Leine durch die Weinberge — Hundeschule ${ort}`,
+  },
+  steppe: {
+    src: '/heroes/hero-steppe.webp',
+    alt: (ort) => `Hund im freudigen Rückruf über die pannonische Ebene — Hundetraining in ${ort}`,
+  },
+  nationalpark: {
+    src: '/heroes/hero-nationalpark.webp',
+    alt: (ort) => `Hund beobachtet an der Leine ruhig Wildgänse über einer Lacke — Impulskontrolle in ${ort}`,
+  },
+  zuhause: {
+    src: '/heroes/hero-zuhause.webp',
+    alt: (ort) => `Hundetrainerin belohnt Welpen im Garten — mobiles Hundetraining bei dir zuhause in ${ort}`,
+  },
+};
+
+const heroThemeBySlug: Record<string, keyof typeof heroThemes> = {
+  'neusiedl-am-see': 'see',
+  'weiden-am-see': 'see',
+  'podersdorf-am-see': 'see',
+  jois: 'see',
+  'winden-am-see': 'see',
+  gols: 'weinberge',
+  halbturn: 'weinberge',
+  moenchhof: 'weinberge',
+  parndorf: 'steppe',
+  frauenkirchen: 'steppe',
+  andau: 'steppe',
+  'st-andrae-am-zicksee': 'steppe',
+  illmitz: 'nationalpark',
+  apetlon: 'nationalpark',
+  pamhagen: 'nationalpark',
+  kittsee: 'zuhause',
+  bruckneudorf: 'zuhause',
+};
+
+function getHeroTheme(slug: string) {
+  return heroThemes[heroThemeBySlug[slug] ?? 'see'];
+}
 
 const pillarIcons = [Heart, Zap, Users, CheckCircle2, Star];
 
@@ -148,6 +195,7 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
 
   const willenskraftConfig = getLocationConfig(regionKey);
   const fachwissen = getFachwissen(regionKey);
+  const heroTheme = getHeroTheme(regionKey);
 
   const pageUrl =
     data.slug === 'neusiedl-am-see'
@@ -214,9 +262,10 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
       {/* ============== HERO ============== */}
       <section className="relative min-h-[78vh] flex items-center justify-center overflow-hidden">
         <Image
-          src={heroImage}
-          alt={`Mobiles Hundetraining in ${data.name}`}
+          src={heroTheme.src}
+          alt={heroTheme.alt(data.name)}
           fill
+          sizes="100vw"
           className="object-cover absolute inset-0 z-0 brightness-[0.55]"
           priority
         />
@@ -368,10 +417,10 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
             <div className="lg:col-span-5 relative">
               <div className="absolute -inset-5 bg-gradient-to-br from-lake-100 to-brand-100 rounded-[2.5rem] rotate-3 opacity-60 blur-2xl" />
               <Image
-                src={heroImage}
-                alt={`Hund und Besitzerin trainieren zuhause in ${data.name}`}
-                width={700}
-                height={700}
+                src="/heroes/hero-zuhause.webp"
+                alt={`Hundetrainerin belohnt Welpen im Garten — mobiles Training zuhause in ${data.name}`}
+                width={960}
+                height={540}
                 className="relative rounded-[2rem] shadow-[0_40px_80px_-32px_rgba(0,0,0,0.25)] object-cover aspect-square"
               />
             </div>
