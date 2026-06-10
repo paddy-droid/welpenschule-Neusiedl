@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/pamhagen';
+const title = 'Hundeschule Pamhagen – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Pamhagen: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Hanság-Stille. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Pamhagen | Mobil im Süd-Seewinkel',
-  description:
-    'Hundeschule Pamhagen ✓ wir kommen zu dir nach Hause ✓ Hanság-Wiesen & Steppentierpark ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
+  title,
+  description,
   keywords: ['Hundeschule Pamhagen', 'Hundetrainer Pamhagen', 'Mobiles Hundetraining Pamhagen', 'Welpentraining Pamhagen Seewinkel'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Pamhagen | Mobil im Süd-Seewinkel',
-    description: 'Hundeschule Pamhagen ✓ mobil bei dir zuhause ✓ Hanság & Grenzwege ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function PamhagenLayout({ children }: { children: React.ReactNode }) {

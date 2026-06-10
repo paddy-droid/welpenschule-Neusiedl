@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/frauenkirchen';
+const title = 'Hundeschule Frauenkirchen – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Frauenkirchen: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Heideboden. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Frauenkirchen | Mobil & gewaltfrei',
-  description:
-    'Hundeschule Frauenkirchen ✓ wir kommen zu dir nach Hause ✓ Heideboden & Wallfahrtsort ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
-  keywords: ['Hundeschule Frauenkirchen', 'Hundetrainer Frauenkirchen', 'Mobiles Hundetraining Frauenkirchen', 'Welpenkurs Frauenkirchen'],
+  title,
+  description,
+  keywords: ['Hundeschule Frauenkirchen', 'Hundetrainer Frauenkirchen', 'Mobiles Hundetraining Frauenkirchen', 'Welpentraining Frauenkirchen'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Frauenkirchen | Mobil & gewaltfrei',
-    description: 'Hundeschule Frauenkirchen ✓ Heideboden & Wallfahrtsort ✓ mobil & gewaltfrei ✓ Willenskraft.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function FrauenkirchenLayout({ children }: { children: React.ReactNode }) {

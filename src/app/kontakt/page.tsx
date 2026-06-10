@@ -5,9 +5,9 @@ import { Phone, Mail, Instagram, Facebook, MapPin, ArrowRight, Clock, CheckCircl
 import GoogleBadge from '@/components/GoogleBadge';
 
 export const metadata: Metadata = {
-  title: 'Kontakt & Anmeldung – Welpenschule Neusiedl am See',
+  title: 'Kontakt & Anmeldung',
   description:
-    'Kontaktiere Jessica Pusch — deine mobile Hundetrainerin für den Bezirk Neusiedl am See. Wir kommen zu dir nach Hause. ☎ +43 664 3903673 · bruck_leitha@willenskraft.co.at',
+    'Kontakt zu Hundetrainerin Jessy: Anruf, WhatsApp oder Mail — mobile Hundeschule für den Bezirk Neusiedl am See. ☎ +43 664 3903673',
 };
 
 export default function KontaktPage() {

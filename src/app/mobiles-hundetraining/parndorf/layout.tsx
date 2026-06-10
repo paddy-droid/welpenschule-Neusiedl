@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/parndorf';
+const title = 'Hundeschule Parndorf – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Parndorf: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Platte & Outlet. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Parndorf | Mobiles Training Burgenland',
-  description:
-    'Hundeschule Parndorf ✓ wir kommen zu dir nach Hause ✓ Parndorfer Platte & Outlet ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
-  keywords: ['Hundeschule Parndorf', 'Hundetrainer Parndorf', 'Mobiles Hundetraining Parndorf', 'Welpenkurs Parndorf Burgenland'],
+  title,
+  description,
+  keywords: ['Hundeschule Parndorf', 'Hundetrainer Parndorf', 'Mobiles Hundetraining Parndorf', 'Welpentraining Parndorf'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Parndorf | Mobiles Training Burgenland',
-    description: 'Hundeschule Parndorf ✓ Parndorfer Platte & Outlet ✓ mobil & gewaltfrei ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function ParndorfLayout({ children }: { children: React.ReactNode }) {

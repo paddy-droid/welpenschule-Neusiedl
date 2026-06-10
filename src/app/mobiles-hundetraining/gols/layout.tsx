@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/gols';
+const title = 'Hundeschule Gols – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Gols: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Weinberge & Heideboden. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Gols | Mobil & gewaltfrei am Weingolf',
-  description:
-    'Hundeschule Gols ✓ wir kommen zu dir nach Hause ✓ Weinberge & Heideboden ✓ mobiles 1:1-Training ✓ Willenskraft. Erstberatung 95€.',
-  keywords: ['Hundeschule Gols', 'Hundetrainer Gols', 'Mobiles Hundetraining Gols', 'Welpenkurs Gols Burgenland'],
+  title,
+  description,
+  keywords: ['Hundeschule Gols', 'Hundetrainer Gols', 'Mobiles Hundetraining Gols', 'Welpentraining Gols Burgenland'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Gols | Mobil & gewaltfrei am Weingolf',
-    description: 'Hundeschule Gols ✓ Weinberge & Heideboden ✓ mobil & gewaltfrei ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function GolsLayout({ children }: { children: React.ReactNode }) {

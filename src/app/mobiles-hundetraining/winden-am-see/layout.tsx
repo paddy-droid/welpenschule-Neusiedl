@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/winden-am-see';
+const title = 'Hundeschule Winden am See – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Winden am See: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Kirschblütenort. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Winden am See | Mobil & gewaltfrei',
-  description:
-    'Hundeschule Winden am See ✓ wir kommen zu dir nach Hause ✓ Kirschblütenort am Leithagebirge ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
+  title,
+  description,
   keywords: ['Hundeschule Winden am See', 'Hundetrainer Winden am See', 'Mobiles Hundetraining Winden', 'Welpentraining Winden am See'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Winden am See | Mobil & gewaltfrei',
-    description: 'Hundeschule Winden am See ✓ mobil bei dir zuhause ✓ Leithagebirge & Kellergassen ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function WindenAmSeeLayout({ children }: { children: React.ReactNode }) {

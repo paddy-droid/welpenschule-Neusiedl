@@ -29,13 +29,14 @@ import Reviews from '@/components/Reviews';
 import WillenskraftSection from '@/components/WillenskraftSection';
 import GoogleBadge from '@/components/GoogleBadge';
 import JessySection from '@/components/JessySection';
+import CtaBanner from '@/components/CtaBanner';
 import { serviceLocations } from '@/lib/regionData';
 import * as Accordion from '@radix-ui/react-accordion';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule & Welpenschule Neusiedl am See – mobil | Willenskraft',
+  title: 'Welpenschule Neusiedl am See – mobil | Willenskraft',
   description:
-    'Mobile Hundeschule & Welpenschule Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ vom Welpen bis zum Senior ✓ Welpenkurse an Treffpunkten in der Region ✓ gewaltfrei ✓ Tel: +43 664 3903673',
+    'Welpenschule & Hundeschule Neusiedl am See: Jessy kommt zu dir nach Hause ✓ Welpenkurse in der Region ✓ gewaltfrei ✓ 5,0 ★ auf Google.',
   alternates: {
     canonical: 'https://welpenschule-neusiedl.at',
   },
@@ -207,7 +208,7 @@ export default function Home() {
           alt="Glücklicher Welpe am Neusiedlersee im Abendlicht – mobile Welpenschule Willenskraft"
           fill
           sizes="100vw"
-          className="object-cover absolute inset-0 z-0 opacity-[0.55] mix-blend-multiply"
+          className="object-cover object-[68%_50%] md:object-center absolute inset-0 z-0 opacity-[0.55] mix-blend-multiply"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-cream/40 to-background z-0" />
@@ -464,6 +465,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ================= JESSY ================= */}
+      <JessySection />
 
       {/* ================= INTRO ================= */}
       <section id="konzept" className="wk-section">
@@ -846,6 +850,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= CTA BANNER ================= */}
+      <CtaBanner
+        regionName="Neusiedl am See"
+        title="Bereit für den entspannten Alltag mit Hund?"
+        text="Welpenkurs, Einzeltraining oder mobile Erstberatung — Jessy meldet sich innerhalb von 24 Stunden an Werktagen."
+      />
+
       {/* ================= SHORTS ================= */}
       <section className="wk-section bg-card">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -947,9 +958,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ================= JESSY ================= */}
-      <JessySection />
 
       {/* ================= TESTIMONIALS ================= */}
       <section id="bewertungen" className="wk-section scroll-mt-24">

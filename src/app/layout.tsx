@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,11 +26,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Welpenschule Neusiedl am See – Mobile Hundeschule Willenskraft | Wir kommen zu dir',
+    default: 'Welpenschule Neusiedl am See – mobil | Willenskraft',
     template: '%s | Welpenschule Neusiedl am See',
   },
   description:
-    'Mobile Welpenschule & Hundeschule für Neusiedl am See und den ganzen Seewinkel ✓ Wir kommen zu dir nach Hause ✓ gewaltfrei & ganzheitlich ✓ Welpenkurse an Treffpunkten in der Region ✓ Tel: +43 664 3903673',
+    'Mobile Welpenschule & Hundeschule für den Bezirk Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ gewaltfrei ✓ Willenskraft. ☎ 0664 3903673',
   applicationName: 'Welpenschule Neusiedl am See',
   keywords: [
     'Welpenschule Neusiedl am See',
@@ -312,6 +313,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

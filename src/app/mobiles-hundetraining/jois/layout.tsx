@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/jois';
+const title = 'Hundeschule Jois – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Jois: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Leithagebirge & Riede. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Jois | Mobiles Training am Leithagebirge',
-  description:
-    'Hundeschule Jois ✓ wir kommen zu dir nach Hause ✓ Weinriede, Hackelsberg & Seeblick ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
+  title,
+  description,
   keywords: ['Hundeschule Jois', 'Hundetrainer Jois', 'Mobiles Hundetraining Jois', 'Welpentraining Jois Burgenland'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Jois | Mobiles Training am Leithagebirge',
-    description: 'Hundeschule Jois ✓ mobil bei dir zuhause ✓ Weinriede & Hackelsberg ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function JoisLayout({ children }: { children: React.ReactNode }) {

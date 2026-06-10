@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/kittsee';
+const title = 'Hundeschule Kittsee – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Kittsee: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Dreiländereck. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Kittsee | Mobil im Dreiländereck',
-  description:
-    'Hundeschule Kittsee ✓ wir kommen zu dir nach Hause ✓ Marillengärten, Schlosspark & Bratislava-Nähe ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
+  title,
+  description,
   keywords: ['Hundeschule Kittsee', 'Hundetrainer Kittsee', 'Mobiles Hundetraining Kittsee', 'Welpentraining Kittsee Burgenland'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Kittsee | Mobil im Dreiländereck',
-    description: 'Hundeschule Kittsee ✓ mobil bei dir zuhause ✓ Marillengärten & Schlosspark ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function KittseeLayout({ children }: { children: React.ReactNode }) {

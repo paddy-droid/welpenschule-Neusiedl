@@ -2,10 +2,13 @@ import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining';
 
+const title = 'Mobiles Hundetraining Neusiedl am See | Willenskraft';
+const description =
+  'Mobiles Hundetraining Neusiedl am See: Einzeltraining bei dir zuhause ✓ Welpe bis Senior ✓ gewaltfrei ✓ Anfahrt gratis. ☎ 0664 3903673';
+
 export const metadata: Metadata = {
-  title: 'Mobiles Hundetraining Neusiedl am See | Hundetrainer Willenskraft',
-  description:
-    'Mobiles Hundetraining & Hundetrainer Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ Einzeltraining, Welpentraining & Verhaltensberatung ✓ Willenskraft. ☎ +43 664 3903673',
+  title: { absolute: title },
+  description,
   keywords: [
     'Mobiles Hundetraining Neusiedl am See',
     'Hundetrainer Neusiedl am See',
@@ -15,13 +18,7 @@ export const metadata: Metadata = {
     'Willenskraft Neusiedl',
   ],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Mobiles Hundetraining Neusiedl am See | Hundetrainer Willenskraft',
-    description:
-      'Mobiles Hundetraining Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ gewaltfrei & ganzheitlich ✓ Willenskraft.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function MobileTrainingLayout({ children }: { children: React.ReactNode }) {

@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
 
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/andau';
+const title = 'Hundeschule Andau – wir kommen zu dir | Willenskraft';
+const description =
+  'Hundeschule Andau: Jessy kommt zu dir nach Hause ✓ gewaltfrei ✓ Welpe bis Senior ✓ Anfahrt gratis ✓ Stille & Grenzwege. ☎ 0664 3903673';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Andau | Mobil im Seewinkel-Süden',
-  description:
-    'Hundeschule Andau ✓ wir kommen zu dir nach Hause ✓ pannonische Stille an der Grenze ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
-  keywords: ['Hundeschule Andau', 'Hundetrainer Andau', 'Mobiles Hundetraining Andau', 'Welpenkurs Andau Burgenland'],
+  title,
+  description,
+  keywords: ['Hundeschule Andau', 'Hundetrainer Andau', 'Mobiles Hundetraining Andau', 'Welpentraining Andau Seewinkel'],
   alternates: { canonical: url },
-  openGraph: {
-    title: 'Hundeschule Andau | Mobil im Seewinkel-Süden',
-    description: 'Hundeschule Andau ✓ Andauer Brücke & Grenzwege ✓ mobil & gewaltfrei ✓ Willenskraft. 95€.',
-    url,
-    type: 'website',
-  },
+  openGraph: { title, description, url, type: 'website' },
 };
 
 export default function AndauLayout({ children }: { children: React.ReactNode }) {

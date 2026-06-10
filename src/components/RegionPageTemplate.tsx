@@ -43,6 +43,8 @@ import { getRegionData, regionCoords, type RegionData } from '@/lib/regionData';
 import { getFachwissen, studies } from '@/lib/studies';
 import { getMapSpots } from '@/lib/mapSpots';
 import RegionMap from '@/components/RegionMap';
+import CtaBanner from '@/components/CtaBanner';
+import { WhatsAppIcon, waHref } from '@/components/WhatsAppFloat';
 import * as Accordion from '@radix-ui/react-accordion';
 
 const profileImage = 'https://www.willenskraft.co.at/wp-content/uploads/2020/02/Hundeschule-Willenskraft-ButtonFINAL.png';
@@ -93,6 +95,57 @@ const heroThemeBySlug: Record<string, keyof typeof heroThemes> = {
 
 function getHeroTheme(slug: string) {
   return heroThemes[heroThemeBySlug[slug] ?? 'see'];
+}
+
+/** Mobile Bildausrichtung je Motiv — der Hund bleibt auf kleinen Screens im Fokus. */
+const heroPositionByTheme: Record<keyof typeof heroThemes, string> = {
+  see: 'object-[68%_50%] md:object-center',
+  weinberge: 'object-[42%_50%] md:object-center',
+  steppe: 'object-[62%_50%] md:object-center',
+  nationalpark: 'object-[35%_50%] md:object-center',
+  zuhause: 'object-[52%_50%] md:object-center',
+};
+
+function getHeroPosition(slug: string) {
+  return heroPositionByTheme[heroThemeBySlug[slug] ?? 'see'];
+}
+
+/** Fettet das erste Vorkommen einer Phrase außerhalb bestehender <strong>-Tags. */
+function boldFirst(html: string, phrase: string): string {
+  const parts = html.split(/(<strong>[\s\S]*?<\/strong>)/);
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].startsWith('<strong>')) continue;
+    const idx = parts[i].toLowerCase().indexOf(phrase.toLowerCase());
+    if (idx !== -1) {
+      const original = parts[i].slice(idx, idx + phrase.length);
+      parts[i] = `${parts[i].slice(0, idx)}<strong>${original}</strong>${parts[i].slice(idx + phrase.length)}`;
+      return parts.join('');
+    }
+  }
+  return html;
+}
+
+/** Hebt zentrale Keywords im Fließtext dezent fett hervor (je Phrase nur 1×). */
+function emphasizeKeywords(text: string, ort: string): string {
+  const phrases = [
+    'mobiles Hundetraining',
+    'mobile Hundeschule',
+    `Hundeschule ${ort}`,
+    `Hundetraining in ${ort}`,
+    ort,
+    'bei dir zuhause',
+    'positive Verstärkung',
+    'gewaltfrei',
+    'Welpen',
+    'Rückruf',
+    'Leinenführigkeit',
+    'Impulskontrolle',
+  ];
+  let out = text;
+  for (const phrase of phrases) {
+    out = boldFirst(out, phrase);
+  }
+  return out;
 }
 
 const pillarIcons = [Heart, Zap, Users, CheckCircle2, Star];
@@ -266,7 +319,7 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
           alt={heroTheme.alt(data.name)}
           fill
           sizes="100vw"
-          className="object-cover absolute inset-0 z-0 brightness-[0.55]"
+          className={`object-cover absolute inset-0 z-0 brightness-[0.55] ${getHeroPosition(regionKey)}`}
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/30 via-ink-950/40 to-background z-0" />
@@ -386,6 +439,29 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               <ThumbsUp className="w-3.5 h-3.5 text-lake-600" /> 5,0 ★ auf Google
             </span>
           </div>
+          <div className="mt-6 flex flex-col sm:flex-row gap-2.5">
+            <Link
+              href={`/kontakt?service=mobiles-training-${data.slug}`}
+              className="wk-btn-primary inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full font-semibold text-sm"
+            >
+              Jetzt Termin in {data.name} anfragen
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 h-12 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:brightness-105 transition-all"
+            >
+              <WhatsAppIcon className="w-4 h-4" /> WhatsApp
+            </a>
+            <a
+              href="tel:+436643903673"
+              className="wk-btn-ghost inline-flex items-center justify-center gap-2 px-5 h-12 rounded-full font-semibold text-sm"
+            >
+              <Phone className="w-4 h-4" /> Anrufen
+            </a>
+          </div>
         </div>
       </section>
 
@@ -393,9 +469,15 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
       <section className="wk-section">
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <h2 className="wk-display text-3xl md:text-5xl text-ink-950 leading-[1.05]">{data.introTitle}</h2>
-          <p className="mt-7 text-lg text-ink-600 leading-relaxed">{data.introText}</p>
+          <p
+            className="mt-7 text-lg text-ink-600 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.introText, data.name) }}
+          />
         </div>
       </section>
+
+      {/* ============== JESSY — DEINE TRAINERIN VOR ORT ============== */}
+      <JessySection regionName={data.name} />
 
       {/* ============== DETAILS ============== */}
       <section className="bg-card wk-section">
@@ -405,13 +487,19 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               <div className="space-y-4">
                 <span className="wk-eyebrow">Vorteil</span>
                 <h3 className="wk-display text-3xl md:text-5xl text-ink-950">{data.detailsTitle}</h3>
-                <p className="text-lg text-ink-600 leading-relaxed">{data.detailsText}</p>
+                <p
+                  className="text-lg text-ink-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.detailsText, data.name) }}
+                />
               </div>
               <div className="wk-rule" />
               <div className="space-y-4">
                 <span className="wk-eyebrow-lake">Zielgruppe</span>
                 <h3 className="wk-display text-3xl md:text-5xl text-ink-950">{data.targetTitle}</h3>
-                <p className="text-lg text-ink-600 leading-relaxed">{data.targetText}</p>
+                <p
+                  className="text-lg text-ink-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.targetText, data.name) }}
+                />
               </div>
             </div>
             <div className="lg:col-span-5 relative">
@@ -427,6 +515,9 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
           </div>
         </div>
       </section>
+
+      {/* ============== CTA #1 ============== */}
+      <CtaBanner regionName={data.name} />
 
       {/* ============== PROCESS STEPS ============== */}
       <section className="wk-section">
@@ -526,9 +617,6 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
           </div>
         </div>
       </section>
-
-      {/* ============== JESSY — DEINE TRAINERIN VOR ORT ============== */}
-      <JessySection regionName={data.name} />
 
       {/* ============== TRAINING METHODS ============== */}
       <section className="wk-section bg-card">
@@ -746,6 +834,13 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
         </section>
       )}
 
+      {/* ============== CTA #2 ============== */}
+      <CtaBanner
+        regionName={data.name}
+        title={`Wissenschaftlich fundiert trainieren — auch in ${data.name}.`}
+        text="Erstberatung 95 € · Einzelstunde 55 € · Welpenkurs 195 €. Schreib Jessy einfach, was euch beschäftigt — sie meldet sich innerhalb von 24 Stunden."
+      />
+
       {/* ============== FAQ ============== */}
       <section className="wk-section">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -845,7 +940,10 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               className="wk-display text-4xl md:text-5xl lg:text-6xl text-ink-950 leading-[1.05]"
               dangerouslySetInnerHTML={{ __html: data.regionSectionTitle }}
             />
-            <p className="mt-7 text-lg text-ink-600 leading-relaxed max-w-3xl mx-auto">{data.regionSectionIntro}</p>
+            <p
+              className="mt-7 text-lg text-ink-600 leading-relaxed max-w-3xl mx-auto"
+              dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.regionSectionIntro, data.name) }}
+            />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
@@ -1020,7 +1118,10 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
             {/* Linke Spalte: Lokale Beschreibung */}
             <div className="md:col-span-7 wk-card p-8 lg:p-10">
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700 mb-4">Über {data.name}</p>
-              <p className="text-ink-700 leading-relaxed text-base mb-7">{data.localDescription}</p>
+              <p
+                className="text-ink-700 leading-relaxed text-base mb-7"
+                dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.localDescription, data.name) }}
+              />
               <h4 className="text-sm font-bold text-ink-950 uppercase tracking-wider mb-4">
                 Was {data.name} für Hundehalter besonders macht
               </h4>
