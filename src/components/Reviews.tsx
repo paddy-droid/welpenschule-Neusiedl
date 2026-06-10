@@ -56,13 +56,22 @@ export default function Reviews() {
         {data.reviews && data.reviews.map((review, index) => (
           <Card key={index}>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Image
-                src={review.profile_photo_url.startsWith('https') ? review.profile_photo_url : `https:${review.profile_photo_url}`}
-                alt={`Profilbild von ${review.author_name}`}
-                width={48}
-                height={48}
-                className="w-12 h-12 rounded-full"
-              />
+              {review.profile_photo_url && review.profile_photo_url.startsWith('https') ? (
+                <Image
+                  src={review.profile_photo_url}
+                  alt={`Profilbild von ${review.author_name}`}
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 rounded-full"
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="w-12 h-12 rounded-full bg-lake-100 text-lake-700 flex items-center justify-center font-bold text-lg shrink-0"
+                >
+                  {(review.author_name || 'G').charAt(0).toUpperCase()}
+                </div>
+              )}
               <div>
                 <CardTitle>{review.author_name}</CardTitle>
                 <CardDescription>{'⭐'.repeat(review.rating)}</CardDescription>
