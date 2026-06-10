@@ -86,6 +86,27 @@ const allLocations: RegionNearby[] = [
 /** Alle Einsatzorte der mobilen Hundeschule — für Navigation, Footer, Sitemap & interne Verlinkung. */
 export const serviceLocations: RegionNearby[] = allLocations;
 
+/** Ortskoordinaten (Gemeindezentren) für lokale GeoCoordinates im Schema jeder Landingpage. */
+export const regionCoords: Record<string, { lat: number; lng: number }> = {
+  'neusiedl-am-see': { lat: 47.9479, lng: 16.8404 },
+  gols: { lat: 47.8967, lng: 16.9119 },
+  parndorf: { lat: 47.9986, lng: 16.8603 },
+  'weiden-am-see': { lat: 47.9258, lng: 16.8686 },
+  jois: { lat: 47.9617, lng: 16.7961 },
+  'winden-am-see': { lat: 47.9469, lng: 16.7503 },
+  'podersdorf-am-see': { lat: 47.855, lng: 16.8417 },
+  frauenkirchen: { lat: 47.8367, lng: 16.9281 },
+  moenchhof: { lat: 47.8783, lng: 16.94 },
+  halbturn: { lat: 47.8697, lng: 16.9744 },
+  'st-andrae-am-zicksee': { lat: 47.785, lng: 16.9342 },
+  illmitz: { lat: 47.7628, lng: 16.7983 },
+  apetlon: { lat: 47.7411, lng: 16.8294 },
+  andau: { lat: 47.7744, lng: 17.0317 },
+  pamhagen: { lat: 47.7097, lng: 16.9028 },
+  kittsee: { lat: 48.0908, lng: 17.0636 },
+  bruckneudorf: { lat: 48.0231, lng: 16.7856 },
+};
+
 function getNearby(currentSlug: string, priority: string[]): RegionNearby[] {
   const ordered = priority
     .map((slug) => allLocations.find((l) => l.slug === slug))

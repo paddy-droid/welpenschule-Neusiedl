@@ -154,29 +154,32 @@ const willenskraftPillars = [
   { icon: Star, title: 'Spiel & Bindung', description: 'Kleine Gruppen, große Wirkung. Spieleinheiten und Freilauf festigen Sozialkompetenz und Bindung.' },
 ];
 
-const sciencePoints = [
+const sciencePoints: { title: string; fact: string; text: string; source: string; href?: string }[] = [
   {
     title: 'Sensible Phase',
     fact: '8.–16. Lebenswoche',
-    text: 'In diesem Zeitfenster werden neue Reize besonders schnell und nachhaltig verknüpft. Verpasste Sozialisierung lässt sich später nur mit Mehraufwand kompensieren — am Neusiedlersee mit seiner Reizvielfalt ein klarer Vorteil.',
-    source: 'Verhaltensbiologie nach Scott & Fuller, ergänzt durch aktuelle ÖKV-Empfehlungen',
+    text: 'In diesem Zeitfenster werden neue Reize besonders schnell und nachhaltig verknüpft. Frühe, positive Sozialisierungserfahrungen hängen nachweislich mit weniger Angst und Problemverhalten im Erwachsenenalter zusammen — am Neusiedlersee mit seiner Reizvielfalt ein klarer Vorteil.',
+    source: 'Howell, King & Bennett (2015), Veterinary Medicine: Research and Reports',
+    href: 'https://doi.org/10.2147/VMRR.S62081',
   },
   {
     title: 'Positive Verstärkung',
-    fact: 'bis zu 35 % schnellerer Lernerfolg',
-    text: 'Studien zeigen, dass auf Belohnung basiertes Training den Lernerfolg verbessert und das Stressniveau im Vergleich zu aversiven Methoden deutlich senkt.',
-    source: 'Hiby et al. (2004) · China et al. (2020)',
+    fact: 'schneller & stressärmer',
+    text: 'In einer Vergleichsstudie mit 63 Hunden reagierten belohnungsbasiert trainierte Hunde schneller auf Signale und brauchten weniger Wiederholungen als aversiv trainierte — bei messbar geringerem Stressniveau.',
+    source: 'China, Mills & Cooper (2020), Frontiers in Veterinary Science · Vieira de Castro et al. (2020), PLOS ONE',
+    href: 'https://doi.org/10.3389/fvets.2020.00508',
   },
   {
-    title: 'Pannonisches Klima',
-    fact: '300+ Sonnentage / Jahr',
-    text: 'Die Region rund um den Neusiedlersee ist klimatisch privilegiert. Wir nutzen diese Bedingung für ganzjähriges Training im Freien — mit angepassten Zeitfenstern in Sommer und Winter.',
-    source: 'ZAMG-Klimaregion Pannonia · Trainings­standards ÖKV',
+    title: 'Lernen braucht Pausen',
+    fact: '1–2 Einheiten / Woche',
+    text: 'Hunde, die nur ein- bis zweimal pro Woche kurz trainierten, lernten neue Aufgaben in weniger Einheiten als täglich trainierte Hunde. Genau so bauen wir eure Übungswochen auf — kurz, präzise, mit Pausen.',
+    source: 'Demant et al. (2011), Applied Animal Behaviour Science',
+    href: 'https://doi.org/10.1016/j.applanim.2011.05.010',
   },
   {
     title: 'Tierschutzkonform',
     fact: '100 % gewaltfrei',
-    text: 'Unsere Methoden entsprechen § 5 Tierschutzgesetz Österreich (BGBl. I Nr. 118/2004) und schließen Stachelhalsbänder, Würger und Schreckmittel aus.',
+    text: 'Unsere Methoden entsprechen § 5 Tierschutzgesetz Österreich (BGBl. I Nr. 118/2004) und schließen Stachelhalsbänder, Würger und Schreckmittel aus — im pannonischen Klima trainieren wir ganzjährig im Freien.',
     source: 'Tierschutzgesetz Österreich · IBH Ethikrichtlinien',
   },
 ];
@@ -646,7 +649,19 @@ export default function Home() {
                 <p className="wk-display text-3xl md:text-4xl text-cream mb-4">{p.fact}</p>
                 <p className="text-ink-300 leading-relaxed mb-6">{p.text}</p>
                 <p className="text-[11px] text-ink-500 border-t border-ink-800 pt-4">
-                  <span className="font-bold uppercase tracking-wider text-ink-400">Quelle:</span> {p.source}
+                  <span className="font-bold uppercase tracking-wider text-ink-400">Quelle:</span>{' '}
+                  {p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-lake-300 underline decoration-ink-700 underline-offset-2 transition-colors"
+                    >
+                      {p.source} →
+                    </a>
+                  ) : (
+                    p.source
+                  )}
                 </p>
               </article>
             ))}

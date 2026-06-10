@@ -85,6 +85,25 @@
 - **Woche 5:** Medical Training & Alltag — Pfoten, Ohren, Tierarzt-Vorbereitung
 - **Woche 6:** Festigen & Transfer — Alltagsbedingungen, Folgeplan
 
+## Wissenschaftliche Fundierung (Fachwissen-Sektionen)
+
+Jede Orts-Landingpage enthält eine individuelle „Fachwissen"-Sektion mit peer-reviewten Studien inkl. DOI-Quellenlinks und lokalem Trainingsbezug. Zitierte Arbeiten u. a.:
+
+- Hiby, Rooney & Bradshaw (2004), *Animal Welfare* — Belohnungstraining: mehr Gehorsam, weniger Problemverhalten (doi.org/10.1017/S0962728600026683)
+- China, Mills & Cooper (2020), *Frontiers in Veterinary Science* — positive Verstärkung effektiver als Elektrohalsband, auch beim Rückruf (doi.org/10.3389/fvets.2020.00508)
+- Vieira de Castro et al. (2020), *PLOS ONE* — aversives Training: mehr Stress, höheres Cortisol (doi.org/10.1371/journal.pone.0225023)
+- Demant et al. (2011), *Applied Animal Behaviour Science* — 1–2 kurze Einheiten/Woche schlagen tägliches Training (doi.org/10.1016/j.applanim.2011.05.010)
+- Salonen et al. (2020), *Scientific Reports* — 72,5 % von 13.700 Hunden mit Angst-Merkmal; Geräuschempfindlichkeit 32 % (doi.org/10.1038/s41598-020-59837-z)
+- Riemer (2019), *PLOS ONE* — Gegenkonditionierung wirkt gegen Feuerwerks-/Geräuschangst (doi.org/10.1371/journal.pone.0218150)
+- Lopes Fagundes et al. (2018), *Frontiers in Veterinary Science* — späte Geräuschangst oft schmerzbedingt (doi.org/10.3389/fvets.2018.00017)
+- Nagasawa et al. (2015), *Science* — Oxytocin-Blickkontakt-Schleife Mensch–Hund (doi.org/10.1126/science.1261022)
+- Puurunen et al. (2020), *Scientific Reports* — Sozialisierungsmangel, Inaktivität & Stadt erhöhen soziale Angst (doi.org/10.1038/s41598-020-60546-w)
+- Howell, King & Bennett (2015), *Veterinary Medicine* — frühe Sozialisierung & Welpenkurse (doi.org/10.2147/VMRR.S62081)
+- Brucks et al. (2017), *Frontiers in Psychology* — Impulskontrolle ist kontextspezifisch (doi.org/10.3389/fpsyg.2017.00849)
+- Hall et al. (2020), *Animals* — Bewegung ist Hitzschlag-Auslöser Nr. 1 (doi.org/10.3390/ani10081324)
+- Sargisson (2014), *Veterinary Medicine* — Trennungsangst: systematische Desensibilisierung (doi.org/10.2147/VMRR.S60424)
+- Westgarth et al. (2019), *Scientific Reports* — Hundehalter erreichen Bewegungsempfehlungen ~4× häufiger (doi.org/10.1038/s41598-019-41254-6)
+
 ## Trainings-Knowledge-Base (häufige Fragen)
 
 - **Wo findet das Training statt?** Beim Kunden zuhause (mobil); Welpenkurse an Outdoor-Treffpunkten in der Region — kein fester Hundeplatz
