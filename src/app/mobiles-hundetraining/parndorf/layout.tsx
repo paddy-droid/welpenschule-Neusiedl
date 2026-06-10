@@ -5,7 +5,7 @@ const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/parndorf';
 export const metadata: Metadata = {
   title: 'Hundeschule Parndorf | Mobiles Training Burgenland',
   description:
-    'Hundeschule Parndorf ✓ Parndorfer Platte & Outlet ✓ mobiles 1:1-Hundetraining am Neusiedlersee ✓ Willenskraft. 95€.',
+    'Hundeschule Parndorf ✓ wir kommen zu dir nach Hause ✓ Parndorfer Platte & Outlet ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
   keywords: ['Hundeschule Parndorf', 'Hundetrainer Parndorf', 'Mobiles Hundetraining Parndorf', 'Welpenkurs Parndorf Burgenland'],
   alternates: { canonical: url },
   openGraph: {

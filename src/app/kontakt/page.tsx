@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, Instagram, Facebook, MapPin, ArrowRight, Clock, CheckCircle2 } from 'lucide-react';
+import GoogleBadge from '@/components/GoogleBadge';
 
 export const metadata: Metadata = {
   title: 'Kontakt & Anmeldung – Welpenschule Neusiedl am See',
   description:
-    'Kontaktiere Jessica Pusch für deine Anmeldung zum Welpenkurs am Neusiedlersee. ☎ +43 664 3903673 · bruck_leitha@willenskraft.co.at',
+    'Kontaktiere Jessica Pusch — deine mobile Hundetrainerin für den Bezirk Neusiedl am See. Wir kommen zu dir nach Hause. ☎ +43 664 3903673 · bruck_leitha@willenskraft.co.at',
 };
 
 export default function KontaktPage() {
@@ -23,9 +24,13 @@ export default function KontaktPage() {
             <span className="wk-text-gradient">kennenlernen.</span>
           </h1>
           <p className="mt-7 text-lg md:text-xl text-ink-600 max-w-2xl mx-auto leading-relaxed">
-            Ich freue mich darauf, dich und deinen Welpen am Neusiedlersee kennenzulernen. Schreib mir, ruf an
-            oder buche direkt einen Termin — wir finden gemeinsam den besten Start für euch.
+            Ich freue mich darauf, dich und deinen Hund kennenzulernen — und komme zum Training direkt zu
+            dir nach Hause, überall im Bezirk Neusiedl am See. Schreib mir, ruf an oder buche direkt einen
+            Termin: Wir finden gemeinsam den besten Start für euch.
           </p>
+          <div className="mt-7 flex justify-center">
+            <GoogleBadge href="/#bewertungen" />
+          </div>
         </div>
       </section>
 
@@ -49,8 +54,9 @@ export default function KontaktPage() {
                 />
               </div>
               <div className="mt-6 text-center">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300">Deine Trainerin</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300">Deine mobile Hundetrainerin</p>
                 <p className="wk-display text-2xl text-cream mt-1">Jessica Pusch</p>
+                <p className="text-xs text-ink-400 mt-1">„Jessy" · Hundeschule Willenskraft · Region Neusiedl am See</p>
               </div>
             </div>
 
@@ -88,8 +94,8 @@ export default function KontaktPage() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-400">Standort</p>
-                  <p className="text-cream font-semibold">7100 Neusiedl am See · Burgenland</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-400">Einsatzgebiet</p>
+                  <p className="text-cream font-semibold">Bezirk Neusiedl am See — wir kommen zu dir nach Hause</p>
                 </div>
               </div>
 
@@ -122,7 +128,7 @@ export default function KontaktPage() {
           {[
             { icon: Clock, title: 'Antwortzeit', text: 'Innerhalb von 24h an Werktagen' },
             { icon: CheckCircle2, title: 'Beratung', text: 'Kostenlos &amp; unverbindlich' },
-            { icon: MapPin, title: 'Anfahrt', text: 'Kostenlos im gesamten Seewinkel' },
+            { icon: MapPin, title: 'Anfahrt', text: 'Kostenlos im gesamten Bezirk Neusiedl am See' },
           ].map((c) => (
             <div key={c.title} className="wk-card p-6">
               <div className="w-10 h-10 rounded-xl bg-lake-100 text-lake-700 flex items-center justify-center mb-4">

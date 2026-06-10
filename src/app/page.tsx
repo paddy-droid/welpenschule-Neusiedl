@@ -21,15 +21,21 @@ import {
   Brain,
   Quote,
   Waves,
+  MapPin,
+  Home as HomeIcon,
+  Car,
 } from 'lucide-react';
 import Reviews from '@/components/Reviews';
 import WillenskraftSection from '@/components/WillenskraftSection';
+import GoogleBadge from '@/components/GoogleBadge';
+import JessySection from '@/components/JessySection';
+import { serviceLocations } from '@/lib/regionData';
 import * as Accordion from '@radix-ui/react-accordion';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule & Welpenschule Neusiedl am See | Willenskraft',
+  title: 'Hundeschule & Welpenschule Neusiedl am See – mobil | Willenskraft',
   description:
-    'Hundeschule & Hundetrainerin in Neusiedl am See ✓ vom Welpen bis zum Senior ✓ Welpenkurs, Einzel- & mobiles Hundetraining ✓ gewaltfrei am Neusiedlersee ✓ Max. 4 Teams ✓ Tel: +43 664 3903673',
+    'Mobile Hundeschule & Welpenschule Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ vom Welpen bis zum Senior ✓ Welpenkurse an Treffpunkten in der Region ✓ gewaltfrei ✓ Tel: +43 664 3903673',
   alternates: {
     canonical: 'https://welpenschule-neusiedl.at',
   },
@@ -39,6 +45,22 @@ const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wo findet das Hundetraining statt — habt ihr einen festen Hundeplatz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wir sind eine mobile Hundeschule: Einzeltraining und Verhaltensberatung finden direkt bei dir zuhause und auf euren gewohnten Spazierrunden statt — genau dort, wo euer Alltag passiert. Die Welpen-Gruppenkurse halten wir an sorgfältig ausgewählten Outdoor-Treffpunkten in der Region Neusiedl am See ab; den genauen Treffpunkt erfährst du bei der Anmeldung. Einen festen Hundeplatz brauchst du bei uns nicht.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'In welche Orte kommt ihr zum mobilen Hundetraining?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wir kommen kostenlos in den gesamten Bezirk Neusiedl am See: Neusiedl am See, Gols, Parndorf, Weiden am See, Jois, Winden am See, Podersdorf am See, Frauenkirchen, Mönchhof, Halbturn, St. Andrä am Zicksee, Illmitz, Apetlon, Andau, Pamhagen, Kittsee und Bruckneudorf — sowie in die umliegenden Gemeinden. Die Anfahrt ist im gesamten Einsatzgebiet kostenlos.',
+      },
+    },
     {
       '@type': 'Question',
       name: 'Ab wann ist die Welpenschule sinnvoll?',
@@ -202,9 +224,10 @@ export default function Home() {
             </h1>
 
             <p className="mt-8 text-lg md:text-xl text-ink-700 max-w-2xl leading-relaxed">
-              Ganzheitliches & gewaltfreies Welpentraining am Neusiedlersee — UNESCO-Welterbe-Region.
-              In 6 Wochen baust du mit deinem Welpen eine ruhige, klare Verbindung auf —
-              wissenschaftlich fundiert, in Kleingruppen mit max. 4 Teams.
+              Deine <strong>mobile Welpenschule &amp; Hundeschule</strong> für die Region Neusiedl am See:
+              Wir kommen zum Training <strong>direkt zu dir nach Hause</strong> — Welpenkurse finden an
+              ausgewählten Outdoor-Treffpunkten in der Region statt. Gewaltfrei, wissenschaftlich fundiert,
+              mit deiner Trainerin Jessy.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
@@ -224,7 +247,15 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-ink-500">
+            <div className="mt-8">
+              <GoogleBadge />
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-ink-500">
+              <div className="flex items-center gap-2">
+                <HomeIcon className="w-4 h-4 text-lake-600" />
+                <span>Wir kommen zu dir nach Hause</span>
+              </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-lake-600" />
                 <span>Welpen 8 Wochen – 5 Monate</span>
@@ -238,8 +269,8 @@ export default function Home() {
                 <span>Max. 4 Teams pro Gruppe</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-lake-600" />
-                <span>100 % positive Verstärkung</span>
+                <Car className="w-4 h-4 text-lake-600" />
+                <span>Kostenlose Anfahrt im ganzen Bezirk</span>
               </div>
             </div>
           </div>
@@ -280,8 +311,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= MOBILE HUNDESCHULE — WIR KOMMEN ZU DIR ================= */}
+      <section id="mobil" className="wk-section">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="wk-eyebrow-lake mb-5">
+              <Car className="w-3 h-3" /> Mobile Hundeschule
+            </span>
+            <h2 className="wk-display text-4xl md:text-5xl lg:text-6xl text-ink-950">
+              Kein fester Hundeplatz.
+              <br />
+              <span className="wk-text-gradient">Dein Zuhause ist der Trainingsplatz.</span>
+            </h2>
+            <p className="mt-6 text-lg text-ink-600 leading-relaxed">
+              Wir sind eine <strong>mobile Hundeschule</strong>: Statt dass du zu uns fährst, kommen wir zu
+              dir — nach Hause, in deinen Garten, auf eure gewohnte Spazierrunde. Denn dein Hund soll genau
+              dort lernen, wo euer Alltag wirklich stattfindet.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mb-12">
+            {[
+              {
+                icon: HomeIcon,
+                title: 'Training bei dir zuhause',
+                text: 'Einzeltraining und Verhaltensberatung finden direkt in deinem Alltag statt — vom Wohnzimmer bis zur Gassirunde. So überträgt sich das Gelernte sofort, ohne Umweg über einen fremden Hundeplatz.',
+              },
+              {
+                icon: Users,
+                title: 'Welpenkurse in deiner Region',
+                text: 'Die Welpen-Gruppenkurse (max. 4 Teams) halten wir an sorgfältig ausgewählten Outdoor-Treffpunkten in der Region Neusiedl am See ab. Den genauen Treffpunkt erfährst du bei der Anmeldung.',
+              },
+              {
+                icon: Car,
+                title: 'Kostenlose Anfahrt',
+                text: 'Wir kommen kostenlos in den gesamten Bezirk Neusiedl am See — vom Leithagebirge über den Heideboden bis in den südlichen Seewinkel. Keine versteckten Kilometerpauschalen.',
+              },
+            ].map((c) => (
+              <div key={c.title} className="wk-card p-8">
+                <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center mb-5">
+                  <c.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-semibold text-ink-950 mb-3 tracking-tight">{c.title}</h3>
+                <p className="text-ink-600 leading-relaxed text-sm">{c.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-3xl bg-cream-soft border border-ink-200/60 p-8 md:p-10">
+            <div className="text-center mb-7">
+              <h3 className="wk-display text-2xl md:text-3xl text-ink-950">
+                Mobiles Hundetraining in deiner Gemeinde.
+              </h3>
+              <p className="mt-3 text-ink-600">
+                Wähle deinen Ort — jede Seite zeigt dir Trainingsorte, Preise und Antworten für deine Gemeinde.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
+              {serviceLocations.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  href={loc.slug === 'neusiedl-am-see' ? '/mobiles-hundetraining' : `/mobiles-hundetraining/${loc.slug}`}
+                  className="group flex items-center justify-center gap-1.5 rounded-full border border-lake-300/50 bg-cream px-3 py-2.5 text-sm font-medium text-ink-800 hover:border-lake-500 hover:bg-lake-50 transition-colors"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-lake-600 shrink-0" />
+                  <span className="truncate">{loc.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ================= HUNDESCHULE – ALLE LEBENSPHASEN (SEO: Hundeschule / Hundetrainer Neusiedl) ================= */}
-      <section id="hundeschule" className="wk-section">
+      <section id="hundeschule" className="wk-section bg-card">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="wk-eyebrow mb-5">Hundeschule Neusiedl am See</span>
@@ -291,10 +394,10 @@ export default function Home() {
               <span className="wk-text-gradient">vom Welpen bis zum Senior.</span>
             </h2>
             <p className="mt-6 text-lg text-ink-600 leading-relaxed">
-              Wir sind weit mehr als eine Welpenschule: Als <strong>Hundeschule und Hundetrainerin in
-              Neusiedl am See</strong> begleiten wir Mensch und Hund in jeder Lebensphase — vom ersten
-              Welpentag über den wilden Junghund bis zum souveränen Senior. Gruppenkurse, Einzeltraining
-              und mobiles Hundetraining in der ganzen Region rund um den Neusiedlersee.
+              Wir sind weit mehr als eine Welpenschule: Als <strong>mobile Hundeschule und Hundetrainerin
+              für Neusiedl am See</strong> begleiten wir Mensch und Hund in jeder Lebensphase — vom ersten
+              Welpentag über den wilden Junghund bis zum souveränen Senior. Einzeltraining bei dir zuhause,
+              Welpenkurse an Treffpunkten in der Region — im ganzen Bezirk rund um den Neusiedlersee.
             </p>
           </div>
 
@@ -327,10 +430,13 @@ export default function Home() {
                   Ein Thema, ein Plan — für jeden Hund.
                 </h3>
                 <p className="mt-4 text-ink-600 leading-relaxed">
-                  Egal ob junger Wirbelwind oder erfahrener Begleiter: Als deine Hundetrainerin in
-                  Neusiedl am See finde ich für jedes Anliegen den passenden Weg — gewaltfrei,
-                  wissenschaftlich fundiert und alltagstauglich.
+                  Egal ob junger Wirbelwind oder erfahrener Begleiter: Als deine mobile Hundetrainerin
+                  für Neusiedl am See komme ich zu dir und finde für jedes Anliegen den passenden Weg —
+                  gewaltfrei, wissenschaftlich fundiert und alltagstauglich.
                 </p>
+                <div className="mt-5">
+                  <GoogleBadge />
+                </div>
               </div>
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap gap-2.5">
@@ -476,7 +582,7 @@ export default function Home() {
                 <h3 className="wk-display text-3xl mb-1">Private Einzelstunde</h3>
                 <p className="text-7xl font-black text-cream mt-4 mb-1 tracking-tighter">55€</p>
                 <p className="text-sm text-ink-950/80 mb-8 leading-snug">
-                  Klärt spezifische Fragen und garantiert deinem Welpen den besten Start am See.
+                  Mobil bei dir zuhause: klärt spezifische Fragen und garantiert deinem Welpen den besten Start.
                 </p>
                 <Link
                   href="/kontakt?angebot=einzelstunde"
@@ -802,8 +908,15 @@ export default function Home() {
                 <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">6 Einheiten · 60 Min.</span>
                 <span className="px-4 py-2 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 font-bold text-sm">195 €</span>
                 <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">Max. 4 Teams</span>
+                <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">Outdoor-Treffpunkte in der Region</span>
               </div>
-              <p className="mt-6 text-ink-400 text-sm">Jeden Monat startet ein neuer Kurs in Neusiedl am See.</p>
+              <p className="mt-6 text-ink-400 text-sm">
+                Jeden Monat startet mindestens ein neuer Welpenkurs — an sorgfältig ausgewählten
+                Outdoor-Treffpunkten in der Region Neusiedl am See. Den genauen Treffpunkt erfährst du bei der Anmeldung.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <GoogleBadge variant="dark" />
+              </div>
             </div>
           </div>
 
@@ -819,13 +932,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= JESSY ================= */}
+      <JessySection />
+
       {/* ================= TESTIMONIALS ================= */}
-      <section className="wk-section">
+      <section id="bewertungen" className="wk-section scroll-mt-24">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="wk-eyebrow mb-5">Stimmen</span>
             <h2 className="wk-display text-4xl md:text-5xl text-ink-950">Was unsere Kund:innen sagen.</h2>
-            <p className="mt-6 text-lg text-ink-600">Echte Erfahrungen von glücklichen Mensch-Hund-Teams.</p>
+            <p className="mt-6 text-lg text-ink-600">Echte Erfahrungen von glücklichen Mensch-Hund-Teams — verifiziert auf Google.</p>
           </div>
           <div className="wk-card p-6 sm:p-10">
             <Reviews />
@@ -853,12 +969,16 @@ export default function Home() {
                 />
               </div>
               <div className="md:col-span-8 text-center md:text-left">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300 mb-3">
+                  Jessica Pusch · Deine mobile Hundetrainerin
+                </p>
                 <h2 className="wk-display text-3xl sm:text-5xl text-cream mb-5">
                   Bereit für den Start?
                 </h2>
                 <p className="text-lg text-ink-300 mb-8 leading-relaxed">
                   Melde dich und deinen Welpen jetzt zum ersten Kennenlernen in der{' '}
-                  <span className="text-lake-300 font-semibold">Welpenschule Neusiedl am See</span> an.
+                  <span className="text-lake-300 font-semibold">Welpenschule Neusiedl am See</span> an —
+                  Jessy kommt zu dir nach Hause oder ihr startet im nächsten Welpenkurs in deiner Region.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                   <Link
@@ -898,18 +1018,29 @@ export default function Home() {
               dem Senior.
             </p>
             <p>
-              Als <strong>Hundetrainerin in Neusiedl</strong> arbeite ich ausschließlich mit positiver
-              Verstärkung — ohne Stachelhalsband, Würger oder Schreckmittel. Ob Leinenführigkeit, ein
-              zuverlässiger Rückruf, Impulskontrolle am vogelreichen Seeufer oder Problemverhalten wie
+              Als <strong>Hundetrainerin für Neusiedl am See</strong> arbeitet Jessy ausschließlich mit
+              positiver Verstärkung — ohne Stachelhalsband, Würger oder Schreckmittel. Ob Leinenführigkeit,
+              ein zuverlässiger Rückruf, Impulskontrolle am vogelreichen Seeufer oder Problemverhalten wie
               Leinenpöbeln und Jagdverhalten: Für jedes Thema gibt es einen klaren, alltagstauglichen
               Plan — für den Welpen genauso wie für den erfahrenen Senior.
             </p>
             <p>
-              Trainiert wird in Kleingruppen am Neusiedlersee sowie als Einzel- und{' '}
+              Das Wichtigste: Wir sind eine <strong>mobile Hundeschule ohne festen Hundeplatz</strong>.
+              Einzeltraining und Verhaltensberatung finden als{' '}
               <Link href="/mobiles-hundetraining" className="wk-link font-semibold">mobiles Hundetraining</Link>{' '}
-              direkt bei dir zuhause — in Neusiedl am See, Gols, Parndorf, Weiden am See, Frauenkirchen,
-              Illmitz, Andau und der gesamten Region rund um den See. So lernt dein Hund genau dort, wo
-              euer Alltag wirklich stattfindet.
+              direkt bei dir zuhause statt — in{' '}
+              <Link href="/mobiles-hundetraining" className="wk-link">Neusiedl am See</Link>,{' '}
+              <Link href="/mobiles-hundetraining/gols" className="wk-link">Gols</Link>,{' '}
+              <Link href="/mobiles-hundetraining/parndorf" className="wk-link">Parndorf</Link>,{' '}
+              <Link href="/mobiles-hundetraining/weiden-am-see" className="wk-link">Weiden am See</Link>,{' '}
+              <Link href="/mobiles-hundetraining/podersdorf-am-see" className="wk-link">Podersdorf</Link>,{' '}
+              <Link href="/mobiles-hundetraining/frauenkirchen" className="wk-link">Frauenkirchen</Link>,{' '}
+              <Link href="/mobiles-hundetraining/illmitz" className="wk-link">Illmitz</Link>,{' '}
+              <Link href="/mobiles-hundetraining/andau" className="wk-link">Andau</Link>,{' '}
+              <Link href="/mobiles-hundetraining/kittsee" className="wk-link">Kittsee</Link> und allen
+              weiteren Gemeinden des Bezirks. Die Welpen-Gruppenkurse halten wir an sorgfältig ausgewählten
+              Outdoor-Treffpunkten in der Region ab. So lernt dein Hund genau dort, wo euer Alltag wirklich
+              stattfindet — und du sparst dir die Fahrt zum Hundeplatz.
             </p>
           </div>
         </div>

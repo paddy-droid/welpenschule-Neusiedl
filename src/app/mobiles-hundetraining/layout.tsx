@@ -3,22 +3,22 @@ import type { Metadata } from 'next';
 const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining';
 
 export const metadata: Metadata = {
-  title: 'Hundeschule Neusiedl am See | Welpenkurs & mobil',
+  title: 'Mobiles Hundetraining Neusiedl am See | Hundetrainer Willenskraft',
   description:
-    'Hundeschule Neusiedl am See ✓ Welpenkurs ab 195€ ✓ mobiles 1:1-Training am UNESCO-Welterbe ✓ Willenskraft. ☎ +43 664 3903673',
+    'Mobiles Hundetraining & Hundetrainer Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ Einzeltraining, Welpentraining & Verhaltensberatung ✓ Willenskraft. ☎ +43 664 3903673',
   keywords: [
+    'Mobiles Hundetraining Neusiedl am See',
+    'Hundetrainer Neusiedl am See',
     'Hundeschule Neusiedl am See',
-    'Hundetrainer Neusiedl',
-    'Welpenkurs Neusiedl am See',
     'Mobiles Hundetraining Burgenland',
-    'Welpenschule Neusiedl',
+    'Mobile Hundeschule Seewinkel',
     'Willenskraft Neusiedl',
   ],
   alternates: { canonical: url },
   openGraph: {
-    title: 'Hundeschule Neusiedl am See | Welpenkurs & mobil',
+    title: 'Mobiles Hundetraining Neusiedl am See | Hundetrainer Willenskraft',
     description:
-      'Hundeschule Neusiedl am See ✓ Welpenkurs ab 195€ ✓ mobiles Training am UNESCO-Welterbe ✓ Willenskraft.',
+      'Mobiles Hundetraining Neusiedl am See ✓ wir kommen zu dir nach Hause ✓ gewaltfrei & ganzheitlich ✓ Willenskraft.',
     url,
     type: 'website',
   },

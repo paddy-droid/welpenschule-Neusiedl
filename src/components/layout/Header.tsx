@@ -14,11 +14,21 @@ const navItems = [
 const mobileTrainingLocations = [
   { href: '/mobiles-hundetraining', label: 'Neusiedl am See', region: 'Bezirkshauptstadt' },
   { href: '/mobiles-hundetraining/gols', label: 'Gols', region: 'Weinhauptort' },
-  { href: '/mobiles-hundetraining/frauenkirchen', label: 'Frauenkirchen', region: 'Wallfahrtsort' },
   { href: '/mobiles-hundetraining/parndorf', label: 'Parndorf', region: 'Heideboden' },
   { href: '/mobiles-hundetraining/weiden-am-see', label: 'Weiden am See', region: 'Seebad-Gemeinde' },
+  { href: '/mobiles-hundetraining/jois', label: 'Jois', region: 'Leithagebirge' },
+  { href: '/mobiles-hundetraining/winden-am-see', label: 'Winden am See', region: 'Kirschblütenort' },
+  { href: '/mobiles-hundetraining/podersdorf-am-see', label: 'Podersdorf am See', region: 'Leuchtturm & Strand' },
+  { href: '/mobiles-hundetraining/frauenkirchen', label: 'Frauenkirchen', region: 'Wallfahrtsort' },
+  { href: '/mobiles-hundetraining/moenchhof', label: 'Mönchhof', region: 'Dorfmuseum' },
+  { href: '/mobiles-hundetraining/halbturn', label: 'Halbturn', region: 'Schlossort' },
+  { href: '/mobiles-hundetraining/st-andrae-am-zicksee', label: 'St. Andrä am Zicksee', region: 'Zicksee' },
   { href: '/mobiles-hundetraining/illmitz', label: 'Illmitz', region: 'Nationalpark' },
+  { href: '/mobiles-hundetraining/apetlon', label: 'Apetlon', region: 'Lange Lacke' },
   { href: '/mobiles-hundetraining/andau', label: 'Andau', region: 'Seewinkel-Süd' },
+  { href: '/mobiles-hundetraining/pamhagen', label: 'Pamhagen', region: 'Hanság' },
+  { href: '/mobiles-hundetraining/kittsee', label: 'Kittsee', region: 'Dreiländereck' },
+  { href: '/mobiles-hundetraining/bruckneudorf', label: 'Bruckneudorf', region: 'Leitha-Auen' },
 ];
 
 const legalItems = [
@@ -73,11 +83,11 @@ export default function Header() {
               Regionen
               <ChevronDown size={14} className="opacity-60 group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <div className="absolute top-full -left-4 pt-3 w-[340px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
-              <div className="bg-card/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.18)] border border-ink-200 overflow-hidden p-2">
+            <div className="absolute top-full -left-4 pt-3 w-[420px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
+              <div className="bg-card/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.18)] border border-ink-200 overflow-hidden p-2 max-h-[70vh] overflow-y-auto">
                 <div className="px-3 pt-2 pb-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-lake-700">Pannonische Standorte</p>
-                  <p className="text-xs text-ink-500 mt-0.5">7 Trainingsorte am Neusiedlersee</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-lake-700">Mobile Hundeschule — wir kommen zu dir</p>
+                  <p className="text-xs text-ink-500 mt-0.5">17 Einsatzorte im Bezirk Neusiedl am See</p>
                 </div>
                 <div className="grid grid-cols-2 gap-0.5">
                   {mobileTrainingLocations.map((item) => (
@@ -168,7 +178,7 @@ export default function Header() {
                 </button>
                 <div
                   className={`space-y-2.5 pl-3 border-l border-lake-300/60 overflow-hidden transition-all duration-500 ${
-                    isMobileRegionOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    isMobileRegionOpen ? 'max-h-[1400px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
                   {mobileTrainingLocations.map((item) => (

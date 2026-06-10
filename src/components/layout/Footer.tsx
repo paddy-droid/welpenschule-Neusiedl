@@ -1,15 +1,11 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Instagram, Facebook, ArrowUpRight, Waves } from 'lucide-react';
+import { serviceLocations } from '@/lib/regionData';
 
-const regionLinks = [
-  { href: '/mobiles-hundetraining', label: 'Neusiedl am See' },
-  { href: '/mobiles-hundetraining/gols', label: 'Gols' },
-  { href: '/mobiles-hundetraining/frauenkirchen', label: 'Frauenkirchen' },
-  { href: '/mobiles-hundetraining/parndorf', label: 'Parndorf' },
-  { href: '/mobiles-hundetraining/weiden-am-see', label: 'Weiden am See' },
-  { href: '/mobiles-hundetraining/illmitz', label: 'Illmitz' },
-  { href: '/mobiles-hundetraining/andau', label: 'Andau' },
-];
+const regionLinks = serviceLocations.map((loc) => ({
+  href: loc.slug === 'neusiedl-am-see' ? '/mobiles-hundetraining' : `/mobiles-hundetraining/${loc.slug}`,
+  label: loc.name,
+}));
 
 export default function Footer() {
   return (
@@ -32,8 +28,10 @@ export default function Footer() {
               <span className="wk-text-gradient">Hund &amp; Mensch näher bringt.</span>
             </h3>
             <p className="text-ink-400 leading-relaxed max-w-md">
-              Welpenschule Neusiedl am See ist Teil der Hundeschule Willenskraft. Gewaltfreies, ganzheitliches
-              Hundetraining im Seewinkel und der gesamten Region Burgenland Nord.
+              Die Welpenschule Neusiedl am See ist der regionale Standort der Hundeschule Willenskraft —
+              als <strong className="text-ink-200">mobile Hundeschule</strong> kommen wir zum Training direkt
+              zu dir nach Hause: im gesamten Bezirk Neusiedl am See, vom Leithagebirge bis in den Seewinkel.
+              Gewaltfrei, ganzheitlich, mit deiner Trainerin Jessy.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -111,7 +109,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 mt-0.5 text-brand-500 shrink-0" />
-                <span>7100 Neusiedl am See<br />Burgenland, AT</span>
+                <span>Mobil im Bezirk<br />Neusiedl am See — wir kommen zu dir</span>
               </li>
             </ul>
           </div>
@@ -120,7 +118,7 @@ export default function Footer() {
         <div className="border-t border-ink-800 pt-8 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-ink-500">
           <p>© {new Date().getFullYear()} Hundeschule Willenskraft · Alle Rechte vorbehalten.</p>
           <p className="text-ink-600">
-            Inhaberin: Jessica Pusch · Welpenschule Neusiedl am See · Burgenland
+            Inhaberin: Jessica Pusch · Mobile Welpenschule &amp; Hundeschule Neusiedl am See · Burgenland
           </p>
         </div>
       </div>

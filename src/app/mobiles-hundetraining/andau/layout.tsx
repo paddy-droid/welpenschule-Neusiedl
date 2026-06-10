@@ -5,7 +5,7 @@ const url = 'https://welpenschule-neusiedl.at/mobiles-hundetraining/andau';
 export const metadata: Metadata = {
   title: 'Hundeschule Andau | Mobil im Seewinkel-Süden',
   description:
-    'Hundeschule Andau ✓ pannonische Stille an der Grenze ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
+    'Hundeschule Andau ✓ wir kommen zu dir nach Hause ✓ pannonische Stille an der Grenze ✓ mobiles 1:1-Hundetraining ✓ Willenskraft. Erstberatung 95€.',
   keywords: ['Hundeschule Andau', 'Hundetrainer Andau', 'Mobiles Hundetraining Andau', 'Welpenkurs Andau Burgenland'],
   alternates: { canonical: url },
   openGraph: {

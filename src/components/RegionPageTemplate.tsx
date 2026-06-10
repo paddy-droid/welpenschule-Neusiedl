@@ -29,8 +29,12 @@ import {
   Sun,
   Snowflake,
   Sparkles,
+  Home as HomeIcon,
+  Car,
 } from 'lucide-react';
 import Reviews from '@/components/Reviews';
+import GoogleBadge from '@/components/GoogleBadge';
+import JessySection from '@/components/JessySection';
 import WillenskraftSection from '@/components/WillenskraftSection';
 import { getLocationConfig } from '@/components/WillenskraftSection/config/locations';
 import { getRegionData, type RegionData } from '@/lib/regionData';
@@ -57,10 +61,14 @@ function buildLocalBusinessJsonLd(data: RegionData) {
   return {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'PetTrainer'],
-    name: `Hundeschule ${data.name} – Willenskraft`,
-    description: `Ganzheitliches und gewaltfreies mobiles Hundetraining in ${data.name} und Umgebung. Einzeltraining, Welpentraining und Verhaltensberatung direkt bei dir zuhause.`,
-    url: `https://welpenschule-neusiedl.at/mobiles-hundetraining/${data.slug === 'neusiedl-am-see' ? '' : data.slug}`,
+    name: `Mobile Hundeschule ${data.name} – Willenskraft`,
+    description: `Mobile Hundeschule für ${data.name}: Wir kommen zum Hundetraining direkt zu dir nach Hause — Einzeltraining, Welpentraining und Verhaltensberatung in ${data.name} und Umgebung. Kein fester Hundeplatz, kostenlose Anfahrt. Trainerin: Jessica Pusch (Hundeschule Willenskraft).`,
+    url:
+      data.slug === 'neusiedl-am-see'
+        ? 'https://welpenschule-neusiedl.at/mobiles-hundetraining'
+        : `https://welpenschule-neusiedl.at/mobiles-hundetraining/${data.slug}`,
     telephone: '+436643903673',
+    email: 'bruck_leitha@willenskraft.co.at',
     address: {
       '@type': 'PostalAddress',
       addressLocality: data.name,
@@ -69,6 +77,17 @@ function buildLocalBusinessJsonLd(data: RegionData) {
     },
     areaServed: { '@type': 'City', name: data.name },
     priceRange: '€€',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Hundeschule Willenskraft & Akademie',
+      url: 'https://www.willenskraft.co.at',
+    },
+    employee: {
+      '@type': 'Person',
+      name: 'Jessica Pusch',
+      alternateName: 'Jessy',
+      jobTitle: `Mobile Hundetrainerin für ${data.name} und den Bezirk Neusiedl am See`,
+    },
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '50' },
   };
 }
@@ -161,8 +180,25 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
         <div className="absolute inset-0 wk-grain opacity-50 z-0" />
         <div className="relative z-10 container mx-auto px-6 py-32">
           <div className="max-w-4xl">
+            {/* Sichtbare Breadcrumbs (passend zur BreadcrumbList im Schema) */}
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-cream/70">
+                <li>
+                  <Link href="/" className="hover:text-cream transition-colors">Startseite</Link>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>
+                  <Link href="/mobiles-hundetraining" className="hover:text-cream transition-colors">
+                    Mobiles Hundetraining
+                  </Link>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li aria-current="page" className="font-semibold text-cream">{data.name}</li>
+              </ol>
+            </nav>
+
             <span className="wk-eyebrow-lake !bg-cream/15 !border-cream/25 !text-cream backdrop-blur mb-7">
-              <Waves className="w-3 h-3" /> Mobiles Hundetraining
+              <Waves className="w-3 h-3" /> Mobile Hundeschule — wir kommen zu dir
             </span>
             <h1 className="wk-display text-[clamp(2.5rem,7vw,5.5rem)] text-cream">
               Hundeschule
@@ -185,6 +221,15 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               >
                 <Phone className="w-4 h-4" /> +43 664 3903673
               </a>
+            </div>
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <GoogleBadge variant="dark" />
+              <span className="inline-flex items-center gap-2 text-xs text-cream/80">
+                <HomeIcon className="w-4 h-4 text-lake-300" /> Training bei dir zuhause in {data.name}
+              </span>
+              <span className="inline-flex items-center gap-2 text-xs text-cream/80">
+                <Car className="w-4 h-4 text-lake-300" /> Kostenlose Anfahrt
+              </span>
             </div>
           </div>
         </div>
@@ -346,10 +391,16 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
                 Erstberatung buchen
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              <div className="mt-7 flex justify-center">
+                <GoogleBadge />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ============== JESSY — DEINE TRAINERIN VOR ORT ============== */}
+      <JessySection regionName={data.name} />
 
       {/* ============== TRAINING METHODS ============== */}
       <section className="wk-section bg-card">
@@ -527,6 +578,39 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               </Accordion.Item>
             ))}
           </Accordion.Root>
+        </div>
+      </section>
+
+      {/* ============== SEO TEXT: Hundeschule & Hundetrainer {Ort} ============== */}
+      <section className="wk-section bg-card">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <span className="wk-eyebrow mb-5">Region &amp; Angebot</span>
+          <h2 className="wk-display text-3xl md:text-4xl lg:text-5xl text-ink-950">
+            Hundeschule &amp; Hundetrainer in {data.name} — mobil bei dir.
+          </h2>
+          <div className="mt-7 space-y-5 text-lg text-ink-600 leading-relaxed">
+            <p>
+              Du suchst eine <strong>Hundeschule in {data.name}</strong> oder einen{' '}
+              <strong>Hundetrainer in {data.name}</strong>? Dann haben wir gute Nachrichten: Du musst
+              nirgendwo hinfahren. Als <strong>mobile Hundeschule</strong> kommen wir zum Training direkt
+              zu dir nach Hause — denn dein Hund lernt am nachhaltigsten dort, wo euer Alltag wirklich
+              stattfindet. Einen festen Hundeplatz brauchst du bei uns nicht.
+            </p>
+            <p>
+              Deine Trainerin Jessica Pusch — Willenskraft-Hundetrainerin für die Region Neusiedl am
+              See — arbeitet ausschließlich gewaltfrei mit positiver Verstärkung: ohne Stachelhalsband,
+              Würger oder Schreckmittel. Ob Welpentraining, Leinenführigkeit, Rückruf, Impulskontrolle
+              oder Problemverhalten wie Leinenpöbeln und Jagdverhalten — für jedes Thema entsteht ein
+              klarer, alltagstauglicher Plan für euch in {data.name}.
+            </p>
+            <p>
+              Die mobile Erstberatung (90 Minuten, 95 €) findet bei dir zuhause in {data.name} statt,
+              Folgestunden buchst du flexibel. Für Welpen gibt es zusätzlich unsere{' '}
+              <Link href="/" className="wk-link font-semibold">Welpen-Gruppenkurse</Link> an sorgfältig
+              ausgewählten Outdoor-Treffpunkten in der Region Neusiedl am See — und die Anfahrt nach{' '}
+              {data.name} ist selbstverständlich kostenlos.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -858,8 +942,14 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
                 />
               </div>
               <div className="md:col-span-8 text-center md:text-left">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300 mb-3">
+                  Jessica Pusch · Deine mobile Hundetrainerin für {data.name}
+                </p>
                 <h2 className="wk-display text-3xl sm:text-5xl text-cream mb-4">{data.contactTitle}</h2>
                 <p className="text-lg text-ink-300 mb-7 leading-relaxed">{data.contactText}</p>
+                <div className="mb-7 flex justify-center md:justify-start">
+                  <GoogleBadge variant="dark" />
+                </div>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                   <Link
                     href={`/kontakt?service=mobiles-training-${data.slug}`}
@@ -882,11 +972,12 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
       </section>
 
       {/* ============== TESTIMONIALS ============== */}
-      <section className="wk-section">
+      <section id="bewertungen" className="wk-section scroll-mt-24">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="wk-eyebrow mb-5">Stimmen</span>
             <h2 className="wk-display text-3xl md:text-5xl text-ink-950">Was unsere Kund:innen sagen.</h2>
+            <p className="mt-5 text-lg text-ink-600">Verifizierte Google-Rezensionen aus der Region.</p>
           </div>
           <div className="wk-card p-6 sm:p-10">
             <Reviews />

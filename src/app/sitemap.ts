@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next';
+import { serviceLocations } from '@/lib/regionData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://welpenschule-neusiedl.at';
   const now = new Date();
 
-  const regions = ['gols', 'frauenkirchen', 'parndorf', 'weiden-am-see', 'illmitz', 'andau'];
+  const regions = serviceLocations.filter((loc) => loc.slug !== 'neusiedl-am-see').map((loc) => loc.slug);
 
   return [
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1 },
