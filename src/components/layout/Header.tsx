@@ -217,15 +217,8 @@ export default function Header() {
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="px-6 pt-6 pb-4 border-b border-ink-200/60 flex items-center justify-between">
+            <div className="px-6 pt-6 pb-4 border-b border-ink-200/60">
               <span className="wk-eyebrow-lake !py-1.5 !text-[10px]">Willenskraft Neusiedl</span>
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="p-2 -mr-2 text-ink-900 hover:bg-lake-50 rounded-full transition-colors"
-                aria-label="Menü schließen"
-              >
-                <X size={22} />
-              </button>
             </div>
 
             <nav className="flex-1 overflow-y-auto px-6 py-7 flex flex-col gap-7">
