@@ -41,6 +41,8 @@ import WillenskraftSection from '@/components/WillenskraftSection';
 import { getLocationConfig } from '@/components/WillenskraftSection/config/locations';
 import { getRegionData, regionCoords, type RegionData } from '@/lib/regionData';
 import { getFachwissen, studies } from '@/lib/studies';
+import { getMapSpots } from '@/lib/mapSpots';
+import RegionMap from '@/components/RegionMap';
 import * as Accordion from '@radix-ui/react-accordion';
 
 const heroImage = '/Welpenschule Welpenkurs Neusiedl.webp';
@@ -909,6 +911,26 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               ))}
             </div>
           </div>
+
+          {/* Interaktive Trainings-Karte */}
+          {regionCoords[data.slug] && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <h3 className="wk-display text-3xl md:text-4xl text-ink-950 mb-3">
+                  Deine Trainings-Karte für {data.name}.
+                </h3>
+                <p className="text-ink-600 max-w-2xl mx-auto">
+                  Tippe auf die Marker: Vom 🏠 mobilen Training bei dir zuhause bis zu den 🐾 Hunde-Hotspots
+                  der Region — hier siehst du, wo euer Training stattfinden kann.
+                </p>
+              </div>
+              <RegionMap
+                regionName={data.name}
+                center={regionCoords[data.slug]}
+                spots={getMapSpots(data.slug)}
+              />
+            </div>
+          )}
 
           {/* CTA Card */}
           <div className="relative overflow-hidden rounded-[2.5rem] p-10 lg:p-14 text-center bg-gradient-to-br from-ink-950 to-ink-800 text-cream shadow-2xl">
