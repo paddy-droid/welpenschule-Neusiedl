@@ -18,7 +18,7 @@ const kursLinks = [
   { href: '/kurse/junghundekurs', label: 'Junghundekurs', hint: 'Souverän durch die Pubertät · 195 €' },
   { href: '/kurse/begegnungstraining', label: 'Begegnungstraining', hint: 'Entspannt an der Leine · 260 €' },
   { href: '/kurse/dummytraining', label: 'Dummytraining', hint: 'Apport & Nasenarbeit · 220 €' },
-  { href: '/kurse/medical-training', label: 'Medical Training', hint: 'Stressfrei zum Tierarzt · 220 €' },
+  { href: '/kurse/medical-training', label: 'Medical Training', hint: 'Stressfrei zum Tierarzt · 260 €' },
 ];
 
 const mobileTrainingLocations = [

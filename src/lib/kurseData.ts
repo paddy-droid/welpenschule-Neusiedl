@@ -250,7 +250,7 @@ export const kurse: KursData[] = [
     menuLabel: 'Medical Training',
     teaser: 'Stressfrei zu Tierarzt & Pflege — Basis & Fortgeschritten',
     claim: 'Krallen schneiden, Ohrentropfen, Tierarztbesuch — ohne Kampf: Medical Training macht Pflege & Untersuchungen zur Kooperationsübung.',
-    price: '220 € je Kurs',
+    price: '260 € je Kurs',
     units: 'Basis & Fortgeschritten: je 8 Einheiten à 60 Min.',
     groupSize: '3–6 Mensch-Hund-Teams',
     audience: 'Hunde jeden Alters, jeder Rasse und jedes Temperaments — keine speziellen Vorkenntnisse nötig. Freude an positiver Zusammenarbeit reicht völlig.',
@@ -279,7 +279,7 @@ export const kurse: KursData[] = [
     faqs: [
       { question: 'Für welche Hunde ist Medical Training geeignet?', answer: 'Für Hunde jeden Alters, jeder Rasse und jedes Temperaments — vom Welpen bis zum Senior. Spezielle Vorkenntnisse braucht es nicht, nur Freude an positiver Zusammenarbeit.' },
       { question: 'Was ist der Unterschied zwischen Basis- und Fortgeschrittenenkurs?', answer: 'Im Basiskurs bauen wir die Grundlagen auf: Brückensignal, Targets, Kooperationssignale und Desensibilisierung. Im Fortgeschrittenenkurs wenden wir sie an — vom Krallenkürzen über Ohrentropfen bis zur Vorbereitung auf Blutabnahme und Impfung.' },
-      { question: 'Was kostet das Medical Training?', answer: 'Basiskurs und Fortgeschrittenenkurs umfassen je 8 wöchentliche Einheiten à 60 Minuten und kosten je 220 €. Targets und Pflegeutensilien werden gestellt; alle Teilnehmer:innen bekommen Zugang zu einer WhatsApp-Gruppe.' },
+      { question: 'Was kostet das Medical Training?', answer: 'Basiskurs und Fortgeschrittenenkurs umfassen je 8 wöchentliche Einheiten à 60 Minuten und kosten je 260 €. Targets und Pflegeutensilien werden gestellt; alle Teilnehmer:innen bekommen Zugang zu einer WhatsApp-Gruppe.' },
       { question: 'Mein Hund hat schon Angst vorm Tierarzt — hilft das noch?', answer: 'Ja — genau dafür ist kooperatives Medical Training da. Dein Hund lernt über „Ich-bin-bereit"-Signale, selbst mitzuentscheiden. Das gibt Kontrolle zurück und baut Angst nachhaltig ab. Bei starker Angst starten wir mit mobilen Einzelstunden.' },
     ],
     heroImage: '/heroes/kurs-medical.webp',
@@ -289,7 +289,7 @@ export const kurse: KursData[] = [
     shorts: ['7dOA4z3M9Eg', 'MccAfEAagXs', 'Mz1kCLxJALA', 'iKANIVJCmyM'],
     video: { id: 'EXJJUMFu49s', title: 'Expertinnen-Talk: Medical Training — mit Jessy Pusch & Bianca Oriana Willen' },
     metaTitle: 'Medical Training für Hunde Neusiedl | Willenskraft',
-    metaDescription: 'Medical Training mit Jessy: Basis & Fortgeschritten, je 8 Einheiten um 220 € ✓ stressfrei zu Tierarzt & Pflege ✓ kooperativ. ☎ 0664 3903673',
+    metaDescription: 'Medical Training mit Jessy: Basis & Fortgeschritten, je 8 Einheiten um 260 € ✓ stressfrei zu Tierarzt & Pflege ✓ kooperativ. ☎ 0664 3903673',
   },
 ];
 
