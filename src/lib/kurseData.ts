@@ -53,7 +53,7 @@ export const kurse: KursData[] = [
     start: 'Jeden Monat startet mindestens ein neuer Welpen-Gruppenkurs.',
     intro: [
       'Im Welpenkurs arbeiten wir gemeinsam an den grundlegenden Fähigkeiten: positiver Signalaufbau, die Auswahl des richtigen Equipments, Objektvorstellung und Leinenhandling — und wir beobachten genau, wie sich die Ausdrucksmöglichkeiten deines jungen Hundes entwickeln. Unser Hauptanliegen: Jeder neue Eindruck soll für deinen Welpen eine positive Erfahrung sein.',
-      'Die sechs Einheiten finden an verschiedenen, sorgfältig ausgewählten Outdoor-Treffpunkten statt — wohnortnah, dort wo dein Welpe seinen Alltag erlebt. Im Winter gibt es die „Willenskraft Winteredition" mit angepasster Kursdauer. Als Welpeneltern bekommt ihr Einzelstunden zum Sonderpreis von 55 € statt 70 €.',
+      'Die sechs Einheiten finden an verschiedenen, sorgfältig ausgewählten Outdoor-Treffpunkten statt — wohnortnah, dort wo dein Welpe seinen Alltag erlebt. Im Winter gibt es die „Willenskraft Winteredition" mit angepasster Kursdauer. Als Welpeneltern bekommt ihr Einzelstunden zum Sonderpreis von 55 € statt 80 €.',
     ],
     inhalte: [
       'Grundbedürfnisse der Hunde',
@@ -71,7 +71,7 @@ export const kurse: KursData[] = [
     faqs: [
       { question: 'Ab wann kann mein Welpe teilnehmen?', answer: 'Sobald die erste Grundimmunisierung gemacht ist — idealerweise direkt nach dem Einzug, denn die wichtigste Sozialisierungsphase endet etwa mit der 16. Lebenswoche. Teilnehmen können Welpen bis zu einem Alter von rund 5 Monaten, alle Rassen.' },
       { question: 'Wo findet der Welpenkurs statt?', answer: 'An sechs verschiedenen, sorgfältig ausgewählten Outdoor-Treffpunkten in der Region — wohnortnah, dort wo dein Welpe seinen Alltag erlebt. Den genauen Treffpunkt erfährst du bei der Anmeldung.' },
-      { question: 'Was kostet der Welpenkurs?', answer: 'Der Kurs umfasst 6 Einheiten zu je einer Stunde und kostet 195 €. Als Welpeneltern bekommt ihr private Einzelstunden zusätzlich zum Sonderpreis von 55 € statt 70 €.' },
+      { question: 'Was kostet der Welpenkurs?', answer: 'Der Kurs umfasst 6 Einheiten zu je einer Stunde und kostet 195 €. Als Welpeneltern bekommt ihr private Einzelstunden zusätzlich zum Sonderpreis von 55 € statt 80 €.' },
       { question: 'Findet der Kurs auch im Winter statt?', answer: 'Ja — als „Willenskraft Winteredition" mit entsprechend angepasster Kursdauer. Wir empfehlen wintergerechte Kleidung für dich und eine Decke für deinen Welpen.' },
     ],
     heroImage: '/heroes/kurs-welpen.webp',
