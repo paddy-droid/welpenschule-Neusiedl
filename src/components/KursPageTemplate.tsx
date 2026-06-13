@@ -54,7 +54,14 @@ function buildJsonLd(kurs: KursData) {
           name: 'Outdoor-Treffpunkte in der Region Neusiedl am See / Nordburgenland',
           address: { '@type': 'PostalAddress', addressRegion: 'Burgenland', addressCountry: 'AT' },
         },
-        instructor: { '@type': 'Person', name: 'Jessica Pusch', alternateName: 'Jessy' },
+        instructor: {
+          '@type': 'Person',
+          name: 'Jessica Pusch',
+          honorificPrefix: 'Ing.',
+          alternateName: 'Jessy',
+          url: 'https://welpenschule-neusiedl.at/kontakt',
+          sameAs: ['https://www.willenskraft.co.at/bruck-leitha/'],
+        },
       },
       ...(kurs.voraussetzungen ? { coursePrerequisites: kurs.voraussetzungen.join('; ') } : {}),
     },
@@ -179,8 +186,8 @@ export default function KursPageTemplate({ kurs }: { kurs: KursData }) {
             Der <strong>{kurs.name}</strong> der Hundeschule Willenskraft kostet <strong>{kurs.price}</strong>{' '}
             ({kurs.units}, {kurs.groupSize}) und findet an sorgfältig ausgewählten{' '}
             <strong>Outdoor-Treffpunkten in der Region Neusiedl am See / Nordburgenland</strong> statt.
-            Trainerin ist Jessica Pusch („Jessy"), trainiert wird zu 100 % gewaltfrei mit positiver
-            Verstärkung. {kurs.start} Anmeldung:{' '}
+            Trainerin ist <Link href="/kontakt" className="wk-link font-semibold">Ing. Jessica Pusch</Link>{' '}
+            („Jessy"), trainiert wird zu 100 % gewaltfrei mit positiver Verstärkung. {kurs.start} Anmeldung:{' '}
             <a href="tel:+436643903673" className="wk-link font-semibold">+43 664 3903673</a>.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-ink-500">

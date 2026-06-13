@@ -168,7 +168,7 @@ function buildLocalBusinessJsonLd(data: RegionData) {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'PetTrainer'],
     name: `Mobile Hundeschule ${data.name} – Willenskraft`,
-    description: `Mobile Hundeschule für ${data.name}: Wir kommen zum Hundetraining direkt zu dir nach Hause — Einzeltraining, Welpentraining und Verhaltensberatung in ${data.name} und Umgebung. Kein fester Hundeplatz, kostenlose Anfahrt. Trainerin: Jessica Pusch (Hundeschule Willenskraft).`,
+    description: `Mobile Hundeschule für ${data.name}: Wir kommen zum Hundetraining direkt zu dir nach Hause — Einzeltraining, Welpentraining und Verhaltensberatung in ${data.name} und Umgebung. Kein fester Hundeplatz, kostenlose Anfahrt. Trainerin: Ing. Jessica Pusch (Biochemikerin & Willenskraft-zertifizierte Hundetrainerin).`,
     url:
       data.slug === 'neusiedl-am-see'
         ? 'https://welpenschule-neusiedl.at/mobiles-hundetraining'
@@ -198,8 +198,11 @@ function buildLocalBusinessJsonLd(data: RegionData) {
     employee: {
       '@type': 'Person',
       name: 'Jessica Pusch',
+      honorificPrefix: 'Ing.',
       alternateName: 'Jessy',
       jobTitle: `Mobile Hundetrainerin für ${data.name} und den Bezirk Neusiedl am See`,
+      url: 'https://welpenschule-neusiedl.at/kontakt',
+      sameAs: ['https://www.willenskraft.co.at/bruck-leitha/'],
     },
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '50' },
   };
@@ -419,8 +422,9 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
           </p>
           <p className="text-ink-800 text-base md:text-lg leading-relaxed">
             Die <strong>Hundeschule {data.name}</strong> der Hundeschule Willenskraft ist eine{' '}
-            <strong>mobile Hundeschule</strong>: Hundetrainerin Jessica Pusch („Jessy") kommt zum Training
-            direkt zu dir nach Hause nach {data.name} — die Anfahrt ist kostenlos. Mobile Erstberatung
+            <strong>mobile Hundeschule</strong>: Hundetrainerin{' '}
+            <Link href="/kontakt" className="wk-link font-semibold">Ing. Jessica Pusch</Link> („Jessy") kommt zum
+            Training direkt zu dir nach Hause nach {data.name} — die Anfahrt ist kostenlos. Mobile Erstberatung
             (90 Minuten): 95 €, Einzelstunde: 55 €, Welpen-Gruppenkurs (6 Einheiten, max. 4 Teams): 195 €
             an Outdoor-Treffpunkten in der Region Neusiedl am See. Trainiert wird zu 100 % gewaltfrei mit
             positiver Verstärkung — für Hunde jeden Alters, vom Welpen bis zum Senior. Kontakt:{' '}
@@ -884,11 +888,12 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               stattfindet. Einen festen Hundeplatz brauchst du bei uns nicht.
             </p>
             <p>
-              Deine Trainerin Jessica Pusch — Willenskraft-Hundetrainerin für die Region Neusiedl am
-              See — arbeitet ausschließlich gewaltfrei mit positiver Verstärkung: ohne Stachelhalsband,
-              Würger oder Schreckmittel. Ob Welpentraining, Leinenführigkeit, Rückruf, Impulskontrolle
-              oder Problemverhalten wie Leinenpöbeln und Jagdverhalten — für jedes Thema entsteht ein
-              klarer, alltagstauglicher Plan für euch in {data.name}.
+              Deine Trainerin <Link href="/kontakt" className="wk-link font-semibold">Ing. Jessica Pusch</Link> —
+              Biochemikerin und Willenskraft-Hundetrainerin für die Region Neusiedl am See — arbeitet
+              ausschließlich gewaltfrei mit positiver Verstärkung: ohne Stachelhalsband, Würger oder
+              Schreckmittel. Ob Welpentraining, Leinenführigkeit, Rückruf, Impulskontrolle oder
+              Problemverhalten wie Leinenpöbeln und Jagdverhalten — für jedes Thema entsteht ein klarer,
+              alltagstauglicher Plan für euch in {data.name}.
             </p>
             <p>
               Die mobile Erstberatung (90 Minuten, 95 €) findet bei dir zuhause in {data.name} statt,

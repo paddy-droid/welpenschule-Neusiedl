@@ -114,8 +114,9 @@ export default function KursePage() {
         <div className="mt-10 max-w-3xl mx-auto text-center">
           <p className="text-sm text-ink-500 leading-relaxed">
             <CheckCircle2 className="inline w-4 h-4 text-lake-600 mr-1 -mt-0.5" />
-            Alle Kurse sind Angebote des Willenskraft-Standorts Bruck/Leitha–Wien–Nordburgenland von
-            Jessica Pusch. Die Treffpunkte liegen in der Region — du erfährst sie bei der Anmeldung.
+            Alle Kurse sind Angebote des Willenskraft-Standorts Bruck/Leitha–Wien–Nordburgenland von{' '}
+            <Link href="/kontakt" className="wk-link font-semibold">Ing. Jessica Pusch</Link>. Die Treffpunkte
+            liegen in der Region — du erfährst sie bei der Anmeldung.
           </p>
         </div>
       </section>

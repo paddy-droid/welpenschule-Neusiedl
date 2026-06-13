@@ -36,10 +36,11 @@ export default function JessySection({ regionName }: JessySectionProps) {
               />
             </div>
             <div className="relative mt-6 text-center">
-              <p className="wk-display text-2xl sm:text-3xl text-ink-950">Jessica Pusch</p>
+              <p className="wk-display text-2xl sm:text-3xl text-ink-950">Ing. Jessica Pusch</p>
               <p className="mt-1 text-sm font-semibold text-lake-700">
                 „Jessy" — deine Hundetrainerin {regionName ? `für ${regionName}` : 'am Neusiedlersee'}
               </p>
+              <p className="mt-2 text-xs text-ink-400">Biochemikerin (Ing.) · Willenskraft-zertifiziert · Akademie-Dozentin</p>
               <div className="mt-4 flex justify-center">
                 <GoogleBadge />
               </div>
@@ -60,12 +61,15 @@ export default function JessySection({ regionName }: JessySectionProps) {
             </div>
 
             <p className="text-base md:text-lg text-ink-600 leading-relaxed">
-              Jessica Pusch — von ihren Kund:innen liebevoll <strong className="text-ink-900">Jessy</strong> genannt —
-              leitet den regionalen Standort der <strong className="text-ink-900">Hundeschule Willenskraft</strong> für
-              Neusiedl am See und das Nordburgenland. Als <strong className="text-ink-900">mobile Hundetrainerin</strong>{' '}
-              kommt sie zum Training direkt zu dir nach Hause {ortText} — dorthin, wo euer Alltag wirklich
-              stattfindet. Die <strong className="text-ink-900">Welpen-Gruppenkurse</strong> finden an sorgfältig
-              ausgewählten Outdoor-Treffpunkten in der Region statt.
+              <strong className="text-ink-900">Ing. Jessica Pusch</strong> — von ihren Kund:innen liebevoll{' '}
+              <strong className="text-ink-900">Jessy</strong> genannt — leitet den regionalen Standort der{' '}
+              <strong className="text-ink-900">Hundeschule Willenskraft</strong> für Neusiedl am See und das
+              Nordburgenland. Ausgebildete Biochemikerin (Ing.), zertifiziert über die Willenskraft Akademie und
+              dort selbst Dozentin: Als <strong className="text-ink-900">mobile Hundetrainerin</strong> kommt sie
+              zum Training direkt zu dir nach Hause {ortText} — dorthin, wo euer Alltag wirklich stattfindet. Die{' '}
+              <strong className="text-ink-900">Welpen-Gruppenkurse</strong> finden an sorgfältig ausgewählten
+              Outdoor-Treffpunkten in der Region statt.{' '}
+              <Link href="/kontakt" className="wk-link font-semibold">Mehr über Jessy →</Link>
             </p>
 
             <div className="rounded-3xl bg-cream-soft border border-ink-200/60 p-5 md:p-7">
