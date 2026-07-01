@@ -13,32 +13,43 @@ export default function Impressum() {
             </p>
 
             <div>
-              <h2 className="text-xl font-semibold text-ink-950 mb-2 tracking-tight">NUR. Marketing GmbH</h2>
+              <h2 className="text-xl font-semibold text-ink-950 mb-2 tracking-tight">Ing. Jessica Pusch</h2>
+              <p className="text-sm text-ink-500 mb-3">
+                Mobile Hundetrainerin — Hundeschule Willenskraft, Region Neusiedl am See
+              </p>
               <p>
-                Bogengasse 1
+                Dörrweg 1/11
                 <br />
-                9800 Spittal an der Drau
+                2405 Bad Deutsch-Altenburg
+                <br />
+                Österreich
               </p>
             </div>
 
             <div className="space-y-1">
               <p>
                 <strong className="text-ink-950">Tel.:</strong>{' '}
-                <a href="tel:+436645322221" className="text-lake-700 hover:underline">
-                  +43 664 5322221
+                <a href="tel:+436643903673" className="text-lake-700 hover:underline">
+                  +43 664 3903673
                 </a>
               </p>
               <p>
                 <strong className="text-ink-950">E-Mail:</strong>{' '}
-                <a href="mailto:kommunikation@nur.marketing" className="text-lake-700 hover:underline">
-                  kommunikation@nur.marketing
+                <a href="mailto:bruck_leitha@willenskraft.co.at" className="text-lake-700 hover:underline">
+                  bruck_leitha@willenskraft.co.at
                 </a>
               </p>
               <p>
-                <strong className="text-ink-950">UID-Nummer:</strong> ATU76522327
+                <strong className="text-ink-950">Unternehmensgegenstand:</strong> Mobiles Hundetraining
               </p>
               <p>
-                <strong className="text-ink-950">Firmenbuchnummer:</strong> FN 549728 z
+                <strong className="text-ink-950">Gewerbe:</strong> Hundetrainer (freies Gewerbe), ausgeübt in Österreich
+              </p>
+              <p>
+                <strong className="text-ink-950">Gewerbebehörde:</strong> Bezirkshauptmannschaft Bruck an der Leitha
+              </p>
+              <p>
+                <strong className="text-ink-950">Mitgliedschaft:</strong> Wirtschaftskammer Niederösterreich
               </p>
               <p>
                 <strong className="text-ink-950">Berufsrecht:</strong> Gewerbeordnung,{' '}
