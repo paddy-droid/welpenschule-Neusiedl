@@ -23,13 +23,13 @@ import {
 import GoogleBadge from '@/components/GoogleBadge';
 import { WhatsAppIcon, waHref } from '@/components/WhatsAppFloat';
 
-const jessyImage = 'https://www.willenskraft.co.at/wp-content/uploads/2020/02/Hundeschule-Willenskraft-ButtonFINAL.png';
+const jessyImage = 'https://www.willenskraft.co.at/wp-content/uploads/2025/06/Jessica-Pusch-Hundeschule-Wien-Niederoesterreich.webp';
 const willenskraftProfil = 'https://www.willenskraft.co.at/bruck-leitha/';
 
 export const metadata: Metadata = {
   title: 'Über Jessy & Kontakt',
   description:
-    'Lerne Ing. Jessica Pusch („Jessy") kennen — deine mobile Hundetrainerin für den Bezirk Neusiedl am See. Biochemikerin, Willenskraft-Trainerin, 100 % gewaltfrei. Anruf, WhatsApp oder Mail. ☎ +43 664 3903673',
+    'Ing. Jessica Pusch („Jessy") — mobile Hundetrainerin am Neusiedlersee. Biochemikerin, Willenskraft-zertifiziert, gewaltfrei. ☎ 0664 3903673',
   alternates: { canonical: 'https://welpenschule-neusiedl.at/kontakt' },
   openGraph: {
     title: 'Über Jessy & Kontakt | Welpenschule Neusiedl am See',
@@ -37,6 +37,14 @@ export const metadata: Metadata = {
       'Ing. Jessica Pusch („Jessy") — deine mobile Hundetrainerin am Neusiedlersee. Von der Biochemie zum gewaltfreien Hundetraining. Jetzt kennenlernen & Termin sichern.',
     url: 'https://welpenschule-neusiedl.at/kontakt',
     type: 'profile',
+    images: [
+      {
+        url: jessyImage,
+        width: 800,
+        height: 800,
+        alt: 'Ing. Jessica Pusch („Jessy") — mobile Hundetrainerin im Bezirk Neusiedl am See',
+      },
+    ],
   },
 };
 
@@ -56,7 +64,7 @@ const profilePageJsonLd = {
     alternateName: 'Jessy',
     jobTitle: 'Hundetrainerin — Hundeschule Willenskraft, Region Neusiedl am See & Nordburgenland',
     description:
-      'Ing. Jessica Pusch — von ihren Kund:innen Jessy genannt — ist mobile Hundetrainerin der Hundeschule Willenskraft für den Bezirk Neusiedl am See. Ausgebildete Biochemikerin (Ing.), zertifiziert über die Willenskraft Akademie, dort auch als Dozentin und Prüferin tätig. Sie trainiert ausschließlich gewaltfrei mit positiver Verstärkung und kommt zum Training direkt zu den Mensch-Hund-Teams nach Hause.',
+      'Ing. Jessica Pusch — von ihren Kund:innen Jessy genannt — ist mobile Hundetrainerin der Hundeschule Willenskraft für den Bezirk Neusiedl am See. Ausgebildete Biochemikerin (Ing.), zertifiziert über die Willenskraft Akademie, dort auch als Dozentin und Prüferin tätig. Sie trainiert gewaltfrei, wissenschaftlich fundiert und bedürfnisorientiert mit positiver Verstärkung und kommt zum Training direkt zu den Mensch-Hund-Teams nach Hause.',
     image: jessyImage,
     url: 'https://welpenschule-neusiedl.at/kontakt',
     telephone: '+43-664-3903673',
@@ -169,6 +177,7 @@ export default function KontaktPage() {
                   width={460}
                   height={460}
                   priority
+                  sizes="(max-width: 640px) 300px, 360px"
                   className="relative w-full h-auto rounded-[2.5rem] object-cover aspect-square border-4 border-cream shadow-[0_40px_80px_-30px_rgba(0,0,0,0.3)]"
                 />
                 <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-max max-w-[90%]">
@@ -419,9 +428,10 @@ export default function KontaktPage() {
                 <div className="absolute inset-0 bg-lake-500 rounded-full blur-3xl opacity-30 -translate-y-2" />
                 <Image
                   src={jessyImage}
-                  alt="Ing. Jessica Pusch — Hundeschule Willenskraft"
+                  alt="Ing. Jessica Pusch — Hundetrainerin der Welpenschule Neusiedl am See (Hundeschule Willenskraft)"
                   width={400}
                   height={400}
+                  sizes="(max-width: 768px) 60vw, 220px"
                   className="relative rounded-full mx-auto object-cover aspect-square border-4 border-ink-800 shadow-2xl"
                 />
               </div>

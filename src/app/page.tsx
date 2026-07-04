@@ -628,8 +628,10 @@ export default function Home() {
               <p className="text-lg text-ink-300 leading-relaxed">
                 Wir trainieren nach dem Stand moderner Verhaltensforschung — angereichert mit den
                 Besonderheiten der pannonischen Tiefebene. Keine Mythen, keine Dominanztheorie,
-                keine veralteten Methoden — sondern operante Konditionierung mit positiver Verstärkung,
-                dosierter Sozialisierung und Tierschutzkonformität nach österreichischem Recht.
+                keine veralteten Methoden — sondern gewaltfreie, bedürfnisorientierte Arbeit,
+                dosierte Sozialisierung und Tierschutzkonformität nach österreichischem Recht.
+                Wir orientieren uns am LIFE-Modell (Least Inhibitive, Functionally Effective) — am wenigsten
+                einschränkend, funktional wirksam und mit echter Wahlfreiheit für deinen Hund.
               </p>
               <div className="mt-6 flex items-start gap-3 text-sm text-ink-400 italic border-l-2 border-lake-500/60 pl-4">
                 <Quote className="w-4 h-4 text-lake-400 shrink-0 mt-0.5" />
@@ -765,7 +767,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-br from-lake-100 to-brand-100 rounded-[2.5rem] -rotate-2 opacity-60 blur-xl" />
               <Image
                 src="https://www.willenskraft.co.at/wp-content/uploads/2024/05/Hundeschule-Bad-Deutsch-Altenburg-Welpentraining-845x684.webp"
-                alt="Training mit positiver Verstärkung am Neusiedlersee"
+                alt="Gewaltfreies Welpentraining am Neusiedlersee – Welpenschule Neusiedl am See"
                 width={700}
                 height={700}
                 className="relative rounded-[2rem] shadow-2xl object-cover aspect-square"
@@ -807,6 +809,7 @@ export default function Home() {
             <iframe
               src="https://www.youtube.com/embed/yyp4gCZdwK4?si=GsCgdrcyf1KDSXaH"
               title="Willenskraft – Ganzheitliche Welpenerziehung"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -979,10 +982,11 @@ export default function Home() {
               <div className="md:col-span-4 relative">
                 <div className="absolute inset-0 bg-lake-500 rounded-full blur-3xl opacity-30 -translate-y-2" />
                 <Image
-                  src="https://www.willenskraft.co.at/wp-content/uploads/2020/02/Hundeschule-Willenskraft-ButtonFINAL.png"
-                  alt="Jessica Pusch – Hundeschule Willenskraft"
+                  src="https://www.willenskraft.co.at/wp-content/uploads/2025/06/Jessica-Pusch-Hundeschule-Wien-Niederoesterreich.webp"
+                  alt="Ing. Jessica Pusch – deine mobile Hundetrainerin für Neusiedl am See"
                   width={400}
                   height={400}
+                  sizes="(max-width: 768px) 60vw, 320px"
                   className="rounded-full mx-auto object-cover aspect-square relative z-10 border-4 border-ink-800 shadow-2xl"
                 />
               </div>
@@ -1036,8 +1040,8 @@ export default function Home() {
               dem Senior.
             </p>
             <p>
-              Als <strong>Hundetrainerin für Neusiedl am See</strong> arbeitet Jessy ausschließlich mit
-              positiver Verstärkung — ohne Stachelhalsband, Würger oder Schreckmittel. Ob Leinenführigkeit,
+              Als <strong>Hundetrainerin für Neusiedl am See</strong> arbeitet Jessy gewaltfrei und
+              bedürfnisorientiert — ohne Stachelhalsband, Würger oder Schreckmittel. Ob Leinenführigkeit,
               ein zuverlässiger Rückruf, Impulskontrolle am vogelreichen Seeufer oder Problemverhalten wie
               Leinenpöbeln und Jagdverhalten: Für jedes Thema gibt es einen klaren, alltagstauglichen
               Plan — für den Welpen genauso wie für den erfahrenen Senior.

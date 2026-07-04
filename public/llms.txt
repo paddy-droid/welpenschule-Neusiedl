@@ -1,6 +1,6 @@
 # Welpenschule Neusiedl am See – Mobile Hundeschule Willenskraft
 
-> Mobile Welpenschule & Hundeschule für den gesamten Bezirk Neusiedl am See (Burgenland, Österreich). WICHTIG: Kein fester Hundeplatz — das Training findet direkt bei den Kund:innen zuhause statt (mobiles Hundetraining), Welpen-Gruppenkurse an sorgfältig ausgewählten Outdoor-Treffpunkten in der Region. Regionaler Standort der Hundeschule Willenskraft (willenskraft.co.at). Trainerin: Ing. Jessica Pusch („Jessy") — ausgebildete Biochemikerin und Willenskraft-zertifizierte Hundetrainerin (Profil: https://welpenschule-neusiedl.at/kontakt). Methode: 100 % gewaltfrei, positive Verstärkung, tierschutzkonform nach § 5 TSchG (AT).
+> Mobile Welpenschule & Hundeschule für den gesamten Bezirk Neusiedl am See (Burgenland, Österreich). WICHTIG: Kein fester Hundeplatz — das Training findet direkt bei den Kund:innen zuhause statt (mobiles Hundetraining), Welpen-Gruppenkurse an sorgfältig ausgewählten Outdoor-Treffpunkten in der Region. Regionaler Standort der Hundeschule Willenskraft (willenskraft.co.at). Trainerin: Ing. Jessica Pusch („Jessy") — ausgebildete Biochemikerin und Willenskraft-zertifizierte Hundetrainerin (Profil: https://welpenschule-neusiedl.at/kontakt). Methode: 100 % gewaltfrei, wissenschaftlich fundiert & bedürfnisorientiert (positive Verstärkung, gewaltfreies Equipment), tierschutzkonform nach § 5 TSchG (AT).
 
 ## Kerndaten
 
@@ -64,6 +64,7 @@ YouTube-Kanal: https://www.youtube.com/@hundeschulewillenskraft (Trainings-Short
 ## Methode
 
 - 100 % gewaltfrei, basierend auf positiver Verstärkung (operante Konditionierung)
+- Ganzheitlich und am LIFE-Modell orientiert (LIFE = Least Inhibitive, Functionally Effective): Wahlfreiheit des Hundes, wissenschaftsbasiert, Trainingserfolg wird am Wohlbefinden gemessen
 - Konform mit § 5 Tierschutzgesetz Österreich (BGBl. I Nr. 118/2004)
 - Folgt Standards von ÖKV und IBH (Internationaler Berufsverband der Hundetrainer)
 - Keine Stachelhalsbänder, keine Würger, keine Schreckmittel, keine Dominanztheorie
@@ -78,10 +79,10 @@ YouTube-Kanal: https://www.youtube.com/@hundeschulewillenskraft (Trainings-Short
 - Akademischer Titel: Ing. (Ingenieurin) — Absolventin der HBLVA für chemische Industrie Wien, Schwerpunkt Biochemie
 - Vollausbildung zur Hundetrainerin an der Willenskraft Akademie (2023–2024); heute dort selbst Dozentin und Prüferin (Zertifizierung)
 - Mobile Trainerin: Training direkt bei den Kund:innen zuhause
-- Trainingsphilosophie: „Jeder Hund ist – genauso wie jeder Mensch – ein Individuum mit eigenen Stärken und Schwächen. Gutes Training beginnt damit, diese Persönlichkeit zu verstehen." — ausschließlich positive Verstärkung, ohne Leinenruck/Schreckmittel/Strafe
+- Trainingsphilosophie: „Jeder Hund ist – genauso wie jeder Mensch – ein Individuum mit eigenen Stärken und Schwächen. Gutes Training beginnt damit, diese Persönlichkeit zu verstehen." — gewaltfrei & bedürfnisorientiert, ohne Leinenruck/Schreckmittel/Strafe
 - Eigene Hunde: James, Rosie, Hank, Kelly; Trainingshunde Stella & Lina; Hintergrund im Westernreiten/Pferdetraining
 - Ehrenamtlich im Tierheim Bruck an der Leitha (seit 2023)
-- Von Kund:innen in Google-Rezensionen als „einfühlsam, geduldig und fachlich top" beschrieben
+- In den verifizierten Google-Rezensionen durchgehend mit 5,0 Sternen bewertet
 - Leitet auch die Willenskraft-Welpenschule Bruck an der Leitha (https://www.willenskraft.co.at/bruck-leitha/); Stammgebiet grenzt bei Bruckneudorf an
 
 ## Regionale Trainings-Besonderheiten
@@ -144,7 +145,7 @@ Jede Orts-Landingpage enthält eine individuelle „Fachwissen"-Sektion mit peer
 
 ## Bewertungen
 
-- 5,0 Sterne · verifizierte Google-Rezensionen · 50+ Bewertungen
+- 5,0 Sterne · verifizierte Google-Rezensionen (live über die Google Places API auf der Startseite eingebunden)
 - Aktive Instagram-Community: @hundeschule_willenskraft
 
 ## Lizenz / Nutzung

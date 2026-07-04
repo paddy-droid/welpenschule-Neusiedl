@@ -48,7 +48,7 @@ import ShortsSection from '@/components/ShortsSection';
 import { WhatsAppIcon, waHref } from '@/components/WhatsAppFloat';
 import * as Accordion from '@radix-ui/react-accordion';
 
-const profileImage = 'https://www.willenskraft.co.at/wp-content/uploads/2020/02/Hundeschule-Willenskraft-ButtonFINAL.png';
+const profileImage = 'https://www.willenskraft.co.at/wp-content/uploads/2025/06/Jessica-Pusch-Hundeschule-Wien-Niederoesterreich.webp';
 
 /** Hero-Motiv passend zur Landschaft des jeweiligen Orts (Gemini-generiert, Brand-Look). */
 const heroThemes: Record<string, { src: string; alt: (ort: string) => string }> = {
@@ -204,7 +204,6 @@ function buildLocalBusinessJsonLd(data: RegionData) {
       url: 'https://welpenschule-neusiedl.at/kontakt',
       sameAs: ['https://www.willenskraft.co.at/bruck-leitha/'],
     },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '50' },
   };
 }
 
@@ -632,7 +631,7 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               Training mit Freude &amp; Verstand in {data.name}.
             </h2>
             <p className="mt-6 text-lg text-ink-600">
-              Moderne, wissenschaftlich fundierte Methoden — positive Verstärkung statt Druck und Zwang.
+              Moderne, wissenschaftlich fundierte Methoden — gewaltfrei nach dem LIFE-Modell, mit positiver Verstärkung statt Druck und Zwang.
             </p>
           </div>
           <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
@@ -1155,7 +1154,7 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
                   </div>
                   <div className="flex items-baseline justify-between gap-3">
                     <dt className="text-ink-500">Methode</dt>
-                    <dd className="font-semibold text-ink-950 text-right">Positive Verstärkung</dd>
+                    <dd className="font-semibold text-ink-950 text-right">Gewaltfrei &amp; positiv</dd>
                   </div>
                 </dl>
               </div>
@@ -1232,9 +1231,10 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
               <div className="md:col-span-4">
                 <Image
                   src={profileImage}
-                  alt={`Jessica Pusch — Hundeschule Willenskraft ${data.name}`}
+                  alt={`Ing. Jessica Pusch, mobile Hundetrainerin der Hundeschule Willenskraft in ${data.name}`}
                   width={400}
                   height={400}
+                  sizes="(max-width: 768px) 60vw, 200px"
                   className="rounded-full mx-auto object-cover aspect-square border-4 border-ink-800 shadow-2xl"
                 />
               </div>
