@@ -45,6 +45,7 @@ import { getMapSpots } from '@/lib/mapSpots';
 import RegionMap from '@/components/RegionMap';
 import CtaBanner from '@/components/CtaBanner';
 import ShortsSection from '@/components/ShortsSection';
+import { getBusinessRating } from '@/lib/businessRating';
 import { WhatsAppIcon, waHref } from '@/components/WhatsAppFloat';
 import * as Accordion from '@radix-ui/react-accordion';
 
@@ -245,9 +246,23 @@ const trainingKnowledgeBase = (regionName: string) => [
   },
 ];
 
-export default function RegionPageTemplate({ regionKey }: { regionKey: string }) {
+export default async function RegionPageTemplate({ regionKey }: { regionKey: string }) {
   const data = getRegionData(regionKey);
   if (!data) return null;
+
+  // Echtes Google-Rating server-seitig holen und – nur wenn belegt – als
+  // AggregateRating ins LocalBusiness-JSON-LD der Ortsseite schreiben.
+  const rating = await getBusinessRating();
+  const businessLd = buildLocalBusinessJsonLd(data) as Record<string, unknown>;
+  if (rating) {
+    businessLd.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: String(rating.ratingValue),
+      reviewCount: String(rating.reviewCount),
+      bestRating: '5',
+      worstRating: '1',
+    };
+  }
 
   const willenskraftConfig = getLocationConfig(regionKey);
   const fachwissen = getFachwissen(regionKey);
@@ -310,7 +325,7 @@ export default function RegionPageTemplate({ regionKey }: { regionKey: string })
   return (
     <div className="bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqJsonLd(data)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildLocalBusinessJsonLd(data)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
