@@ -10,6 +10,7 @@ const youtubeChannelUrl = 'https://www.youtube.com/@hundeschulewillenskraft';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/mobiles-hundetraining', label: 'Mobiles Training' },
+  { href: '/ratgeber', label: 'Ratgeber' },
 ];
 
 const kursLinks = [

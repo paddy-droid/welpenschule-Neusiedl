@@ -1,0 +1,545 @@
+{
+ "site": "welpenschule-neusiedl.at",
+ "onSiteFixes": [
+  {
+   "area": "aufbau",
+   "priority": "P1",
+   "issue": "Es existiert kein Blog/Ratgeber. Die gesamte informationale Longtail-Ebene fehlt, dadurch fehlt die topical authority, die die schwachen Head-Terms 'welpenschule burgenland' (#7) und 'hundeschule nordburgenland welpen' (#5) hochziehen wuerde.",
+   "action": "Blog-Hub /ratgeber als Cluster-Zentrale nach bellerei-Qualitaetsstandard bauen (Hero-Intro, Key-Takeaways-Box, Info/Warn/Tipp-Boxen, Jessy-Zitat, >=8 sichtbare FAQ mit textgleichem FAQPage-Schema, Article+FAQPage-JSON-LD, Fazit-Box, 16:9-Titelbild). Hub-Seite verlinkt alle 18 Redaktionsplan-Artikel und die beiden Pillar-Seiten.",
+   "expectedImpact": "Baut Frische-Signal + Themen-Tiefe auf, fuettert die schwachen Head-Terms ueber interne Verlinkung und faengt hochvolumige informationale Suchen (stubenrein, Hitze, Silvester) als Top-of-Funnel."
+  },
+  {
+   "area": "seo",
+   "priority": "P1",
+   "issue": "Keine dedizierte Autoritaetsseite fuer die schwachen Head-Terms. 'welpenschule burgenland' und 'hundeschule nordburgenland' werden nur beilaeufig in einer Home-FAQ bedient - keine URL besitzt diese Terme als Hauptthema.",
+   "action": "Zwei Pillar-Seiten schaffen: /welpenschule-burgenland und /hundeschule-nordburgenland. Bezirks-Coverage + Seewinkel-USP (Wildvogel-Impulskontrolle, LIFE-Modell, DOI-Studien) buendeln. Von allen 17 Ortsseiten (nearbyLocations-Block) und jedem Blogartikel dorthin verlinken.",
+   "expectedImpact": "Gibt den beiden schwachen Kern-Terms eine thematisch fokussierte Landing mit interner Autoritaet der 17 Ortsseiten - direkter Hebel von #7/#5 Richtung Top 3 gegen pfotenkompass/freizeitwuffel."
+  },
+  {
+   "area": "interne-verlinkung",
+   "priority": "P1",
+   "issue": "Orts->Kurs-Deeplinks fehlen komplett: die 17 Ortsseiten verlinken keine spezifischen Kursseiten, nur generisch auf / fuer 'Welpen-Gruppenkurse'. Die 5 margenrelevanten Kurs-URLs (Prio 0.85) bekommen kaum kontextuelle Inlinks.",
+   "action": "In RegionPageTemplate einen 'Passende Kurse'-Block mit Deeplinks zu /kurse/welpenkurs, /junghundekurs, /begegnungstraining, /dummytraining, /medical-training ergaenzen; im Gegenzug Kursseiten auf 6-8 semantisch naechste Orte zurueckverlinken.",
+   "expectedImpact": "Schliesst den Orts->Kurs-Silo, verteilt Linkequity auf die Conversion-Seiten und staerkt Kurs-Rankings, ohne neuen Content zu brauchen."
+  },
+  {
+   "area": "content",
+   "priority": "P2",
+   "issue": "Hohe Template-Duplizierung: trainingKnowledgeBase, Challenges/Solutions und Methoden-Texte sind ueber alle 17 Ortsseiten WORTGLEICH - nur der Ortsname variiert. Risiko von Thin-/Near-Duplicate-Signalen und verwaesserter Relevanz.",
+   "action": "Mindestens die Challenges/Solutions- und Fachwissen-Bloecke je Ort um 2-3 ortsspezifische Saetze anreichern (reale Landmarks/Reize wie in den bereits guten localDescription/FAQs), sodass jede Seite einen substanziellen Unique-Anteil hat.",
+   "expectedImpact": "Reduziert Near-Duplicate-Risiko und erhoeht die individuelle Ort-Relevanz - stabilisiert die lokalen #1-Rankings und hebt schwaechere Ortsseiten (Parndorf #7)."
+  },
+  {
+   "area": "content",
+   "priority": "P2",
+   "issue": "Kurscontent stammt laut kurseData.ts-Header 1:1 von willenskraft.co.at Kurs-Detailseiten -> Kannibalisierungs-/Duplicate-Risiko mit der Mutterdomain, die im SERP teils selbst fuer Nordburgenland/Bruck rankt.",
+   "action": "Kurstexte auf welpenschule-neusiedl.at eigenstaendig umschreiben (mobile Neusiedl-/Seewinkel-Perspektive, wechselnde Outdoor-Treffpunkte) und die Willenskraft-Kursseiten als thematischen Crosslink statt als Textquelle nutzen; Rollen klar trennen.",
+   "expectedImpact": "Beseitigt Duplicate-Signale zur Mutterdomain, staerkt die Eigenstaendigkeit der Kurs-URLs und die mobile USP-Differenzierung."
+  },
+  {
+   "area": "conversion",
+   "priority": "P2",
+   "issue": "Fehlende Dringlichkeit/Verfuegbarkeit: 'Jeden Monat startet mindestens ein Kurs' ist vage; kein konkretes naechstes Startdatum, keine Restplatz-Anzeige - obwohl max. 4 Teams ein starker, echter Scarcity-Hebel waere.",
+   "action": "Konkretes naechstes Kursstart-Datum + ehrliche Restplatz-Anzeige ('noch 2 von 4 Plaetzen') auf Home, Ortsseiten und /kurse/welpenkurs einbauen (belegbar, kontraktkonform).",
+   "expectedImpact": "Wandelt Sofort-Entschlossene, die aktuell im asynchronen 24h-Formular verloren gehen - direkte Conversion-Steigerung ohne neuen Traffic."
+  },
+  {
+   "area": "conversion",
+   "priority": "P2",
+   "issue": "Preis-Hero der Ortsseiten fokussiert die 95-EUR-Erstberatung; der eigentliche Anker-Kurs Welpenkurs (195 EUR) ist auf Ortsseiten nur schwach (nur nach /) verlinkt.",
+   "action": "Auf jeder Ortsseite den Welpenkurs (195 EUR) als klaren Angebots-CTA neben der 95-EUR-Erstberatung platzieren und direkt auf /kurse/welpenkurs deeplinken.",
+   "expectedImpact": "Fuehrt Ortsseiten-Traffic direkt auf das Kernprodukt und den Orts->Kurs-Pfad - hoehere Kurs-Conversion und staerkere interne Verlinkung der Kurs-URL."
+  },
+  {
+   "area": "conversion",
+   "priority": "P3",
+   "issue": "Kontakt-E-Mail bruck_leitha@willenskraft.co.at (llms.txt, RegionPageTemplate) wirkt fuer eine Neusiedl-/Seewinkel-Marke off-brand und mindert Regional-Vertrauen und Konsistenz.",
+   "action": "Regionale bzw. auf Jessy personalisierte Kontakt-Mail (oder Weiterleitung) einrichten und ueberall statt bruck_leitha@ ausgeben; 'Jessy direkt'-Framing an den CTAs ergaenzen.",
+   "expectedImpact": "Erhoeht Marken-/Regional-Vertrauen und Konsistenz an einem sichtbaren Trust-Touchpoint."
+  },
+  {
+   "area": "content",
+   "priority": "P3",
+   "issue": "Hardcodiertes Einzel-Testimonial 'Victoria S.' auf Home parallel zur Live-Reviews-Komponente - falls nicht aus Live-Daten gespeist, kollidiert das mit dem Ehrlichkeits-Kontrakt.",
+   "action": "Testimonial-Snippet an die Live-Reviews-Daten binden oder entfernen; auf Ortsseiten stattdessen 1-2 echte Google-Zitate mit Ortsbezug einblenden.",
+   "expectedImpact": "Sichert Kontrakt-Konformitaet (keine erfundenen Testimonials) und staerkt E-E-A-T mit belegbaren, ortsbezogenen Reviews."
+  },
+  {
+   "area": "design",
+   "priority": "P3",
+   "issue": "Home-Hero stapelt mix-blend-multiply + opacity 0.55 + Mesh + Grain + Waves + Gradient -> LCP-/Kontrast-Risiko und schwaechere Mobile-Performance; zusaetzlich Hotlink-Bilder von willenskraft.co.at.",
+   "action": "Hero-Overlays auf ein Gradient + Bild reduzieren, LCP-Bild als priority mit echten sizes/quality; Willenskraft-Hotlink-Bilder lokal als AVIF/WebP ueber next/image spiegeln; emphasizeKeywords auf max. 2-3 Fettungen pro Absatz entschaerfen.",
+   "expectedImpact": "Bessere Core Web Vitals (LCP) mobil und geringeres Over-Optimization-Risiko - stuetzt Rankings und Nutzererlebnis."
+  }
+ ],
+ "redaktionsplan": [
+  {
+   "month": "2026-07",
+   "slug": "hundetraining-hitze-neusiedler-see",
+   "title": "Hundetraining bei Hitze: der Sommer-Guide",
+   "primaryKeyword": "hundetraining hitze",
+   "secondaryKeywords": [
+    "hund abkuehlen sommer",
+    "asphalt test hund",
+    "hundetraining sommer burgenland"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Pannonisches Klima ueber 30 Grad, 300+ Sonnentage, Asphalt-7-Sekunden-Test an der Seepromenade Neusiedl und am Strandbad Podersdorf",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Podersdorf am See",
+    "Illmitz"
+   ],
+   "contentAngle": "Konkrete Trainingszeiten, Asphalt-Test, Kuehl- und Belastungsstrategien - kein regionaler Wettbewerber liefert etwas fachlich Fundiertes zum Sommer",
+   "willenskraftHook": "Hall et al. (2020) zum Hitzschlag-Risiko plus LIFE-Modell: Belastung dosieren und Verhalten ueber Selbstregulation steuern statt ueber Drill",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/mobiles-hundetraining/podersdorf-am-see",
+    "/kurse/welpenkurs",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2026-08",
+   "slug": "hund-jagt-wasservoegel-seewinkel",
+   "title": "Hund jagt Wasservoegel? Impulskontrolle am See",
+   "primaryKeyword": "hund jagt voegel abgewoehnen",
+   "secondaryKeywords": [
+    "impulskontrolle hund",
+    "hund jagt enten",
+    "antijagdtraining wasservoegel"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Neusiedler See und Nationalpark Seewinkel als hoechste Vogeldichte Oesterreichs - Schilfguertel, Zicksee und Lange Lacke als reale Reizkulissen",
+   "targetTowns": [
+    "Illmitz",
+    "Apetlon",
+    "Neusiedl am See"
+   ],
+   "contentAngle": "Schritt-fuer-Schritt-Impulskontrolle am Wasser mit alternativem Beuteersatz statt Verbot - ein Zero-Competition-Thema, das nur eine See-Hundeschule glaubwuerdig besetzt",
+   "willenskraftHook": "Bruck (2017) zu Impulskontrolle und Selbstbeherrschung, im LIFE-Modell als trainierbare Ressource statt als reine Gehorsamsuebung",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/illmitz",
+    "/mobiles-hundetraining/apetlon",
+    "/kurse/junghundekurs",
+    "/kurse/dummytraining"
+   ]
+  },
+  {
+   "month": "2026-09",
+   "slug": "hund-weinlese-gols-trauben-gefahr",
+   "title": "Hund bei der Weinlese: Trauben-Gefahr & Ruhe",
+   "primaryKeyword": "hund weinlese",
+   "secondaryKeywords": [
+    "weintrauben giftig hund",
+    "hund buschenschank",
+    "hund ruhe im lokal"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Weinlese in den Golser und Moenchhofer Weinbergen, Buschenschank-Saison - Trauben-/Traubenkern-Gefahr und Ruheverhalten im vollen Heurigen",
+   "targetTowns": [
+    "Gols",
+    "Moenchhof",
+    "Halbturn"
+   ],
+   "contentAngle": "Gesundheitswarnung (Trauben toxisch) plus praxisnaher Ruhe-/Decken-Aufbau fuer den Buschenschank - regionaler Aufhaenger mit echtem Mehrwert",
+   "willenskraftHook": "LIFE-Modell: Entspannung und Selbstregulation als aktiv aufgebautes Verhalten, wissenschaftlich fundierte Habituation statt 'einfach liegen bleiben'",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/gols",
+    "/mobiles-hundetraining/moenchhof",
+    "/kurse/begegnungstraining",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2026-10",
+   "slug": "hund-nationalpark-seewinkel-leinenpflicht",
+   "title": "Mit Hund im Nationalpark Seewinkel: Leinenpflicht",
+   "primaryKeyword": "hund nationalpark seewinkel",
+   "secondaryKeywords": [
+    "leinenpflicht neusiedler see",
+    "hund lange lacke",
+    "hund seewinkel regeln"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Nationalpark Neusiedler See-Seewinkel: ganzjaehrige Leinenpflicht, gesperrte Schilfzonen, Lange Lacke, Herbst-Vogelzug als Insider-Service-Wissen",
+   "targetTowns": [
+    "Illmitz",
+    "Apetlon",
+    "Pamhagen"
+   ],
+   "contentAngle": "Null-Wettbewerb-Service-Guide zu erlaubten Runden, gesperrten Zonen und entspanntem Verhalten am Beobachtungsturm - hyper-regionaler Vertrauensbeweis",
+   "willenskraftHook": "LIFE-Modell: Leinenfuehrigkeit und Reizkontrolle als planbarer Lernprozess, gestuetzt auf Bruck (2017) Impulskontrolle",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/illmitz",
+    "/mobiles-hundetraining/pamhagen",
+    "/hundeschule-nordburgenland",
+    "/kurse/junghundekurs"
+   ]
+  },
+  {
+   "month": "2026-11",
+   "slug": "hund-rueckruf-herbstnebel-heideboden",
+   "title": "Rueckruf im Herbstnebel: Hund sicher abrufen",
+   "primaryKeyword": "hund rueckruf training",
+   "secondaryKeywords": [
+    "hund abrufen ueben",
+    "rueckruf trotz ablenkung",
+    "hund sichtbar dunkelheit"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Dichter Herbst-Seenebel ueber Heideboden und Steppe rund um Halbturn und Andau - Sichtbarkeit, Leuchtgeschirr und Rueckruf bei schlechter Sicht",
+   "targetTowns": [
+    "Halbturn",
+    "Andau",
+    "Frauenkirchen"
+   ],
+   "contentAngle": "Rueckruf-Aufbau speziell fuer geringe Sicht plus Sichtbarkeits-Ausruestung - saisonal zwingendes Thema, das Wettbewerber nicht bedienen",
+   "willenskraftHook": "LIFE-Modell: Rueckruf als hoch belohntes, emotional positiv verankertes Signal - lernpsychologisch statt ueber Zwang aufgebaut",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/halbturn",
+    "/mobiles-hundetraining/andau",
+    "/kurse/junghundekurs",
+    "/hundeschule-nordburgenland"
+   ]
+  },
+  {
+   "month": "2026-12",
+   "slug": "silvester-hund-gewaltfrei-knallsaison",
+   "title": "Silvester: Hund gewaltfrei durch die Knallsaison",
+   "primaryKeyword": "silvester hund beruhigen",
+   "secondaryKeywords": [
+    "geraeuschangst hund",
+    "hund angst feuerwerk",
+    "hund silvester vorbereiten"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Silvester am Neusiedler See und Dorf-/Weinfeste als lokale Reizkontexte - Vorbereitung Wochen vor dem Jahreswechsel",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Weiden am See",
+    "Jois"
+   ],
+   "contentAngle": "Praxisplan zur Gegenkonditionierung und zum sicheren Rueckzugsort - saisonale Suchspitze plus Cross-Selling in den Willenskraft-/bellerei-Kosmos",
+   "willenskraftHook": "Riemer (2019) zur Gegenkonditionierung und Salonen (2020) zur Angst-Praevalenz - LIFE-Modell statt Beschwichtigungs-Floskeln",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/kurse/medical-training",
+    "willenskraft.co.at",
+    "bellerei-shop.com"
+   ]
+  },
+  {
+   "month": "2027-01",
+   "slug": "welpe-stubenrein-2-wochen-plan",
+   "title": "Welpe stubenrein: der realistische 2-Wochen-Plan",
+   "primaryKeyword": "welpe stubenrein bekommen",
+   "secondaryKeywords": [
+    "welpe stubenrein winter",
+    "welpe pipi drinnen",
+    "stubenrein plan hund"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Stubenreinheit im pannonischen Bora-Winter - kalte, windige Gassirunden rund um Neusiedl als reale Erschwernis",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Gols",
+    "Parndorf"
+   ],
+   "contentAngle": "Ehrlicher, realistischer Zeitplan mit HowTo-Schema statt Wunder-Versprechen - hochvolumiger Top-of-Funnel-Feeder direkt in den Welpenkurs",
+   "willenskraftHook": "LIFE-Modell und Lernpsychologie: Erfolg ueber Management, Timing und Belohnung - keine Bestrafung, kein 'Mit-der-Nase-reinstupsen'",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/kurse/welpenkurs",
+    "/welpenschule-burgenland",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2027-02",
+   "slug": "hund-winter-beschaeftigen-nasenarbeit",
+   "title": "Nasenarbeit im Winter: Hund sinnvoll auslasten",
+   "primaryKeyword": "hund winter beschaeftigen",
+   "secondaryKeywords": [
+    "nasenarbeit hund",
+    "hund indoor auslasten",
+    "dummytraining anfang"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Winterruhe im Seewinkel und kurze kalte Tage - mentale Auslastung drinnen und auf kurzen Runden am zugefrorenen Zicksee",
+   "targetTowns": [
+    "Frauenkirchen",
+    "St. Andrae am Zicksee",
+    "Moenchhof"
+   ],
+   "contentAngle": "Konkrete Such- und Dummy-Spiele fuer drinnen mit Steigerungsstufen - Feeder ins Dummytraining, echter Mehrwert gegen Winter-Langeweile",
+   "willenskraftHook": "LIFE-Modell: kognitive Auslastung und Nasenarbeit als Stressabbau - Studienlage zu Sucharbeit und Wohlbefinden statt reiner Bewegung",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/frauenkirchen",
+    "/mobiles-hundetraining/st-andrae-am-zicksee",
+    "/kurse/dummytraining",
+    "/kurse/junghundekurs"
+   ]
+  },
+  {
+   "month": "2027-03",
+   "slug": "welpenschule-burgenland-kosten-methoden",
+   "title": "Welpenschule Burgenland: Kosten & Methoden 2027",
+   "primaryKeyword": "welpenschule burgenland kosten",
+   "secondaryKeywords": [
+    "welpenkurs preis burgenland",
+    "hundeschule burgenland vergleich",
+    "was kostet welpenschule"
+   ],
+   "searchIntent": "kommerziell",
+   "regionalAngle": "Burgenland-weiter Preis- und Methodenvergleich mit mobilem Seewinkel-Angebot - greift den schwachen Head-Term im Welpen-Fruehjahr an",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Gols",
+    "Frauenkirchen"
+   ],
+   "contentAngle": "Transparenter, ehrlicher Preisvergleich als Trust-Hebel und Differenzierung ueber Methode statt Floskel - direkter Feeder auf Pillar und Welpenkurs",
+   "willenskraftHook": "LIFE-Modell und DOI-belegte Studien als echte Differenzierung gegenueber dem Konkurrenz-Einheitsbrei 'positive Verstaerkung und viel Herz'",
+   "internalLinkTargets": [
+    "/welpenschule-burgenland",
+    "/kurse/welpenkurs",
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2027-04",
+   "slug": "zeckenschutz-hund-handling-medical-training",
+   "title": "Zeckenschutz & Handling: Hund stressfrei pflegen",
+   "primaryKeyword": "zeckenschutz hund",
+   "secondaryKeywords": [
+    "zecken entfernen hund",
+    "hund handling ueben",
+    "cooperative care hund"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Zeckensaison-Start in Schilf, Heideboden und Weinbergen rund um Winden und Jois - Kontrolle nach der Runde ohne Stress",
+   "targetTowns": [
+    "Winden am See",
+    "Jois",
+    "Weiden am See"
+   ],
+   "contentAngle": "Verbindet Gesundheits-Info (Zeckenrisiko/Entfernung) mit Cooperative-Care-Handling-Training - Feeder ins Medical Training",
+   "willenskraftHook": "LIFE-Modell: Medical/Cooperative Care - der Hund gibt aktiv Zustimmung zur Behandlung statt festgehalten zu werden, angstfreie Pflege",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/winden-am-see",
+    "/mobiles-hundetraining/jois",
+    "/kurse/medical-training",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2027-05",
+   "slug": "hund-poebelt-leine-5-begegnungszonen",
+   "title": "Hund poebelt an der Leine? Die 5 Begegnungszonen",
+   "primaryKeyword": "hund poebelt an der leine",
+   "secondaryKeywords": [
+    "leinenaggression hund",
+    "hund pobelt entgegenkommende",
+    "begegnungstraining hund"
+   ],
+   "searchIntent": "kommerziell",
+   "regionalAngle": "Enge Seepromenade Neusiedl, Radweg B10 und Kellergassen als reale Begegnungs-Hotspots im beginnenden Tourismus-Fruehjahr",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Podersdorf am See",
+    "Weiden am See"
+   ],
+   "contentAngle": "Praxis-Konzept der 5 Begegnungszonen mit Volumenregler statt Theorie - konversionsstarker Feeder ins margenstarke Begegnungstraining",
+   "willenskraftHook": "LIFE-Modell: Arbeit unter der Reizschwelle und Emotionsregulation - Distanz als trainierbarer Volumenregler statt Korrektur",
+   "internalLinkTargets": [
+    "/kurse/begegnungstraining",
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/mobiles-hundetraining/podersdorf-am-see",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2027-06",
+   "slug": "hund-baden-neusiedler-see-sicherheit",
+   "title": "Hund am Neusiedler See: Baden & Sicherheit",
+   "primaryKeyword": "hund baden neusiedler see",
+   "secondaryKeywords": [
+    "hund schwimmen see",
+    "strandbad hund erlaubt",
+    "blaualgen hund see"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Badesaison am Neusiedler See: Strandbad-Hundeverbote, erlaubte Hundezonen in Podersdorf/Weiden, Blaualgen- und Schilf-Risiken",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Podersdorf am See",
+    "Weiden am See"
+   ],
+   "contentAngle": "Service-Guide zu erlaubten Badestellen plus stressfreier Wassergewoehnung - hoher Insider-Nutzen zur Hochsaison",
+   "willenskraftHook": "LIFE-Modell: freiwillige, angstfreie Wassergewoehnung ueber positive Emotion und Wahlfreiheit statt Ins-Wasser-tragen",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/podersdorf-am-see",
+    "/mobiles-hundetraining/weiden-am-see",
+    "/kurse/junghundekurs",
+    "/mobiles-hundetraining/neusiedl-am-see"
+   ]
+  },
+  {
+   "month": "2027-07",
+   "slug": "junghund-pubertaet-gelassen-durch-flegelzeit",
+   "title": "Junghund in der Pubertaet: gelassen durch die Zeit",
+   "primaryKeyword": "junghund pubertaet",
+   "secondaryKeywords": [
+    "hund flegelphase",
+    "junghund hoert nicht mehr",
+    "pubertaet hund training"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Reizueberflutung im Sommer am See - volle Promenaden, Badegaeste, Wildvoegel als Bewaehrungsprobe fuer den pubertierenden Junghund",
+   "targetTowns": [
+    "Gols",
+    "Parndorf",
+    "Neusiedl am See"
+   ],
+   "contentAngle": "Erklaert die adoleszente Umbauphase wissenschaftlich und gibt Deeskalations-Strategien - Feeder in den Junghundekurs",
+   "willenskraftHook": "Asher et al. (2020) zur Adoleszenz-Phase beim Hund - LIFE-Modell: Beziehung und Impulskontrolle halten statt haerter durchgreifen",
+   "internalLinkTargets": [
+    "/kurse/junghundekurs",
+    "/mobiles-hundetraining/gols",
+    "/mobiles-hundetraining/parndorf",
+    "willenskraft.co.at"
+   ]
+  },
+  {
+   "month": "2027-08",
+   "slug": "wandern-hund-nordburgenland-leithagebirge",
+   "title": "Wandern mit Hund im Nordburgenland: Leithagebirge",
+   "primaryKeyword": "wandern hund nordburgenland",
+   "secondaryKeywords": [
+    "hund leithagebirge",
+    "freilauf hund training",
+    "hund ausflug burgenland"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Leithagebirge, Heideboden und die Grenzregion Kittsee/Bruckneudorf als hundefreundliche Sommer-Ausflugsrouten",
+   "targetTowns": [
+    "Bruckneudorf",
+    "Kittsee",
+    "Parndorf"
+   ],
+   "contentAngle": "Tourenideen mit Freilauf-Regeln, Hitzeschutz und Rueckruf-Praxis - staerkt bewusst die bislang schwaecher bespielten Nordrand-Orte",
+   "willenskraftHook": "LIFE-Modell: sicherer Freilauf ueber trainierten Rueckruf und Impulskontrolle (Bruck 2017) statt Dauerleine oder Gluecksspiel",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/bruckneudorf",
+    "/mobiles-hundetraining/kittsee",
+    "/hundeschule-nordburgenland",
+    "/kurse/junghundekurs"
+   ]
+  },
+  {
+   "month": "2027-09",
+   "slug": "antijagdtraining-hase-reh-heideboden",
+   "title": "Antijagdtraining: Hase & Reh im Heideboden",
+   "primaryKeyword": "antijagdtraining hund",
+   "secondaryKeywords": [
+    "hund jagt rehe",
+    "hund jagt hasen",
+    "jagdverhalten abgewoehnen"
+   ],
+   "searchIntent": "kommerziell",
+   "regionalAngle": "Abgeerntete Felder und Steppe des Heidebodens rund um Halbturn, Andau und Frauenkirchen mit hoher Feldhasen- und Rehdichte im Herbst",
+   "targetTowns": [
+    "Halbturn",
+    "Andau",
+    "Frauenkirchen"
+   ],
+   "contentAngle": "Abgrenzung Saeugetier-Jagd vs. Wasservoegel: Frustrationstoleranz, Alternativverhalten und Schleppleinen-Management - Feeder in Junghund/Einzeltraining",
+   "willenskraftHook": "LIFE-Modell: Jagdverhalten als selbstbelohnendes System - kontrolliert kanalisieren ueber Ersatzbeschaeftigung statt strafen (Bruck 2017)",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/halbturn",
+    "/mobiles-hundetraining/andau",
+    "/kurse/junghundekurs",
+    "/hundeschule-nordburgenland"
+   ]
+  },
+  {
+   "month": "2027-10",
+   "slug": "giftkoeder-praevention-hund-schuetzen",
+   "title": "Giftkoeder-Praevention: Hund sicher schuetzen",
+   "primaryKeyword": "giftkoeder training hund",
+   "secondaryKeywords": [
+    "anti giftkoeder training",
+    "hund frisst alles unterwegs",
+    "giftkoeder erkennen"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Herbstliche Feld- und Weinbergwege in Gols und Moenchhof, wo Fallobst und Koeder liegen - erhoehte Wachsamkeit auf den Runden",
+   "targetTowns": [
+    "Gols",
+    "Moenchhof",
+    "Neusiedl am See"
+   ],
+   "contentAngle": "Anti-Giftkoeder-Training mit Tausch-Prinzip und Maulkorb-Gewoehnung plus Notfall-Info - hoher Sicherheits-Mehrwert",
+   "willenskraftHook": "LIFE-Modell: zuverlaessiges 'Aus/Tausch' und angstfreie Maulkorb-Gewoehnung ueber positive Verknuepfung statt Verbotsdruck",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/gols",
+    "/mobiles-hundetraining/moenchhof",
+    "/kurse/junghundekurs",
+    "/kurse/medical-training"
+   ]
+  },
+  {
+   "month": "2027-11",
+   "slug": "hund-allein-zuhause-trennungsstress",
+   "title": "Hund allein zu Hause: Trennungsstress loesen",
+   "primaryKeyword": "hund allein bleiben lernen",
+   "secondaryKeywords": [
+    "hund trennungsangst",
+    "hund bellt allein",
+    "alleinsein hund ueben"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Dunkle, kurze pannonische Wintertage mit weniger Aussenaktivitaet - mehr Zeit drinnen macht Alleinbleiben zum Thema",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Parndorf",
+    "Weiden am See"
+   ],
+   "contentAngle": "Realistischer Aufbauplan in Minutenschritten mit Kamera-Diagnose - Top-of-Funnel-Feeder in Welpen-/Junghundekurs",
+   "willenskraftHook": "LIFE-Modell: graduelle, unterschwellige Gewoehnung an Alleinsein - wissenschaftlich fundiert statt 'muss er lernen, einfach weggehen'",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/kurse/welpenkurs",
+    "willenskraft.co.at",
+    "bellerei-shop.com"
+   ]
+  },
+  {
+   "month": "2027-12",
+   "slug": "weihnachten-mit-hund-ruhe-advent-stress",
+   "title": "Weihnachten mit Hund: Ruhe im Advent-Stress",
+   "primaryKeyword": "weihnachten mit hund",
+   "secondaryKeywords": [
+    "hund advent stress",
+    "hund besuch gaeste",
+    "schokolade giftig hund"
+   ],
+   "searchIntent": "informational",
+   "regionalAngle": "Adventmaerkte und Feiern im Nordburgenland plus Silvester-Vorbereitung am See - Trubel, Gaeste und Festtags-Reste als Stressquellen",
+   "targetTowns": [
+    "Neusiedl am See",
+    "Kittsee",
+    "Frauenkirchen"
+   ],
+   "contentAngle": "Ruhe- und Rueckzugs-Management bei Besuch, Gefahren-Info zu Festtags-Resten und Bruecke zum Silvester-Artikel - runder Jahresabschluss",
+   "willenskraftHook": "LIFE-Modell: aktiv aufgebautes Entspannungs- und Rueckzugsverhalten (Habituation) statt Ueberreizung - Selbstregulation als Ressource",
+   "internalLinkTargets": [
+    "/mobiles-hundetraining/neusiedl-am-see",
+    "/kurse/welpenkurs",
+    "willenskraft.co.at",
+    "bellerei-shop.com"
+   ]
+  }
+ ]
+}
