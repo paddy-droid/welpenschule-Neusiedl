@@ -18,16 +18,16 @@ export default function CtaBanner({ regionName, title, text }: CtaBannerProps) {
   const ort = regionName ?? 'deiner Region';
   return (
     <section className="container mx-auto px-6 py-8">
-      <div className="relative overflow-hidden rounded-[2rem] max-w-5xl mx-auto p-8 md:p-10 bg-gradient-to-br from-brand-400 via-brand-500 to-lake-700 text-ink-950 shadow-[0_30px_60px_-20px_rgba(186,135,30,0.45)]">
-        <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-cream/30 blur-3xl" />
-        <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-lake-300/40 blur-3xl" />
+      <div className="relative overflow-hidden rounded-[2rem] max-w-5xl mx-auto p-8 md:p-10 bg-gradient-to-br from-brand-400 via-brand-500 to-brand-700 text-white shadow-[0_30px_60px_-20px_rgba(208,113,8,0.5)]">
+        <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-white/25 blur-3xl" />
+        <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-brand-300/40 blur-3xl" />
         <div className="absolute inset-0 wk-grain opacity-30" />
         <div className="relative z-10 grid lg:grid-cols-12 gap-6 items-center">
           <div className="lg:col-span-7">
             <h3 className="wk-display text-2xl md:text-3xl mb-2">
               {title ?? `Bereit für entspannte Spaziergänge in ${ort}?`}
             </h3>
-            <p className="text-ink-950/80 leading-relaxed text-sm md:text-base">
+            <p className="text-white/90 leading-relaxed text-sm md:text-base">
               {text ??
                 'Jessy ist nur eine Nachricht entfernt — unverbindlich anfragen und gemeinsam Schritt für Schritt euren gewaltfreien Trainingsplan festlegen. Rückmeldung innerhalb von 24 Stunden an Werktagen.'}
             </p>
@@ -38,7 +38,7 @@ export default function CtaBanner({ regionName, title, text }: CtaBannerProps) {
           <div className="lg:col-span-5 flex flex-col gap-2.5">
             <Link
               href="/kontakt"
-              className="inline-flex items-center justify-center gap-2 bg-ink-950 text-cream rounded-full px-6 h-12 font-semibold text-sm hover:bg-ink-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-white text-brand-700 rounded-full px-6 h-12 font-semibold text-sm hover:bg-brand-50 transition-colors"
             >
               Jetzt Termin anfragen
               <ArrowRight className="w-4 h-4" />
@@ -46,7 +46,7 @@ export default function CtaBanner({ regionName, title, text }: CtaBannerProps) {
             <div className="grid grid-cols-2 gap-2.5">
               <a
                 href="tel:+436643903673"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-4 h-11 bg-cream/85 border border-cream text-ink-950 font-semibold text-sm hover:bg-cream transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-4 h-11 bg-white/90 border border-white text-brand-700 font-semibold text-sm hover:bg-white transition-colors"
               >
                 <Phone className="w-4 h-4" /> Anrufen
               </a>
@@ -59,7 +59,7 @@ export default function CtaBanner({ regionName, title, text }: CtaBannerProps) {
                 <WhatsAppIcon className="w-4 h-4" /> WhatsApp
               </a>
             </div>
-            <p className="text-[11px] text-ink-950/70 text-center leading-snug">
+            <p className="text-[11px] text-white/80 text-center leading-snug">
               Kostenlose Anfahrt im gesamten Einsatzgebiet · max. 4 Teams pro Gruppe
             </p>
           </div>

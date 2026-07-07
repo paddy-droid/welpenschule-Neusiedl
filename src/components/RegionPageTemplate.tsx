@@ -361,14 +361,14 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               </ol>
             </nav>
 
-            <span className="wk-eyebrow-lake !bg-cream/15 !border-cream/25 !text-cream backdrop-blur mb-7">
+            <span className="wk-eyebrow !bg-cream/15 !border-cream/25 !text-cream backdrop-blur mb-7">
               <Waves className="w-3 h-3" /> Mobile Hundeschule — wir kommen zu dir
             </span>
-            <h1 className="wk-display text-[clamp(2.5rem,7vw,5.5rem)] text-cream">
+            <h1 className="wk-display text-[clamp(2.5rem,7vw,5.5rem)] text-cream leading-[1.02]">
               Hundeschule
               <br />
               <span className="wk-text-gradient">{data.name}</span>
-              <span className="text-lake-400">.</span>
+              <span className="text-brand-400">.</span>
             </h1>
             <p className="mt-7 text-lg md:text-xl text-cream/85 max-w-2xl leading-relaxed">{data.heroSubtitle}</p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
@@ -389,10 +389,10 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
               <GoogleBadge variant="dark" />
               <span className="inline-flex items-center gap-2 text-xs text-cream/80">
-                <HomeIcon className="w-4 h-4 text-lake-300" /> Training bei dir zuhause in {data.name}
+                <HomeIcon className="w-4 h-4 text-brand-300" /> Training bei dir zuhause in {data.name}
               </span>
               <span className="inline-flex items-center gap-2 text-xs text-cream/80">
-                <Car className="w-4 h-4 text-lake-300" /> Kostenlose Anfahrt
+                <Car className="w-4 h-4 text-brand-300" /> Kostenlose Anfahrt
               </span>
             </div>
           </div>
@@ -411,7 +411,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                 { icon: ShieldCheck, value: '100 %', label: 'Gewaltfrei' },
               ].map((s) => (
                 <div key={s.label} className="text-center md:text-left flex md:items-center gap-3 md:gap-4 flex-col md:flex-row">
-                  <div className="self-center md:self-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-lake-100 text-lake-700">
+                  <div className="self-center md:self-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 text-brand-700">
                     <s.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -429,9 +429,9 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
       <section className="container mx-auto px-6 pt-16">
         <div
           id="direktantwort"
-          className="wk-card max-w-4xl mx-auto p-8 md:p-10 border-l-[5px] !border-l-lake-500 scroll-mt-24"
+          className="wk-card max-w-4xl mx-auto p-8 md:p-10 border-l-[5px] !border-l-brand-500 scroll-mt-24"
         >
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700 mb-4">
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-4">
             Auf einen Blick — Hundeschule {data.name}
           </p>
           <p className="text-ink-800 text-base md:text-lg leading-relaxed">
@@ -446,16 +446,16 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-ink-500">
             <span className="inline-flex items-center gap-1.5">
-              <HomeIcon className="w-3.5 h-3.5 text-lake-600" /> Training bei dir zuhause
+              <HomeIcon className="w-3.5 h-3.5 text-brand-600" /> Training bei dir zuhause
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Car className="w-3.5 h-3.5 text-lake-600" /> Kostenlose Anfahrt
+              <Car className="w-3.5 h-3.5 text-brand-600" /> Kostenlose Anfahrt
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-lake-600" /> 100 % gewaltfrei
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-600" /> 100 % gewaltfrei
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <ThumbsUp className="w-3.5 h-3.5 text-lake-600" /> 5,0 ★ auf Google
+              <ThumbsUp className="w-3.5 h-3.5 text-brand-600" /> 5,0 ★ auf Google
             </span>
           </div>
           <div className="mt-6 flex flex-col sm:flex-row gap-2.5">
@@ -522,7 +522,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               </div>
             </div>
             <div className="lg:col-span-5 relative">
-              <div className="absolute -inset-5 bg-gradient-to-br from-lake-100 to-brand-100 rounded-[2.5rem] rotate-3 opacity-60 blur-2xl" />
+              <div className="absolute -inset-5 bg-gradient-to-br from-brand-100 to-lake-100 rounded-[2.5rem] rotate-3 opacity-60 blur-2xl" />
               <Image
                 src="/heroes/hero-zuhause.webp"
                 alt={`Hundetrainerin belohnt Welpen im Garten — mobiles Training zuhause in ${data.name}`}
@@ -553,7 +553,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             {data.processSteps.map((step) => (
               <li key={step.step} className="wk-card p-8">
                 <div className="flex items-baseline justify-between mb-5">
-                  <span className="wk-display text-6xl text-lake-600 leading-none">0{step.step}</span>
+                  <span className="wk-display text-6xl text-brand-500 leading-none">0{step.step}</span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">Schritt {step.step}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-ink-950 mb-3 tracking-tight">{step.title}</h3>
@@ -578,7 +578,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
       <section className="wk-section bg-card">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="wk-eyebrow-lake mb-5">Vorteile</span>
+            <span className="wk-eyebrow mb-5">Vorteile</span>
             <h2 className="wk-display text-4xl md:text-5xl text-ink-950">
               5 Gründe für mobiles Training
               <br />
@@ -591,7 +591,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               return (
                 <div key={pillar.title} className="wk-card p-7 group">
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center group-hover:bg-lake-500 group-hover:text-cream transition-colors">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-cream transition-colors">
                       {IconComp && <IconComp className="w-5 h-5" />}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">0{idx + 1}</span>
@@ -608,9 +608,9 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
       {/* ============== PRICING ============== */}
       <section className="wk-section">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="relative overflow-hidden rounded-[2.5rem] p-10 md:p-14 text-center bg-gradient-to-br from-brand-400 via-brand-500 to-lake-700 text-ink-950 shadow-[0_40px_80px_-30px_rgba(186,135,30,0.6)]">
+          <div className="relative overflow-hidden rounded-[2.5rem] p-10 md:p-14 text-center bg-gradient-to-br from-brand-400 via-brand-500 to-brand-600 text-ink-950 shadow-[0_40px_80px_-30px_rgba(240,147,26,0.55)]">
             <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-cream/30 blur-3xl" />
-            <div className="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-lake-300/30 blur-3xl" />
+            <div className="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-brand-200/40 blur-3xl" />
             <div className="absolute inset-0 wk-grain opacity-25" />
             <div className="relative z-10">
               <Gift className="w-10 h-10 text-cream mx-auto mb-4" />
@@ -624,7 +624,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               </p>
               <Link
                 href={`/kontakt?service=erstberatung-mobil-${data.slug}`}
-                className="inline-flex items-center justify-center gap-2 bg-ink-950 text-cream rounded-full px-8 h-13 font-semibold hover:bg-ink-900 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-brand-700 rounded-full px-8 h-13 font-semibold hover:bg-brand-50 transition-colors"
               >
                 Erstberatung buchen
                 <ArrowRight className="w-4 h-4" />
@@ -651,7 +651,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
           </div>
           <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-lake-100 to-brand-100 rounded-[2.5rem] -rotate-2 opacity-60 blur-xl" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-brand-100 to-lake-100 rounded-[2.5rem] -rotate-2 opacity-60 blur-xl" />
               <Image
                 src="https://www.willenskraft.co.at/wp-content/uploads/2024/05/Hundeschule-Bad-Deutsch-Altenburg-Welpentraining-845x684.webp"
                 alt={`Training mit positiver Verstärkung in ${data.name}`}
@@ -662,13 +662,13 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             </div>
             <div className="lg:col-span-7 space-y-4">
               {[
-                { icon: CheckCircle2, title: 'Positive Verstärkung', text: 'Wir belohnen gewünschtes Verhalten statt Fehler zu bestrafen. Dadurch lernt dein Hund gerne und nachhaltig — mit Freude statt mit Angst. Wissenschaftlich belegt und tierschutzkonform.', color: 'lake' },
-                { icon: Users, title: 'Individuelle Betreuung', text: `Im mobilen 1:1-Training in ${data.name} geht es nur um dich und deinen Hund. Wir passen Tempo, Methoden und Übungen genau auf eure Situation an — ohne Gruppenzwang.`, color: 'lake' },
-                { icon: ShieldCheck, title: 'Tierschutzkonform', text: 'Methoden entsprechen dem aktuellen Stand der Verhaltensforschung und den Tierschutzrichtlinien. Kein Zwang, keine Dominanztheorie, kein Stachelhals.', color: 'brand' },
+                { icon: CheckCircle2, title: 'Positive Verstärkung', text: 'Wir belohnen gewünschtes Verhalten statt Fehler zu bestrafen. Dadurch lernt dein Hund gerne und nachhaltig — mit Freude statt mit Angst. Wissenschaftlich belegt und tierschutzkonform.' },
+                { icon: Users, title: 'Individuelle Betreuung', text: `Im mobilen 1:1-Training in ${data.name} geht es nur um dich und deinen Hund. Wir passen Tempo, Methoden und Übungen genau auf eure Situation an — ohne Gruppenzwang.` },
+                { icon: ShieldCheck, title: 'Tierschutzkonform', text: 'Methoden entsprechen dem aktuellen Stand der Verhaltensforschung und den Tierschutzrichtlinien. Kein Zwang, keine Dominanztheorie, kein Stachelhals.' },
               ].map((m) => (
                 <div key={m.title} className="rounded-3xl p-7 bg-cream-soft border border-ink-200/60">
                   <h3 className="flex items-center gap-3 text-xl font-semibold text-ink-950 mb-3 tracking-tight">
-                    <m.icon className={`w-5 h-5 ${m.color === 'lake' ? 'text-lake-600' : 'text-brand-600'}`} /> {m.title}
+                    <m.icon className="w-5 h-5 text-brand-600" /> {m.title}
                   </h3>
                   <p className="text-ink-600 leading-relaxed">{m.text}</p>
                 </div>
@@ -745,25 +745,24 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
         </div>
       </section>
 
-      {/* ============== NEW SECTION 1: TRAINING KNOWLEDGE BASE (GEO/AI optimized) ============== */}
-      <section className="wk-section bg-ink-950 text-cream relative overflow-hidden">
-        <div className="absolute inset-0 wk-mesh-dark" />
-        <div className="absolute inset-0 wk-waves opacity-50" />
+      {/* ============== TRAINING KNOWLEDGE BASE (GEO/AI optimized, hell) ============== */}
+      <section className="wk-section bg-brand-50 relative overflow-hidden">
         <div className="absolute inset-0 wk-grain opacity-30" />
+        <div className="absolute -top-24 right-0 w-[30rem] h-[30rem] rounded-full bg-brand-100/60 blur-3xl pointer-events-none" />
         <div className="relative container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 mb-14">
             <div className="lg:col-span-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lake-500/15 border border-lake-500/30 text-lake-300 text-[10px] font-bold uppercase tracking-[0.18em]">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-[10px] font-bold uppercase tracking-[0.18em]">
                 <BookOpen className="w-3 h-3" /> Trainings-Wissen für {data.name}
               </div>
-              <h2 className="wk-display text-4xl md:text-5xl mt-6 text-cream">
+              <h2 className="wk-display text-4xl md:text-5xl mt-6 text-ink-950">
                 Pannonisches Trainings-Wissen,
                 <br />
                 <span className="wk-text-gradient">wissenschaftlich fundiert.</span>
               </h2>
             </div>
-            <div className="lg:col-span-6 lg:pl-8 lg:border-l border-ink-800">
-              <p className="text-lg text-ink-300 leading-relaxed">
+            <div className="lg:col-span-6 lg:pl-8 lg:border-l border-brand-200/70">
+              <p className="text-lg text-ink-600 leading-relaxed">
                 Diese Wissensbasis enthält die wichtigsten verhaltensbiologischen Fakten für Hundetraining am
                 Neusiedlersee — angepasst an die spezifischen Bedingungen rund um {data.name}: pannonisches Klima,
                 hohe Vogelreiz­dichte, Wein­bauwege und Steppen­landschaft.
@@ -775,15 +774,15 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             {trainingKnowledgeBase(data.name).map((item) => (
               <article
                 key={item.question}
-                className="group rounded-3xl p-7 bg-ink-900/80 border border-ink-800 hover:border-lake-500/40 transition-colors backdrop-blur"
+                className="group wk-card p-7 hover:border-brand-300 transition-colors"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-lake-500/15 text-lake-400 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center shrink-0">
                     <item.icon className="w-4 h-4" />
                   </div>
-                  <h3 className="text-lg font-semibold text-cream leading-tight">{item.question}</h3>
+                  <h3 className="text-lg font-semibold text-ink-950 leading-tight">{item.question}</h3>
                 </div>
-                <p className="text-ink-300 leading-relaxed text-sm">{item.answer}</p>
+                <p className="text-ink-600 leading-relaxed text-sm">{item.answer}</p>
               </article>
             ))}
           </div>
@@ -813,7 +812,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                 return (
                   <article key={study.id} className="wk-card p-7 flex flex-col">
                     <div className="flex items-center justify-between mb-5">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-lake-100 text-lake-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em]">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 text-brand-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em]">
                         <Microscope className="w-3 h-3" /> Studie {study.year}
                       </span>
                       <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-ink-300">
@@ -831,11 +830,11 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                       href={study.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto group inline-flex items-start gap-2 text-xs text-ink-500 hover:text-lake-700 transition-colors"
+                      className="mt-auto group inline-flex items-start gap-2 text-xs text-ink-500 hover:text-brand-700 transition-colors"
                     >
-                      <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 shrink-0 text-lake-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 shrink-0 text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       <span>
-                        <span className="font-semibold text-ink-700 group-hover:text-lake-800 transition-colors">{study.short}</span>
+                        <span className="font-semibold text-ink-700 group-hover:text-brand-800 transition-colors">{study.short}</span>
                         {' — '}
                         <em>{study.journal}</em>. Zur Originalstudie →
                       </span>
@@ -871,10 +870,10 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
           <Accordion.Root type="single" collapsible className="space-y-3">
             {data.faqs.map((faq, idx) => (
               <Accordion.Item key={idx} value={`faq-${idx}`} className="wk-card !p-0 overflow-hidden">
-                <Accordion.Trigger className="flex w-full items-center justify-between p-6 sm:p-7 font-semibold text-base sm:text-lg text-ink-950 hover:text-lake-700 transition-colors group text-left">
+                <Accordion.Trigger className="flex w-full items-center justify-between p-6 sm:p-7 font-semibold text-base sm:text-lg text-ink-950 hover:text-brand-700 transition-colors group text-left">
                   <span className="pr-4">{faq.question}</span>
-                  <div className="bg-cream-soft rounded-full p-2 group-hover:bg-lake-100 transition-colors shrink-0">
-                    <ChevronDown className="h-5 w-5 text-ink-400 group-hover:text-lake-700 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                  <div className="bg-cream-soft rounded-full p-2 group-hover:bg-brand-100 transition-colors shrink-0">
+                    <ChevronDown className="h-5 w-5 text-ink-400 group-hover:text-brand-700 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                   </div>
                 </Accordion.Trigger>
                 <Accordion.Content className="px-6 sm:px-7 pb-7 text-ink-600 leading-relaxed text-base data-[state=open]:animate-in data-[state=open]:fade-in">
@@ -928,11 +927,11 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
 
       {/* ============== REGION DEEP DIVE ============== */}
       <section className="wk-section relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-lake-100/50 to-brand-100/50 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-brand-100/50 to-lake-100/40 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative">
           <div className="text-center mb-16 max-w-4xl mx-auto">
-            <span className="wk-eyebrow-lake mb-5">
+            <span className="wk-eyebrow mb-5">
               <MapPin className="w-3 h-3" /> Deine Region
             </span>
             <h2
@@ -962,7 +961,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               };
               return (
                 <div key={highlight.title} className="wk-card p-7 group">
-                  <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center mb-5 group-hover:bg-lake-500 group-hover:text-cream transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-cream transition-colors">
                     {iconMap[highlight.icon] || <MapPin className="w-5 h-5" />}
                   </div>
                   <h3
@@ -988,7 +987,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             <div className="hidden lg:block wk-card !p-0 overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="bg-ink-950 text-lake-300">
+                  <tr className="bg-brand-600 text-cream">
                     <th className="px-7 py-5 text-left text-[10px] font-bold uppercase tracking-[0.18em]">Trainingsort</th>
                     <th className="px-7 py-5 text-left text-[10px] font-bold uppercase tracking-[0.18em]">Entfernung</th>
                     <th className="px-7 py-5 text-left text-[10px] font-bold uppercase tracking-[0.18em]">Besonderheit</th>
@@ -999,12 +998,12 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                   {data.regionTableRows.map((row, idx) => (
                     <tr
                       key={idx}
-                      className={`border-b border-ink-200 hover:bg-lake-50/40 transition-colors ${idx % 2 === 0 ? 'bg-card' : 'bg-cream-soft/60'}`}
+                      className={`border-b border-ink-200 hover:bg-brand-50/60 transition-colors ${idx % 2 === 0 ? 'bg-card' : 'bg-cream-soft/60'}`}
                     >
                       <td className="px-7 py-5">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-lake-100 rounded-lg flex items-center justify-center shrink-0">
-                            <MapPin className="w-4 h-4 text-lake-700" />
+                          <div className="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0">
+                            <MapPin className="w-4 h-4 text-brand-700" />
                           </div>
                           <span
                             className="font-semibold text-ink-950"
@@ -1029,8 +1028,8 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               {data.regionTableRows.map((row, idx) => (
                 <div key={idx} className="wk-card p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-10 h-10 bg-lake-100 rounded-xl flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-lake-700" />
+                    <div className="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5 text-brand-700" />
                     </div>
                     <div>
                       <h4
@@ -1078,18 +1077,18 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             </div>
           )}
 
-          {/* CTA Card */}
-          <div className="relative overflow-hidden rounded-[2.5rem] p-10 lg:p-14 text-center bg-gradient-to-br from-ink-950 to-ink-800 text-cream shadow-2xl">
-            <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-lake-500 blur-[100px] opacity-30" />
-            <div className="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-brand-500 blur-[100px] opacity-25" />
-            <div className="absolute inset-0 wk-grain opacity-25" />
+          {/* CTA Card (heller Marken-Gradient) */}
+          <div className="relative overflow-hidden rounded-[2.5rem] p-10 lg:p-14 text-center bg-gradient-to-br from-brand-400 via-brand-500 to-brand-600 text-ink-950 shadow-[0_40px_80px_-30px_rgba(240,147,26,0.5)]">
+            <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-cream/30 blur-3xl" />
+            <div className="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-brand-200/40 blur-3xl" />
+            <div className="absolute inset-0 wk-grain opacity-20" />
             <h3 className="relative wk-display text-2xl lg:text-4xl mb-4">{data.regionCtaText}</h3>
-            <p className="relative text-ink-300 mb-8 max-w-2xl mx-auto">
+            <p className="relative text-ink-950/85 mb-8 max-w-2xl mx-auto">
               Ganz gleich ob Welpe oder erwachsener Hund — unser Training in {data.name} passt sich euch an.
             </p>
             <Link
               href={`/kontakt?service=mobiles-training-${data.slug}`}
-              className="relative wk-btn-primary inline-flex items-center gap-2 px-7 h-13 rounded-full font-semibold"
+              className="relative inline-flex items-center gap-2 bg-white text-brand-700 px-7 h-13 rounded-full font-semibold hover:bg-brand-50 transition-colors"
             >
               Jetzt Termin in {data.name} vereinbaren
               <ArrowRight className="w-4 h-4" />
@@ -1098,11 +1097,11 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
         </div>
       </section>
 
-      {/* ============== NEW SECTION 2: GEO LOCAL FACTS / PANNONIAN STECKBRIEF ============== */}
+      {/* ============== GEO LOCAL FACTS / PANNONISCHER STECKBRIEF ============== */}
       <section className="wk-section bg-card relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-14 max-w-3xl mx-auto">
-            <span className="wk-eyebrow-lake mb-5">
+            <span className="wk-eyebrow mb-5">
               <Compass className="w-3 h-3" /> Pannonischer Steckbrief {data.name}
             </span>
             <h2 className="wk-display text-4xl md:text-5xl text-ink-950">
@@ -1116,7 +1115,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
           <div className="grid md:grid-cols-12 gap-6">
             {/* Linke Spalte: Lokale Beschreibung */}
             <div className="md:col-span-7 wk-card p-8 lg:p-10">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700 mb-4">Über {data.name}</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-4">Über {data.name}</p>
               <p
                 className="text-ink-700 leading-relaxed text-base mb-7"
                 dangerouslySetInnerHTML={{ __html: emphasizeKeywords(data.localDescription, data.name) }}
@@ -1127,7 +1126,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               <ul className="grid sm:grid-cols-2 gap-3">
                 {data.localFeatures.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-ink-700">
-                    <CheckCircle2 className="w-4 h-4 mt-0.5 text-lake-600 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 text-brand-600 shrink-0" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -1137,7 +1136,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
             {/* Rechte Spalte: Datentafel */}
             <div className="md:col-span-5 space-y-4">
               <div className="wk-card p-6">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700 mb-4">Quick Facts</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-4">Quick Facts</p>
                 <dl className="space-y-3 text-sm">
                   <div className="flex items-baseline justify-between gap-3 pb-3 border-b border-ink-200/70">
                     <dt className="text-ink-500">Region</dt>
@@ -1175,7 +1174,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
               </div>
 
               <div className="wk-card p-6">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700 mb-4">Pannonische Saison-Tipps</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-4">Pannonische Saison-Tipps</p>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start gap-2.5">
                     <Sun className="w-4 h-4 mt-0.5 text-brand-600 shrink-0" />
@@ -1212,21 +1211,21 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
       <section className="wk-section">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="wk-eyebrow-lake mb-5">In deiner Nähe</span>
+            <span className="wk-eyebrow mb-5">In deiner Nähe</span>
             <h2 className="wk-display text-3xl md:text-4xl text-ink-950">Auch in der Region: Mobiles Hundetraining.</h2>
             <p className="mt-5 text-lg text-ink-600">Wir bieten mobiles Hundetraining in der gesamten Region am Neusiedlersee an.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
             <Link href="/mobiles-hundetraining" className="block">
               <div className="wk-card p-4 flex items-center justify-center gap-2 group">
-                <MapPin className="w-4 h-4 text-lake-600" />
+                <MapPin className="w-4 h-4 text-brand-600" />
                 <span className="font-semibold text-ink-900 text-sm">Neusiedl am See</span>
               </div>
             </Link>
             {data.nearbyLocations.filter((l) => l.slug !== 'neusiedl-am-see').map((loc) => (
               <Link key={loc.slug} href={`/mobiles-hundetraining/${loc.slug}`} className="block">
                 <div className="wk-card p-4 flex items-center justify-center gap-2 group">
-                  <MapPin className="w-4 h-4 text-ink-400 group-hover:text-lake-600 transition-colors" />
+                  <MapPin className="w-4 h-4 text-ink-400 group-hover:text-brand-600 transition-colors" />
                   <span className="font-semibold text-ink-900 text-sm">{loc.name}</span>
                 </div>
               </Link>
@@ -1235,13 +1234,12 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
         </div>
       </section>
 
-      {/* ============== CONTACT ============== */}
+      {/* ============== CONTACT (heller Marken-Look) ============== */}
       <section className="wk-section bg-card">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden rounded-[2.5rem] p-8 sm:p-14 bg-gradient-to-br from-ink-950 to-ink-800 text-cream shadow-2xl">
-            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-lake-500 blur-[120px] opacity-25" />
-            <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-brand-500 blur-[120px] opacity-25" />
-            <div className="absolute inset-0 wk-grain opacity-25" />
+          <div className="relative overflow-hidden rounded-[2.5rem] p-8 sm:p-14 bg-brand-50 border border-brand-100 shadow-[0_40px_80px_-40px_rgba(240,147,26,0.35)]">
+            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-200/40 blur-[120px]" />
+            <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-lake-100/50 blur-[120px]" />
             <div className="relative grid md:grid-cols-12 gap-10 items-center">
               <div className="md:col-span-4">
                 <Image
@@ -1250,17 +1248,17 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                   width={400}
                   height={400}
                   sizes="(max-width: 768px) 60vw, 200px"
-                  className="rounded-full mx-auto object-cover aspect-square border-4 border-ink-800 shadow-2xl"
+                  className="rounded-full mx-auto object-cover aspect-square border-4 border-cream shadow-2xl"
                 />
               </div>
               <div className="md:col-span-8 text-center md:text-left">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300 mb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-3">
                   Jessica Pusch · Deine mobile Hundetrainerin für {data.name}
                 </p>
-                <h2 className="wk-display text-3xl sm:text-5xl text-cream mb-4">{data.contactTitle}</h2>
-                <p className="text-lg text-ink-300 mb-7 leading-relaxed">{data.contactText}</p>
+                <h2 className="wk-display text-3xl sm:text-5xl text-ink-950 mb-4">{data.contactTitle}</h2>
+                <p className="text-lg text-ink-600 mb-7 leading-relaxed">{data.contactText}</p>
                 <div className="mb-7 flex justify-center md:justify-start">
-                  <GoogleBadge variant="dark" />
+                  <GoogleBadge />
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                   <Link
@@ -1272,7 +1270,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
                   </Link>
                   <a
                     href="tel:+436643903673"
-                    className="inline-flex items-center justify-center gap-2 px-6 h-13 rounded-full bg-ink-900/60 border border-ink-700 hover:border-lake-500 hover:bg-lake-500/10 hover:text-lake-300 text-cream font-semibold transition-all"
+                    className="wk-btn-ghost inline-flex items-center justify-center gap-2 px-6 h-13 rounded-full font-semibold"
                   >
                     <Phone className="w-4 h-4" /> +43 664 3903673
                   </a>
@@ -1301,7 +1299,7 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
       <section className="container mx-auto px-6 pb-20">
         <Link
           href="/mobiles-hundetraining"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-ink-700 hover:text-lake-700 transition-colors group"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-ink-700 hover:text-brand-700 transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           Zurück zur Übersicht Mobiles Hundetraining

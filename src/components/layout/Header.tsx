@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Youtube } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Youtube, MapPin, PawPrint } from 'lucide-react';
 import Logo from '@/components/Logo';
 
 const youtubeChannelUrl = 'https://www.youtube.com/@hundeschulewillenskraft';
@@ -47,11 +47,21 @@ const legalItems = [
   { href: '/datenschutz', label: 'Datenschutz' },
 ];
 
+/** Willenskraft-Chip: weißes Icon auf Orange-Verlauf (wie das gebrandete WK-Menü). */
+function Chip({ kind }: { kind: 'kurs' | 'ort' }) {
+  return (
+    <span className="inline-flex w-8 h-8 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-white items-center justify-center shrink-0 shadow-[0_4px_10px_-4px_rgba(208,113,8,0.6)] transition-transform duration-200 group-hover/item:scale-110">
+      {kind === 'ort' ? <MapPin className="w-4 h-4" /> : <PawPrint className="w-4 h-4" />}
+    </span>
+  );
+}
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [isMobileRegionOpen, setIsMobileRegionOpen] = useState(false);
+  const [isMobileKursOpen, setIsMobileKursOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -80,7 +90,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-[padding,background-color,box-shadow,border-color] duration-500 ease-out ${
         isClient && isScrolled
-          ? 'bg-[color-mix(in_oklch,var(--cream)_82%,transparent)] backdrop-blur-xl shadow-[0_1px_0_0_var(--ink-200),0_8px_30px_-12px_rgba(0,0,0,0.08)] py-2.5'
+          ? 'bg-[color-mix(in_oklch,white_90%,transparent)] backdrop-blur-xl shadow-[0_1px_0_0_var(--ink-200),0_8px_30px_-12px_rgba(0,0,0,0.08)] py-2.5'
           : 'bg-transparent py-4'
       }`}
     >
@@ -97,33 +107,33 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50"
+              className="relative px-3.5 py-2 text-sm font-semibold text-ink-700 hover:text-brand-700 transition-colors rounded-full hover:bg-brand-50"
             >
               {item.label}
             </Link>
           ))}
 
-          {/* Kurse Dropdown */}
+          {/* Kurse Dropdown — WK-gebrandet (Caveat + Orange-Chips) */}
           <div className="relative group">
-            <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50">
+            <button className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-ink-700 hover:text-brand-700 transition-colors rounded-full hover:bg-brand-50">
               Kurse
               <ChevronDown size={14} className="opacity-60 group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <div className="absolute top-full -left-4 pt-3 w-[320px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
-              <div className="bg-card/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.18)] border border-ink-200 overflow-hidden p-2">
-                <div className="px-3 pt-2 pb-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-brand-700">Gruppenkurse mit Jessy</p>
-                  <p className="text-xs text-ink-500 mt-0.5">An Outdoor-Treffpunkten in deiner Region</p>
-                </div>
+            <div className="absolute top-full -left-4 pt-3 w-[360px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
+              <div className="bg-white/97 backdrop-blur-xl rounded-3xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.2)] border border-brand-100 overflow-hidden p-2.5">
+                <p className="px-3 pt-1.5 pb-2.5 wk-hand text-xl text-brand-600">Kurse & Training mit Jessy</p>
                 <div className="space-y-0.5">
                   {kursLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group/item block px-3 py-2 rounded-lg text-sm text-ink-700 hover:bg-lake-50 hover:text-lake-800 transition-colors"
+                      className="group/item flex items-center gap-3 px-3 py-2 rounded-2xl hover:bg-brand-50 transition-colors"
                     >
-                      <span className="block font-medium">{item.label}</span>
-                      <span className="block text-[10px] text-ink-400 group-hover/item:text-lake-700">{item.hint}</span>
+                      <Chip kind="kurs" />
+                      <span className="min-w-0">
+                        <span className="block wk-hand text-lg leading-tight text-ink-800 group-hover/item:text-brand-700">{item.label}</span>
+                        <span className="block text-[11px] text-ink-400 leading-tight">{item.hint}</span>
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -131,27 +141,27 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Regionen Dropdown */}
+          {/* Orte Dropdown — WK-gebrandet */}
           <div className="relative group">
-            <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50">
-              Regionen
+            <button className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-ink-700 hover:text-brand-700 transition-colors rounded-full hover:bg-brand-50">
+              Orte
               <ChevronDown size={14} className="opacity-60 group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <div className="absolute top-full -left-4 pt-3 w-[420px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
-              <div className="bg-card/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.18)] border border-ink-200 overflow-hidden p-2 max-h-[70vh] overflow-y-auto">
-                <div className="px-3 pt-2 pb-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-lake-700">Mobile Hundeschule — wir kommen zu dir</p>
-                  <p className="text-xs text-ink-500 mt-0.5">17 Einsatzorte im Bezirk Neusiedl am See</p>
-                </div>
+            <div className="absolute top-full -left-4 pt-3 w-[460px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 origin-top">
+              <div className="bg-white/97 backdrop-blur-xl rounded-3xl shadow-[0_24px_64px_-20px_rgba(0,0,0,0.2)] border border-brand-100 overflow-hidden p-2.5 max-h-[72vh] overflow-y-auto">
+                <p className="px-3 pt-1.5 pb-2.5 wk-hand text-xl text-brand-600">Mobil — wir kommen zu dir</p>
                 <div className="grid grid-cols-2 gap-0.5">
                   {mobileTrainingLocations.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group/item px-3 py-2 rounded-lg text-sm text-ink-700 hover:bg-lake-50 hover:text-lake-800 transition-colors"
+                      className="group/item flex items-center gap-2.5 px-2.5 py-2 rounded-2xl hover:bg-brand-50 transition-colors"
                     >
-                      <span className="block font-medium">{item.label}</span>
-                      <span className="block text-[10px] text-ink-400 group-hover/item:text-lake-700">{item.region}</span>
+                      <Chip kind="ort" />
+                      <span className="min-w-0">
+                        <span className="block wk-hand text-base leading-tight text-ink-800 group-hover/item:text-brand-700 truncate">{item.label}</span>
+                        <span className="block text-[10px] text-ink-400 leading-tight truncate">{item.region}</span>
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -161,24 +171,18 @@ export default function Header() {
 
           <Link
             href="/kontakt"
-            className="relative px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-950 transition-colors rounded-full hover:bg-lake-50"
+            className="relative px-3.5 py-2 text-sm font-semibold text-ink-700 hover:text-brand-700 transition-colors rounded-full hover:bg-brand-50"
           >
             Kontakt
           </Link>
 
-          <a
-            href={youtubeChannelUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Willenskraft auf YouTube"
-            className="ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full text-ink-600 hover:text-[#FF0000] hover:bg-lake-50 transition-colors"
-          >
-            <Youtube size={18} />
-          </a>
+          <div className="flex items-center gap-1 ml-1 pl-1 border-l border-ink-200/70">
+            <a href={youtubeChannelUrl} target="_blank" rel="noopener noreferrer" aria-label="Willenskraft auf YouTube" className="inline-flex items-center justify-center w-8 h-8 rounded-full text-ink-500 hover:text-[#FF0000] hover:bg-brand-50 transition-colors"><Youtube size={16} /></a>
+          </div>
 
           <a
             href="tel:+436643903673"
-            className="ml-1 hidden xl:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-ink-600 hover:text-lake-700 transition-colors"
+            className="ml-1 hidden xl:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-ink-600 hover:text-brand-700 transition-colors"
           >
             <Phone size={13} /> +43 664 3903673
           </a>
@@ -195,7 +199,7 @@ export default function Header() {
         <div className="lg:hidden flex items-center z-[60] relative">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 -mr-2 text-ink-900 hover:bg-lake-50 rounded-full transition-colors"
+            className="p-2 -mr-2 text-ink-900 hover:bg-brand-50 rounded-full transition-colors"
             aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
             aria-expanded={isMenuOpen}
           >
@@ -204,7 +208,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer — WK-Stil: Caveat + Orange-Chips + Social-Bar */}
       {isClient && (
         <>
           <div
@@ -214,22 +218,21 @@ export default function Header() {
             onClick={() => setIsMenuOpen(false)}
           />
           <div
-            className={`fixed top-0 right-0 w-[88vw] sm:w-[360px] bg-cream/98 backdrop-blur-xl z-50 h-[100dvh] lg:hidden transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] shadow-[-24px_0_64px_-12px_rgba(0,0,0,0.18)] flex flex-col ${
+            className={`fixed top-0 right-0 w-[90vw] sm:w-[380px] bg-cream/98 backdrop-blur-xl z-50 h-[100dvh] lg:hidden transition-transform duration-500 ease-[cubic-bezier(.2,.8,.2,1)] shadow-[-24px_0_64px_-12px_rgba(0,0,0,0.18)] flex flex-col ${
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="px-6 pt-6 pb-4 border-b border-ink-200/60">
-              <span className="wk-eyebrow-lake !py-1.5 !text-[10px]">Willenskraft Neusiedl</span>
+            <div className="px-6 pt-6 pb-4 border-b border-brand-200/60">
+              <span className="wk-hand text-2xl text-brand-600">Willenskraft Neusiedl</span>
             </div>
 
-            <nav className="flex-1 overflow-y-auto px-6 py-7 flex flex-col gap-7">
-              <div className="space-y-3">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-400 mb-3">Menü</h3>
+            <nav className="flex-1 overflow-y-auto px-5 py-6 flex flex-col gap-5">
+              <div className="space-y-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-2xl font-semibold text-ink-900 hover:text-lake-700 transition-colors"
+                    className="block wk-hand text-2xl text-ink-900 hover:text-brand-700 transition-colors py-1"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -237,70 +240,66 @@ export default function Header() {
                 ))}
                 <Link
                   href="/kontakt"
-                  className="block text-2xl font-semibold text-ink-900 hover:text-lake-700 transition-colors"
+                  className="block wk-hand text-2xl text-ink-900 hover:text-brand-700 transition-colors py-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Kontakt
                 </Link>
               </div>
 
-              <div className="space-y-3">
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700">Gruppenkurse</h3>
-                <div className="space-y-2.5 pl-3 border-l border-brand-300/60">
-                  {kursLinks.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block text-base font-medium text-ink-700 hover:text-lake-700 py-1 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                      <span className="block text-[10px] text-ink-400 mt-0.5">{item.hint}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-3">
+              {/* Kurse (aufklappbar) */}
+              <div>
                 <button
-                  onClick={() => setIsMobileRegionOpen(!isMobileRegionOpen)}
-                  className="flex items-center justify-between w-full text-left focus:outline-none"
+                  onClick={() => setIsMobileKursOpen((v) => !v)}
+                  className="flex items-center justify-between w-full text-left"
                 >
-                  <h3 className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-400">Regionen</h3>
-                  <ChevronDown
-                    size={16}
-                    className={`text-ink-400 transition-transform duration-300 ${isMobileRegionOpen ? 'rotate-180' : ''}`}
-                  />
+                  <span className="wk-hand text-xl text-brand-600">Kurse & Training</span>
+                  <ChevronDown size={18} className={`text-brand-500 transition-transform duration-300 ${isMobileKursOpen ? 'rotate-180' : ''}`} />
                 </button>
-                <div
-                  className={`space-y-2.5 pl-3 border-l border-lake-300/60 overflow-hidden transition-all duration-500 ${
-                    isMobileRegionOpen ? 'max-h-[1400px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  {mobileTrainingLocations.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block text-base font-medium text-ink-700 hover:text-lake-700 py-1 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                      <span className="block text-[10px] text-ink-400 mt-0.5">{item.region}</span>
-                    </Link>
-                  ))}
+                <div className={`overflow-hidden transition-all duration-500 ${isMobileKursOpen ? 'max-h-[900px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-1">
+                    {kursLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="group/item flex items-center gap-3 py-1.5"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <Chip kind="kurs" />
+                        <span className="wk-hand text-lg text-ink-800 group-hover/item:text-brand-700">{item.label}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4 mt-auto">
-                <a
-                  href={youtubeChannelUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold border border-ink-200 text-ink-700 hover:border-[#FF0000]/40 hover:text-[#FF0000] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+              {/* Orte (aufklappbar) */}
+              <div>
+                <button
+                  onClick={() => setIsMobileRegionOpen((v) => !v)}
+                  className="flex items-center justify-between w-full text-left"
                 >
-                  <Youtube className="w-4 h-4" /> Willenskraft auf YouTube
-                </a>
+                  <span className="wk-hand text-xl text-brand-600">Orte — wir kommen zu dir</span>
+                  <ChevronDown size={18} className={`text-brand-500 transition-transform duration-300 ${isMobileRegionOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-500 ${isMobileRegionOpen ? 'max-h-[1800px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-1">
+                    {mobileTrainingLocations.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="group/item flex items-center gap-3 py-1.5"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <Chip kind="ort" />
+                        <span className="wk-hand text-lg text-ink-800 group-hover/item:text-brand-700">{item.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 mt-auto pt-4">
                 <a
                   href="tel:+436643903673"
                   className="block text-center wk-btn-ghost rounded-full py-3.5 text-sm font-semibold"
@@ -317,7 +316,11 @@ export default function Header() {
                   Anmeldung starten
                 </Link>
 
-                <div className="flex justify-center gap-6 pt-5 border-t border-ink-200/60">
+                {/* Social-Bar (wie WK-Mobile) */}
+                <div className="flex justify-center gap-3 pt-4 border-t border-brand-200/60">
+                  <a href={youtubeChannelUrl} target="_blank" rel="noopener noreferrer" aria-label="Willenskraft auf YouTube" className="w-10 h-10 rounded-full border border-ink-200 text-ink-600 hover:text-[#FF0000] hover:border-[#FF0000]/40 flex items-center justify-center transition-colors"><Youtube className="w-4 h-4" /></a>
+                </div>
+                <div className="flex justify-center gap-6">
                   {legalItems.map((item) => (
                     <Link
                       key={item.href}

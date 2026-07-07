@@ -91,7 +91,7 @@ function Callout({
   const cfg = {
     info: { Icon: Info, ring: 'border-l-lake-500', bg: 'bg-lake-50/70', label: title ?? 'Gut zu wissen', tone: 'text-lake-800' },
     warn: { Icon: TriangleAlert, ring: 'border-l-brand-500', bg: 'bg-brand-50/70', label: title ?? 'Achtung', tone: 'text-brand-800' },
-    tipp: { Icon: Lightbulb, ring: 'border-l-lake-600', bg: 'bg-cream-soft', label: title ?? 'Jessys Tipp', tone: 'text-ink-900' },
+    tipp: { Icon: Lightbulb, ring: 'border-l-brand-500', bg: 'bg-brand-50/60', label: title ?? 'Jessys Tipp', tone: 'text-brand-800' },
   }[variant];
   const { Icon } = cfg;
   return (
@@ -120,7 +120,7 @@ function Block({ block, i }: { block: ContentBlock; i: number }) {
         <ol className="space-y-2.5 pl-1">
           {block.items.map((it, k) => (
             <li key={k} className="flex gap-3 text-ink-700 leading-relaxed">
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lake-100 text-xs font-bold text-lake-800">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">
                 {k + 1}
               </span>
               <span>{renderInline(it, `${kb}-${k}`)}</span>
@@ -131,7 +131,7 @@ function Block({ block, i }: { block: ContentBlock; i: number }) {
         <ul className="space-y-2.5">
           {block.items.map((it, k) => (
             <li key={k} className="flex gap-3 text-ink-700 leading-relaxed">
-              <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-lake-600" />
+              <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-brand-600" />
               <span>{renderInline(it, `${kb}-${k}`)}</span>
             </li>
           ))}
@@ -186,7 +186,7 @@ function Block({ block, i }: { block: ContentBlock; i: number }) {
       if (!s) return null;
       return (
         <div className="my-7 rounded-2xl border border-ink-200 bg-card p-5 sm:p-6">
-          <p className="mb-2 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-lake-700">
+          <p className="mb-2 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-700">
             <FlaskConical className="h-4 w-4" /> Das sagt die Wissenschaft
           </p>
           <p className="text-ink-700 leading-relaxed">{renderInline(block.take, kb)}</p>
@@ -202,7 +202,7 @@ function Block({ block, i }: { block: ContentBlock; i: number }) {
     }
     case 'cta':
       return (
-        <div className="my-8 overflow-hidden rounded-3xl border border-lake-200 bg-gradient-to-br from-lake-50 to-cream-soft p-7 sm:p-8">
+        <div className="my-8 overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 to-cream-soft p-7 sm:p-8">
           <p className="wk-display text-xl md:text-2xl text-ink-950">{block.title}</p>
           <p className="mt-2 text-ink-700 leading-relaxed">{renderInline(block.text, kb)}</p>
           <div className="mt-5">
@@ -291,42 +291,44 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
 
-      {/* ===== HERO ===== */}
-      <header className="relative overflow-hidden">
-        <div className="absolute inset-0 wk-mesh opacity-50 pointer-events-none" />
-        <div className="container mx-auto px-6 max-w-4xl pt-10 pb-6 relative">
+      {/* ===== HERO (Marken-Gradient + Foto) ===== */}
+      <header className="relative overflow-hidden bg-gradient-to-br from-brand-100 via-cream to-brand-50">
+        <div className="absolute inset-0 wk-mesh opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 wk-grain opacity-[0.35] pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-4xl pt-10 pb-8 relative">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-1.5 text-xs text-ink-500">
-              <li><Link href="/" className="hover:text-lake-700 transition-colors">Startseite</Link></li>
+              <li><Link href="/" className="hover:text-brand-700 transition-colors">Startseite</Link></li>
               <li aria-hidden="true">›</li>
-              <li><Link href="/ratgeber" className="hover:text-lake-700 transition-colors">Ratgeber</Link></li>
+              <li><Link href="/ratgeber" className="hover:text-brand-700 transition-colors">Ratgeber</Link></li>
               <li aria-hidden="true">›</li>
               <li aria-current="page" className="font-semibold text-ink-800">{post.category}</li>
             </ol>
           </nav>
-          <span className="wk-eyebrow-lake mb-5"><BookOpen className="h-3 w-3" /> {post.category}</span>
+          <span className="wk-eyebrow mb-5"><BookOpen className="h-3 w-3" /> {post.category}</span>
           <h1 className="wk-display text-3xl md:text-5xl text-ink-950 leading-[1.08]">{post.title}</h1>
-          <p className="mt-5 text-lg text-ink-600 leading-relaxed">{post.excerpt}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
+          <p className="mt-5 text-lg text-ink-700 leading-relaxed">{post.excerpt}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-600">
             <span className="inline-flex items-center gap-1.5">
               <Image src={author.image} alt={author.name} width={28} height={28} className="rounded-full object-cover" />
               {author.name}
             </span>
-            <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5 text-lake-600" /> {published}</span>
-            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-lake-600" /> {post.readingMinutes} Min. Lesezeit</span>
+            <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5 text-brand-600" /> {published}</span>
+            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-brand-600" /> {post.readingMinutes} Min. Lesezeit</span>
           </div>
         </div>
-        <div className="container mx-auto px-6 max-w-4xl relative">
+        <div className="container mx-auto px-6 max-w-4xl pb-10 relative">
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-32px_rgba(0,0,0,0.28)]">
             <Image src={post.heroImage} alt={post.heroAlt} fill sizes="(max-width: 896px) 100vw, 896px" className="object-cover" priority />
           </div>
         </div>
+        <div className="h-1.5 w-full bg-gradient-to-r from-brand-500 via-brand-400 to-lake-400" />
       </header>
 
       {/* ===== DIREKTANTWORT (AEO) ===== */}
       <section className="container mx-auto px-6 max-w-4xl pt-10">
-        <div id="direktantwort" className="wk-card border-l-[5px] !border-l-lake-500 p-7 md:p-8 scroll-mt-24">
-          <p className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-lake-700">
+        <div id="direktantwort" className="wk-card border-l-[5px] !border-l-brand-500 p-7 md:p-8 scroll-mt-24">
+          <p className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700">
             <Sparkles className="h-3.5 w-3.5" /> Kurz & knapp
           </p>
           <p className="text-ink-800 text-base md:text-lg leading-relaxed">{renderInline(post.direktantwort, 'da')}</p>
@@ -343,7 +345,7 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
             <ul className="grid gap-3 sm:grid-cols-2">
               {post.keyTakeaways.map((t, k) => (
                 <li key={k} className="flex gap-2.5 text-ink-700 leading-relaxed">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-lake-600" />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                   <span>{renderInline(t, `kt-${k}`)}</span>
                 </li>
               ))}
@@ -363,7 +365,7 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
 
       {/* ===== FAZIT ===== */}
       <section className="container mx-auto px-6 max-w-3xl pb-4">
-        <div className="rounded-3xl bg-gradient-to-br from-lake-50 to-cream-soft border-2 border-lake-200 p-7 sm:p-9">
+        <div className="rounded-3xl bg-gradient-to-br from-brand-50 to-cream-soft border-2 border-brand-200 p-7 sm:p-9">
           <h2 className="wk-display text-2xl md:text-3xl text-ink-950">Fazit</h2>
           <p className="mt-3 text-lg text-ink-700 leading-relaxed">{renderInline(post.fazit, 'fazit')}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -373,7 +375,7 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
             <a href={waHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white hover:brightness-105 transition-all">
               <WhatsAppIcon className="h-5 w-5" /> WhatsApp
             </a>
-            <a href="tel:+436643903673" className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-6 py-3 text-sm font-semibold text-ink-700 hover:border-lake-400 hover:text-lake-700 transition-all">
+            <a href="tel:+436643903673" className="inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-6 py-3 text-sm font-semibold text-ink-700 hover:border-brand-400 hover:text-brand-700 transition-all">
               <Phone className="h-4 w-4" /> +43 664 3903673
             </a>
           </div>
@@ -390,10 +392,10 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
           <Accordion.Root type="single" collapsible className="space-y-3">
             {post.faqs.map((faq, idx) => (
               <Accordion.Item key={idx} value={`faq-${idx}`} className="wk-card !p-0 overflow-hidden">
-                <Accordion.Trigger className="group flex w-full items-center justify-between p-5 sm:p-6 text-left text-base font-semibold text-ink-950 hover:text-lake-700 transition-colors">
+                <Accordion.Trigger className="group flex w-full items-center justify-between p-5 sm:p-6 text-left text-base font-semibold text-ink-950 hover:text-brand-700 transition-colors">
                   <span className="pr-4">{faq.question}</span>
-                  <div className="shrink-0 rounded-full bg-cream-soft p-2 transition-colors group-hover:bg-lake-100">
-                    <ChevronDown className="h-5 w-5 text-ink-400 transition-transform duration-300 group-data-[state=open]:rotate-180 group-hover:text-lake-700" />
+                  <div className="shrink-0 rounded-full bg-cream-soft p-2 transition-colors group-hover:bg-brand-100">
+                    <ChevronDown className="h-5 w-5 text-ink-400 transition-transform duration-300 group-data-[state=open]:rotate-180 group-hover:text-brand-700" />
                   </div>
                 </Accordion.Trigger>
                 <Accordion.Content className="px-5 sm:px-6 pb-6 text-ink-600 leading-relaxed data-[state=open]:animate-in data-[state=open]:fade-in">
@@ -410,7 +412,7 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
         <div className="flex flex-col sm:flex-row items-start gap-5 rounded-3xl bg-card border border-ink-200 p-6 sm:p-7">
           <Image src={author.image} alt={author.name} width={88} height={88} className="rounded-2xl object-cover" />
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-lake-700">Über die Autorin</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-brand-700">Über die Autorin</p>
             <p className="mt-1 text-lg font-semibold text-ink-950">{author.name}</p>
             <p className="text-sm text-ink-500">{author.role}</p>
             <p className="mt-3 text-ink-600 leading-relaxed">{author.bio}</p>
@@ -426,12 +428,12 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
             <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-700">Passend dazu</p>
             <div className="grid gap-2.5 sm:grid-cols-2">
               {post.internalLinks.map((l) => (
-                <Link key={l.href} href={l.href} className="group flex items-center justify-between rounded-xl bg-card px-4 py-3 border border-ink-200 hover:border-lake-400 transition-colors">
+                <Link key={l.href} href={l.href} className="group flex items-center justify-between rounded-xl bg-card px-4 py-3 border border-ink-200 hover:border-brand-400 transition-colors">
                   <span>
-                    <span className="block text-sm font-semibold text-ink-800 group-hover:text-lake-700">{l.label}</span>
+                    <span className="block text-sm font-semibold text-ink-800 group-hover:text-brand-700">{l.label}</span>
                     {l.hint && <span className="block text-xs text-ink-400">{l.hint}</span>}
                   </span>
-                  <ArrowRight className="h-4 w-4 text-ink-400 transition-transform group-hover:translate-x-1 group-hover:text-lake-600" />
+                  <ArrowRight className="h-4 w-4 text-ink-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-600" />
                 </Link>
               ))}
             </div>
@@ -450,7 +452,7 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
       {related.length > 0 && (
         <section className="container mx-auto px-6 max-w-6xl py-12">
           <div className="mb-8 text-center">
-            <span className="wk-eyebrow-lake mb-4">Weiterlesen</span>
+            <span className="wk-eyebrow mb-4">Weiterlesen</span>
             <h2 className="wk-display text-2xl md:text-4xl text-ink-950">Mehr aus dem Ratgeber.</h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -461,8 +463,8 @@ export default function BlogArticleTemplate({ post }: { post: BlogPost }) {
                     <Image src={r.heroImage} alt={r.heroAlt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-lake-700">{r.category}</span>
-                    <h3 className="mt-1 font-semibold text-ink-950 group-hover:text-lake-700 transition-colors leading-snug">{r.title}</h3>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-brand-700">{r.category}</span>
+                    <h3 className="mt-1 font-semibold text-ink-950 group-hover:text-brand-700 transition-colors leading-snug">{r.title}</h3>
                     <p className="mt-2 text-sm text-ink-500 leading-relaxed line-clamp-2">{r.excerpt}</p>
                   </div>
                 </article>

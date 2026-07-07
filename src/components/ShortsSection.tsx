@@ -18,10 +18,10 @@ interface ShortsSectionProps {
 export default function ShortsSection({ ids = defaultShortIds, title = 'Echte Momente aus dem Training.', dark = false }: ShortsSectionProps) {
   const gridCols = ids.length >= 6 ? 'sm:grid-cols-2 lg:grid-cols-3 max-w-5xl' : ids.length >= 4 ? 'sm:grid-cols-2 lg:grid-cols-4 max-w-6xl' : ids.length === 3 ? 'sm:grid-cols-3 max-w-4xl' : 'sm:grid-cols-2 max-w-3xl';
   return (
-    <section className={`wk-section ${dark ? 'bg-ink-950 text-cream' : 'bg-card'}`}>
+    <section className={`wk-section ${dark ? 'bg-ink-950 text-cream' : 'bg-brand-50'}`}>
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="wk-eyebrow mb-5">
+          <span className={`wk-eyebrow mb-5 ${dark ? 'text-brand-200' : ''}`}>
             <Youtube className="w-3 h-3" /> Trainings-Shorts
           </span>
           <h2 className={`wk-display text-4xl md:text-5xl ${dark ? 'text-cream' : 'text-ink-950'}`}>{title}</h2>
@@ -35,7 +35,7 @@ export default function ShortsSection({ ids = defaultShortIds, title = 'Echte Mo
             <div key={id} className="flex justify-center">
               <iframe
                 width="100%"
-                className="max-w-[300px] aspect-[9/16] h-auto rounded-[1.5rem] shadow-xl border border-ink-200"
+                className={`max-w-[300px] aspect-[9/16] h-auto rounded-[1.5rem] shadow-xl border ${dark ? 'border-ink-800' : 'border-brand-100'}`}
                 src={`https://www.youtube.com/embed/${id}`}
                 title="Willenskraft Trainings-Short"
                 loading="lazy"
@@ -51,7 +51,7 @@ export default function ShortsSection({ ids = defaultShortIds, title = 'Echte Mo
             href={youtubeChannelUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-full px-6 h-13 bg-[#FF0000] text-white font-semibold hover:brightness-110 transition-all"
+            className="wk-btn-primary inline-flex items-center gap-2.5"
           >
             <Youtube className="w-5 h-5" />
             Mehr auf dem Willenskraft-Kanal

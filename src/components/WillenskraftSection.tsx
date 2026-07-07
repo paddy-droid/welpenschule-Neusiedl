@@ -12,10 +12,10 @@ export default function WillenskraftSection({ content = defaultWillenskraftConte
   return (
     <section className="wk-section relative overflow-hidden bg-cream-soft">
       <div className="absolute inset-0 wk-mesh opacity-50 pointer-events-none" />
-      <div className="container mx-auto px-6 relative">
-        <div className="text-center max-w-4xl mx-auto mb-14">
+      <div className="container mx-auto px-6 max-w-7xl relative">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="wk-eyebrow mb-5">Hundeschule Willenskraft</span>
-          <h2 className="wk-display text-3xl md:text-4xl lg:text-5xl text-ink-950 leading-[1.05]">
+          <h2 className="wk-display text-3xl md:text-4xl lg:text-5xl text-ink-950">
             {content.title}
           </h2>
           <p className="mt-6 text-lg text-ink-600 leading-relaxed">
@@ -23,7 +23,7 @@ export default function WillenskraftSection({ content = defaultWillenskraftConte
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {content.images.map((src: string, index: number) => (
             <div
               key={index}
@@ -41,23 +41,30 @@ export default function WillenskraftSection({ content = defaultWillenskraftConte
           ))}
         </div>
 
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-lg text-ink-700 leading-relaxed mb-8">
-            {content.description}
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3">
-            {content.buttons.map((button: WillenskraftButton, index: number) => (
-              <Link
-                key={index}
-                href={button.href}
-                target={button.target || '_blank'}
-                rel={button.rel || 'noopener noreferrer'}
-                className="wk-btn-primary inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full font-semibold text-sm"
-              >
-                {button.text}
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            ))}
+        <div className="mt-12 rounded-3xl bg-brand-50 border border-brand-200/60 p-8 md:p-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8">
+              <h3 className="wk-display text-2xl md:text-3xl text-ink-950">
+                Teil des <span className="wk-text-gradient">Willenskraft</span>-Netzwerks.
+              </h3>
+              <p className="mt-4 text-ink-600 leading-relaxed">
+                {content.description}
+              </p>
+            </div>
+            <div className="lg:col-span-4 flex flex-col gap-2.5">
+              {content.buttons.map((button: WillenskraftButton, index: number) => (
+                <Link
+                  key={index}
+                  href={button.href}
+                  target={button.target || '_blank'}
+                  rel={button.rel || 'noopener noreferrer'}
+                  className="inline-flex items-center justify-between gap-3 rounded-2xl bg-white border border-brand-200 px-5 py-3.5 text-sm font-semibold text-ink-900 hover:border-brand-400 transition-colors"
+                >
+                  <span>{button.text}</span>
+                  <ArrowUpRight className="w-4 h-4 shrink-0 text-brand-600" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -202,23 +202,22 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 wk-mesh" />
         <Image
           src="/heroes/hero-see.webp"
           alt="Glücklicher Welpe am Neusiedlersee im Abendlicht – mobile Welpenschule Willenskraft"
           fill
           sizes="100vw"
-          className="object-cover object-[68%_50%] md:object-center absolute inset-0 z-0 opacity-[0.55] mix-blend-multiply"
+          className="object-cover object-[68%_50%] md:object-center absolute inset-0 z-0 opacity-[0.45] mix-blend-multiply"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-cream/40 to-background z-0" />
-        <div className="absolute inset-0 wk-grain opacity-60 z-0" />
-        <div className="absolute inset-0 wk-waves opacity-30 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-50/40 via-cream/50 to-background z-0" />
+        <div className="absolute inset-0 wk-grain opacity-50 z-0" />
 
         <div className="relative z-10 container mx-auto px-6 py-32 lg:py-40">
           <div className="max-w-5xl">
-            <span className="wk-eyebrow-lake mb-8">
+            <span className="wk-eyebrow mb-8">
               <Waves className="w-3 h-3" /> Burgenland · UNESCO-Welterbe Neusiedlersee
             </span>
 
@@ -226,7 +225,7 @@ export default function Home() {
               Welpenschule Neusiedl am See —
               <br />
               <span className="wk-text-gradient">Pannonische Ruhe, souveräner Hund</span>
-              <span className="text-lake-600">.</span>
+              <span className="text-brand-600">.</span>
             </h1>
 
             <p className="mt-8 text-lg md:text-xl text-ink-700 max-w-2xl leading-relaxed">
@@ -259,23 +258,23 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-ink-500">
               <div className="flex items-center gap-2">
-                <HomeIcon className="w-4 h-4 text-lake-600" />
+                <HomeIcon className="w-4 h-4 text-brand-600" />
                 <span>Wir kommen zu dir nach Hause</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-lake-600" />
+                <CheckCircle2 className="w-4 h-4 text-brand-600" />
                 <span>Welpen 8 Wochen – 5 Monate</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-lake-600" />
+                <CheckCircle2 className="w-4 h-4 text-brand-600" />
                 <span>6 Einheiten · 195 €</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-lake-600" />
+                <CheckCircle2 className="w-4 h-4 text-brand-600" />
                 <span>Max. 4 Teams pro Gruppe</span>
               </div>
               <div className="flex items-center gap-2">
-                <Car className="w-4 h-4 text-lake-600" />
+                <Car className="w-4 h-4 text-brand-600" />
                 <span>Kostenlose Anfahrt im ganzen Bezirk</span>
               </div>
             </div>
@@ -303,7 +302,7 @@ export default function Home() {
                 { icon: ShieldCheck, value: '100 %', label: 'Gewaltfrei' },
               ].map((s) => (
                 <div key={s.label} className="text-center md:text-left flex md:items-center gap-3 md:gap-4 flex-col md:flex-row">
-                  <div className="self-center md:self-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-lake-100 text-lake-700">
+                  <div className="self-center md:self-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 text-brand-700">
                     <s.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -355,7 +354,7 @@ export default function Home() {
               },
             ].map((c) => (
               <div key={c.title} className="wk-card p-8">
-                <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mb-5">
                   <c.icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-xl font-semibold text-ink-950 mb-3 tracking-tight">{c.title}</h3>
@@ -378,9 +377,9 @@ export default function Home() {
                 <Link
                   key={loc.slug}
                   href={loc.slug === 'neusiedl-am-see' ? '/mobiles-hundetraining' : `/mobiles-hundetraining/${loc.slug}`}
-                  className="group flex items-center justify-center gap-1.5 rounded-full border border-lake-300/50 bg-cream px-3 py-2.5 text-sm font-medium text-ink-800 hover:border-lake-500 hover:bg-lake-50 transition-colors"
+                  className="group flex items-center justify-center gap-1.5 rounded-full border border-brand-200/70 bg-cream px-3 py-2.5 text-sm font-medium text-ink-800 hover:border-brand-500 hover:bg-brand-50 transition-colors"
                 >
-                  <MapPin className="w-3.5 h-3.5 text-lake-600 shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 text-brand-600 shrink-0" />
                   <span className="truncate">{loc.name}</span>
                 </Link>
               ))}
@@ -416,7 +415,7 @@ export default function Home() {
             ].map((s, i) => (
               <div key={s.phase} className="wk-card p-7 group">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center group-hover:bg-lake-500 group-hover:text-cream transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
                     <s.icon className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">0{i + 1}</span>
@@ -447,8 +446,8 @@ export default function Home() {
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap gap-2.5">
                   {['Alltagstraining', 'Leinenführigkeit', 'Rückruf', 'Impulskontrolle', 'Leinenpöbeln', 'Jagdverhalten', 'Anti-Bell-Training', 'Medical Training', 'Mobiles Training', 'Einzelstunden', 'Welpenkurs', 'Junghundekurs'].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2 rounded-full border border-lake-300/50 bg-cream px-4 py-2 text-sm font-medium text-ink-800">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-lake-600 shrink-0" />
+                    <span key={t} className="inline-flex items-center gap-2 rounded-full border border-brand-200/70 bg-cream px-4 py-2 text-sm font-medium text-ink-800">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-600 shrink-0" />
                       {t}
                     </span>
                   ))}
@@ -492,8 +491,8 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="absolute -inset-6 bg-gradient-to-br from-brand-100 to-lake-100 rounded-[2.5rem] rotate-2 opacity-60 blur-2xl" />
-              <div className="absolute -inset-2 border border-lake-300/40 rounded-[2rem] rotate-3" />
+              <div className="absolute -inset-6 bg-gradient-to-br from-brand-100 to-brand-50 rounded-[2.5rem] rotate-2 opacity-70 blur-2xl" />
+              <div className="absolute -inset-2 border border-brand-200/50 rounded-[2rem] rotate-3" />
               <Image
                 src="/Welpenschule Welpenkurs Neusiedl.webp"
                 alt="Welpen lernen Kommunikation in der Welpenschule Neusiedl am See"
@@ -570,7 +569,7 @@ export default function Home() {
             {willenskraftPillars.map((pillar, i) => (
               <div key={pillar.title} className="wk-card p-8 group">
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-lake-100 text-lake-700 flex items-center justify-center group-hover:bg-lake-500 group-hover:text-cream transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
                     <pillar.icon className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">0{i + 1}</span>
@@ -606,26 +605,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= NEW SECTION 1: Wissenschaft & Methode ================= */}
-      <section className="relative wk-section bg-ink-950 text-ink-100 overflow-hidden">
-        <div className="absolute inset-0 wk-mesh-dark" />
-        <div className="absolute inset-0 wk-waves opacity-50" />
+      {/* ================= WISSENSCHAFT & METHODE ================= */}
+      <section className="wk-section bg-brand-50/60 relative overflow-hidden">
         <div className="absolute inset-0 wk-grain opacity-30" />
         <div className="relative container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          <div className="grid lg:grid-cols-12 gap-12 mb-14">
             <div className="lg:col-span-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lake-500/15 border border-lake-500/30 text-lake-300 text-[10px] font-bold uppercase tracking-[0.18em]">
-                <Microscope className="w-3 h-3" />
-                Wissenschaft &amp; Pannonia
-              </div>
-              <h2 className="wk-display text-4xl md:text-5xl lg:text-6xl mt-6 text-cream">
+              <span className="wk-eyebrow mb-5">
+                <Microscope className="w-3 h-3" /> Wissenschaft &amp; Pannonia
+              </span>
+              <h2 className="wk-display text-4xl md:text-5xl lg:text-6xl text-ink-950">
                 Was Verhaltens­biologen
                 <br />
                 <span className="wk-text-gradient">längst belegt haben.</span>
               </h2>
             </div>
-            <div className="lg:col-span-6 lg:pl-8 lg:border-l border-ink-800">
-              <p className="text-lg text-ink-300 leading-relaxed">
+            <div className="lg:col-span-6 lg:pl-8 lg:border-l border-brand-200">
+              <p className="text-lg text-ink-600 leading-relaxed">
                 Wir trainieren nach dem Stand moderner Verhaltensforschung — angereichert mit den
                 Besonderheiten der pannonischen Tiefebene. Keine Mythen, keine Dominanztheorie,
                 keine veralteten Methoden — sondern gewaltfreie, bedürfnisorientierte Arbeit,
@@ -633,8 +629,8 @@ export default function Home() {
                 Wir orientieren uns am LIFE-Modell (Least Inhibitive, Functionally Effective) — am wenigsten
                 einschränkend, funktional wirksam und mit echter Wahlfreiheit für deinen Hund.
               </p>
-              <div className="mt-6 flex items-start gap-3 text-sm text-ink-400 italic border-l-2 border-lake-500/60 pl-4">
-                <Quote className="w-4 h-4 text-lake-400 shrink-0 mt-0.5" />
+              <div className="mt-6 flex items-start gap-3 text-sm text-ink-700 italic border-l-2 border-brand-400 pl-4">
+                <Quote className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
                 <p>
                   „Hunde, die mit positiver Verstärkung trainiert werden, zeigen weniger Stresssymptome und
                   lernen Aufgaben schneller als Hunde, die mit aversiven Methoden konditioniert werden."
@@ -648,22 +644,22 @@ export default function Home() {
             {sciencePoints.map((p) => (
               <article
                 key={p.title}
-                className="group relative rounded-3xl p-8 bg-ink-900/80 border border-ink-800 hover:border-lake-500/40 transition-colors backdrop-blur"
+                className="group relative rounded-3xl p-8 bg-card border border-ink-200/60 hover:border-brand-400/50 transition-colors shadow-[0_20px_50px_-30px_rgba(0,0,0,0.2)]"
               >
                 <div className="flex items-start justify-between mb-5">
-                  <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-lake-400">{p.title}</h3>
-                  <Brain className="w-4 h-4 text-ink-600 group-hover:text-lake-400 transition-colors" />
+                  <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-brand-700">{p.title}</h3>
+                  <Brain className="w-4 h-4 text-ink-300 group-hover:text-brand-600 transition-colors" />
                 </div>
-                <p className="wk-display text-3xl md:text-4xl text-cream mb-4">{p.fact}</p>
-                <p className="text-ink-300 leading-relaxed mb-6">{p.text}</p>
-                <p className="text-[11px] text-ink-500 border-t border-ink-800 pt-4">
+                <p className="wk-display text-3xl md:text-4xl text-ink-950 mb-4">{p.fact}</p>
+                <p className="text-ink-600 leading-relaxed mb-6">{p.text}</p>
+                <p className="text-[11px] text-ink-500 border-t border-ink-200 pt-4">
                   <span className="font-bold uppercase tracking-wider text-ink-400">Quelle:</span>{' '}
                   {p.href ? (
                     <a
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lake-300 underline decoration-ink-700 underline-offset-2 transition-colors"
+                      className="hover:text-brand-700 underline decoration-ink-300 underline-offset-2 transition-colors"
                     >
                       {p.source} →
                     </a>
@@ -675,10 +671,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-ink-900/60 border border-ink-800">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-card border border-ink-200/60">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-400 mb-1">Standards</p>
-              <p className="text-cream font-medium">Tierschutzkonform · ÖKV-Empfehlungen · IBH Ethikrichtlinien · § 5 TSchG (AT)</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-1">Standards</p>
+              <p className="text-ink-900 font-medium">Tierschutzkonform · ÖKV-Empfehlungen · IBH Ethikrichtlinien · § 5 TSchG (AT)</p>
             </div>
             <Link
               href="/kontakt"
@@ -691,9 +687,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= NEW SECTION 2: 6-Wochen-Roadmap ================= */}
+      {/* ================= 6-Wochen-Roadmap ================= */}
       <section className="wk-section relative">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lake-300/60 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/60 to-transparent" />
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="wk-eyebrow-lake mb-5">
@@ -716,7 +712,7 @@ export default function Home() {
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
                     <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-400">Woche</span>
-                    <span className="wk-display text-5xl text-lake-600 leading-none">{w.week}</span>
+                    <span className="wk-display text-5xl text-brand-600 leading-none">{w.week}</span>
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">
                     {i === roadmap.length - 1 ? 'Finale' : `${i + 1} / ${roadmap.length}`}
@@ -726,7 +722,7 @@ export default function Home() {
                 <ul className="space-y-2.5">
                   {w.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2 text-sm text-ink-600">
-                      <CheckCircle2 className="w-4 h-4 text-lake-600 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -764,7 +760,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
             <div className="order-2 lg:order-1 lg:col-span-5 relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-lake-100 to-brand-100 rounded-[2.5rem] -rotate-2 opacity-60 blur-xl" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-brand-100 to-brand-50 rounded-[2.5rem] -rotate-2 opacity-60 blur-xl" />
               <Image
                 src="https://www.willenskraft.co.at/wp-content/uploads/2024/05/Hundeschule-Bad-Deutsch-Altenburg-Welpentraining-845x684.webp"
                 alt="Gewaltfreies Welpentraining am Neusiedlersee – Welpenschule Neusiedl am See"
@@ -775,13 +771,13 @@ export default function Home() {
             </div>
             <div className="order-1 lg:order-2 lg:col-span-7 space-y-5">
               {[
-                { icon: CheckCircle2, color: 'lake', title: 'Positive Verstärkung', text: 'Wir konditionieren Sitz, Platz und Bleib mit Belohnung statt mit Druck. Lockere Leine und zuverlässiger Rückruf entstehen aus Vertrauen — nicht aus Angst.' },
-                { icon: Users, color: 'brand', title: 'Kleine Gruppen', text: 'Maximal 4 Mensch-Hund-Teams. Welpen werden nach Größe und Temperament zusammengestellt — für faires, sicheres Lernen.' },
-                { icon: ShieldCheck, color: 'lake', title: 'Tierschutzkonform', text: 'Stand der Verhaltens­forschung, IBH-Ethik, § 5 TSchG. Keine Stachelhalsbänder, keine Würger, keine Schreckmittel.' },
+                { icon: CheckCircle2, title: 'Positive Verstärkung', text: 'Wir konditionieren Sitz, Platz und Bleib mit Belohnung statt mit Druck. Lockere Leine und zuverlässiger Rückruf entstehen aus Vertrauen — nicht aus Angst.' },
+                { icon: Users, title: 'Kleine Gruppen', text: 'Maximal 4 Mensch-Hund-Teams. Welpen werden nach Größe und Temperament zusammengestellt — für faires, sicheres Lernen.' },
+                { icon: ShieldCheck, title: 'Tierschutzkonform', text: 'Stand der Verhaltens­forschung, IBH-Ethik, § 5 TSchG. Keine Stachelhalsbänder, keine Würger, keine Schreckmittel.' },
               ].map((m) => (
                 <div key={m.title} className="rounded-3xl p-7 bg-cream-soft border border-ink-200/60">
                   <h3 className="flex items-center gap-3 text-xl font-semibold text-ink-950 mb-3 tracking-tight">
-                    <m.icon className={`w-5 h-5 ${m.color === 'lake' ? 'text-lake-600' : 'text-brand-600'}`} />
+                    <m.icon className="w-5 h-5 text-brand-600" />
                     {m.title}
                   </h3>
                   <p className="text-ink-600 leading-relaxed">{m.text}</p>
@@ -793,19 +789,19 @@ export default function Home() {
       </section>
 
       {/* ================= YouTube Video ================= */}
-      <section className="wk-section bg-ink-950 text-cream relative overflow-hidden">
-        <div className="absolute inset-0 wk-mesh-dark" />
+      <section className="wk-section bg-brand-50/60 relative overflow-hidden">
+        <div className="absolute inset-0 wk-grain opacity-30" />
         <div className="container mx-auto px-6 max-w-6xl relative">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="wk-eyebrow-lake !bg-lake-500/15 !text-lake-300 !border-lake-500/30 mb-5">
+            <span className="wk-eyebrow-lake mb-5">
               Expertinnen-Talk
             </span>
-            <h2 className="wk-display text-4xl md:text-5xl text-cream">Ganzheitliche Erziehung im Gespräch.</h2>
-            <p className="mt-6 text-lg text-ink-300">
+            <h2 className="wk-display text-4xl md:text-5xl text-ink-950">Ganzheitliche Erziehung im Gespräch.</h2>
+            <p className="mt-6 text-lg text-ink-600">
               Bianca Willen und Martha Höhr über die gewaltfreie Philosophie hinter Willenskraft.
             </p>
           </div>
-          <div className="rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] border border-ink-800 aspect-video">
+          <div className="rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] border border-ink-200/60 aspect-video">
             <iframe
               src="https://www.youtube.com/embed/yyp4gCZdwK4?si=GsCgdrcyf1KDSXaH"
               title="Willenskraft – Ganzheitliche Welpenerziehung"
@@ -881,10 +877,10 @@ export default function Home() {
                 value={`faq-${idx}`}
                 className="wk-card !p-0 overflow-hidden"
               >
-                <Accordion.Trigger className="flex w-full items-center justify-between p-6 sm:p-7 font-semibold text-base sm:text-lg text-ink-950 hover:text-lake-700 transition-colors group text-left">
+                <Accordion.Trigger className="flex w-full items-center justify-between p-6 sm:p-7 font-semibold text-base sm:text-lg text-ink-950 hover:text-brand-700 transition-colors group text-left">
                   <span className="pr-4">{faq.name}</span>
-                  <div className="bg-cream-soft rounded-full p-2 group-hover:bg-lake-100 transition-colors shrink-0">
-                    <ChevronDown className="h-5 w-5 text-ink-400 group-hover:text-lake-700 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                  <div className="bg-cream-soft rounded-full p-2 group-hover:bg-brand-100 transition-colors shrink-0">
+                    <ChevronDown className="h-5 w-5 text-ink-400 group-hover:text-brand-700 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                   </div>
                 </Accordion.Trigger>
                 <Accordion.Content className="px-6 sm:px-7 pb-7 text-ink-600 leading-relaxed text-base data-[state=open]:animate-in data-[state=open]:fade-in">
@@ -907,20 +903,19 @@ export default function Home() {
             <p className="mt-6 text-lg text-ink-600">Finde den passenden Termin für dich und deinen Welpen am Neusiedlersee.</p>
           </div>
 
-          <div className="relative rounded-[2rem] p-10 mb-12 bg-gradient-to-br from-ink-950 to-ink-800 text-cream overflow-hidden">
-            <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-brand-500 blur-3xl opacity-30" />
-            <div className="absolute -bottom-12 -left-12 w-56 h-56 rounded-full bg-lake-500 blur-3xl opacity-30" />
-            <div className="absolute inset-0 wk-grain opacity-30" />
+          <div className="relative overflow-hidden rounded-[2rem] p-8 md:p-12 mb-12 bg-gradient-to-br from-brand-50 via-cream to-brand-50 border border-brand-200/60">
+            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-brand-200/40 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-lake-200/40 blur-3xl" />
             <div className="relative z-10 text-center">
-              <GraduationCap className="w-7 h-7 text-lake-400 mx-auto mb-4" />
-              <h3 className="wk-display text-3xl md:text-4xl mb-6">Dein Welpen-Gruppenkurs.</h3>
+              <GraduationCap className="w-7 h-7 text-brand-600 mx-auto mb-4" />
+              <h3 className="wk-display text-3xl md:text-4xl text-ink-950 mb-6">Dein Welpen-Gruppenkurs.</h3>
               <div className="flex flex-wrap items-center justify-center gap-3">
-                <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">6 Einheiten · 60 Min.</span>
-                <span className="px-4 py-2 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 font-bold text-sm">195 €</span>
-                <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">Max. 4 Teams</span>
-                <span className="px-4 py-2 rounded-full bg-ink-900/60 border border-ink-700 text-sm">Outdoor-Treffpunkte in der Region</span>
+                <span className="px-4 py-2 rounded-full bg-cream border border-brand-200/70 text-sm text-ink-800">6 Einheiten · 60 Min.</span>
+                <span className="px-4 py-2 rounded-full bg-brand-100 text-brand-700 border border-brand-200 font-bold text-sm">195 €</span>
+                <span className="px-4 py-2 rounded-full bg-cream border border-brand-200/70 text-sm text-ink-800">Max. 4 Teams</span>
+                <span className="px-4 py-2 rounded-full bg-cream border border-brand-200/70 text-sm text-ink-800">Outdoor-Treffpunkte in der Region</span>
               </div>
-              <p className="mt-6 text-ink-400 text-sm">
+              <p className="mt-6 text-ink-600 text-sm">
                 Jeden Monat startet mindestens ein neuer Welpenkurs — an sorgfältig ausgewählten
                 Outdoor-Treffpunkten in der Region Neusiedl am See. Den genauen Treffpunkt erfährst du bei der Anmeldung.
               </p>
@@ -933,13 +928,13 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/kurse"
-                  className="inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-ink-900/60 border border-ink-700 hover:border-lake-500 hover:bg-lake-500/10 hover:text-lake-300 text-cream font-semibold text-sm transition-all"
+                  className="wk-btn-ghost inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full font-semibold text-sm"
                 >
                   Alle Gruppenkurse ansehen
                 </Link>
               </div>
               <div className="mt-6 flex justify-center">
-                <GoogleBadge variant="dark" />
+                <GoogleBadge />
               </div>
             </div>
           </div>
@@ -973,33 +968,32 @@ export default function Home() {
       {/* ================= CONTACT CTA ================= */}
       <section className="wk-section bg-card">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="relative overflow-hidden rounded-[2.5rem] p-8 sm:p-16 bg-gradient-to-br from-ink-950 to-ink-800 text-cream shadow-2xl">
-            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-500 blur-[120px] opacity-25" />
-            <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-lake-500 blur-[120px] opacity-25" />
-            <div className="absolute inset-0 wk-grain opacity-25" />
+          <div className="relative overflow-hidden rounded-[2.5rem] p-8 sm:p-16 bg-gradient-to-br from-brand-50 via-cream to-brand-50 border border-brand-200/60">
+            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-brand-200/40 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-lake-200/40 blur-3xl" />
 
             <div className="relative grid md:grid-cols-12 gap-10 items-center">
               <div className="md:col-span-4 relative">
-                <div className="absolute inset-0 bg-lake-500 rounded-full blur-3xl opacity-30 -translate-y-2" />
+                <div className="absolute inset-0 bg-brand-300 rounded-full blur-3xl opacity-25 -translate-y-2" />
                 <Image
                   src="https://www.willenskraft.co.at/wp-content/uploads/2025/06/Jessica-Pusch-Hundeschule-Wien-Niederoesterreich.webp"
                   alt="Ing. Jessica Pusch – deine mobile Hundetrainerin für Neusiedl am See"
                   width={400}
                   height={400}
                   sizes="(max-width: 768px) 60vw, 320px"
-                  className="rounded-full mx-auto object-cover aspect-square relative z-10 border-4 border-ink-800 shadow-2xl"
+                  className="rounded-full mx-auto object-cover aspect-square relative z-10 border-4 border-cream shadow-2xl"
                 />
               </div>
               <div className="md:col-span-8 text-center md:text-left">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-lake-300 mb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-700 mb-3">
                   Jessica Pusch · Deine mobile Hundetrainerin
                 </p>
-                <h2 className="wk-display text-3xl sm:text-5xl text-cream mb-5">
+                <h2 className="wk-display text-3xl sm:text-5xl text-ink-950 mb-5">
                   Bereit für den Start?
                 </h2>
-                <p className="text-lg text-ink-300 mb-8 leading-relaxed">
+                <p className="text-lg text-ink-600 mb-8 leading-relaxed">
                   Melde dich und deinen Welpen jetzt zum ersten Kennenlernen in der{' '}
-                  <span className="text-lake-300 font-semibold">Welpenschule Neusiedl am See</span> an —
+                  <span className="text-brand-700 font-semibold">Welpenschule Neusiedl am See</span> an —
                   Jessy kommt zu dir nach Hause oder ihr startet im nächsten Welpenkurs in deiner Region.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
@@ -1012,7 +1006,7 @@ export default function Home() {
                   </Link>
                   <a
                     href="tel:+436643903673"
-                    className="inline-flex items-center justify-center gap-2 px-6 h-13 rounded-full bg-ink-900/60 border border-ink-700 hover:border-lake-500 hover:bg-lake-500/10 hover:text-lake-300 text-cream font-semibold text-base transition-all"
+                    className="wk-btn-ghost inline-flex items-center justify-center gap-2 px-6 h-13 rounded-full font-semibold text-base"
                   >
                     <Phone className="w-4 h-4" />
                     +43 664 3903673

@@ -31,14 +31,14 @@ export default function JessySection({ regionName }: JessySectionProps) {
                 src={jessyImage}
                 alt={`Ing. Jessica Pusch — mobile Hundetrainerin & Welpenschule ${ortText}`}
                 width={420}
-                height={420}
+                height={560}
                 sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 320px"
-                className="relative w-full h-auto rounded-full object-cover aspect-square border-4 border-cream shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)]"
+                className="relative w-full h-auto rounded-[2rem] object-cover aspect-[3/4] border-4 border-cream shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)]"
               />
             </div>
             <div className="relative mt-6 text-center">
               <p className="wk-display text-2xl sm:text-3xl text-ink-950">Ing. Jessica Pusch</p>
-              <p className="mt-1 text-sm font-semibold text-lake-700">
+              <p className="mt-1 text-sm font-semibold text-brand-700">
                 „Jessy" — deine Hundetrainerin {regionName ? `für ${regionName}` : 'am Neusiedlersee'}
               </p>
               <p className="mt-2 text-xs text-ink-400">Biochemikerin (Ing.) · Willenskraft-zertifiziert · Akademie-Dozentin</p>
@@ -73,7 +73,7 @@ export default function JessySection({ regionName }: JessySectionProps) {
               <Link href="/kontakt" className="wk-link font-semibold">Mehr über Jessy →</Link>
             </p>
 
-            <div className="rounded-3xl bg-cream-soft border border-ink-200/60 p-5 md:p-7">
+            <div className="rounded-3xl bg-brand-50 border border-brand-200/60 p-5 md:p-7">
               <div className="flex items-start gap-3">
                 <Quote className="w-5 h-5 text-brand-600 shrink-0 mt-1" />
                 <div className="min-w-0">
@@ -97,7 +97,7 @@ export default function JessySection({ regionName }: JessySectionProps) {
                 'Kostenlose Anfahrt im gesamten Einsatzgebiet',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-ink-700">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5 text-lake-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 mt-0.5 text-brand-600 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -128,7 +128,7 @@ export default function JessySection({ regionName }: JessySectionProps) {
             </div>
 
             <p className="flex items-center gap-2 text-xs text-ink-500">
-              <MapPin className="w-3.5 h-3.5 text-lake-600" />
+              <MapPin className="w-3.5 h-3.5 text-brand-600" />
               Einsatzgebiet: gesamter Bezirk Neusiedl am See — vom Leithagebirge bis in den südlichen Seewinkel.
             </p>
           </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Fraunces } from 'next/font/google';
+import { Open_Sans, Geist_Mono, Fraunces, Caveat } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -7,8 +7,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import NewsletterPopup from '@/components/NewsletterPopup';
 import { getBusinessRating } from '@/lib/businessRating';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const openSans = Open_Sans({
+  variable: '--font-open-sans',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -23,6 +23,13 @@ const fraunces = Fraunces({
   variable: '--font-display',
   subsets: ['latin'],
   axes: ['SOFT', 'opsz'],
+  display: 'swap',
+});
+
+const caveat = Caveat({
+  variable: '--font-hand',
+  subsets: ['latin'],
+  weight: ['600', '700'],
   display: 'swap',
 });
 
@@ -319,7 +326,7 @@ export default async function RootLayout({
   return (
     <html lang="de-AT" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#f5e6b8" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#f0931a" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1916" media="(prefers-color-scheme: dark)" />
         <link rel="preconnect" href="https://www.willenskraft.co.at" />
         <link rel="dns-prefetch" href="https://www.willenskraft.co.at" />
@@ -329,7 +336,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}
+        className={`${openSans.variable} ${geistMono.variable} ${fraunces.variable} ${caveat.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}
       >
         <a
           href="#main"
