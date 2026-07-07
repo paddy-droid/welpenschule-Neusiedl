@@ -38,6 +38,7 @@ import Reviews from '@/components/Reviews';
 import GoogleBadge from '@/components/GoogleBadge';
 import JessySection from '@/components/JessySection';
 import WillenskraftSection from '@/components/WillenskraftSection';
+import WillenskraftTeamSection from '@/components/WillenskraftTeamSection';
 import { getLocationConfig } from '@/components/WillenskraftSection/config/locations';
 import { getRegionData, regionCoords, type RegionData } from '@/lib/regionData';
 import { getFachwissen, studies } from '@/lib/studies';
@@ -921,6 +922,9 @@ export default async function RegionPageTemplate({ regionKey }: { regionKey: str
 
       {/* ============== WILLENSKRAFT BRAND ============== */}
       <WillenskraftSection content={willenskraftConfig} />
+
+      {/* ============== WILLENSKRAFT-TEAM ============== */}
+      <WillenskraftTeamSection />
 
       {/* ============== YouTube Shorts + Kanal-CTA ============== */}
       <ShortsSection />

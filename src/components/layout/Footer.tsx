@@ -98,6 +98,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-brand-300 transition-colors">Startseite</Link></li>
               <li><Link href="/mobiles-hundetraining" className="hover:text-brand-300 transition-colors">Mobiles Training</Link></li>
               <li><Link href="/kurse" className="hover:text-brand-300 transition-colors">Alle Kurse</Link></li>
+              <li><Link href="/ueber-willenskraft" className="hover:text-brand-300 transition-colors">Über Willenskraft</Link></li>
               <li><Link href="/kontakt" className="hover:text-brand-300 transition-colors">Kontakt</Link></li>
               <li><Link href="/impressum" className="hover:text-brand-300 transition-colors">Impressum</Link></li>
               <li><Link href="/datenschutz" className="hover:text-brand-300 transition-colors">Datenschutz</Link></li>

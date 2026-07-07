@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import NewsletterPopup from '@/components/NewsletterPopup';
+import BellereiSection from '@/components/BellereiSection';
 import { getBusinessRating } from '@/lib/businessRating';
 
 const openSans = Open_Sans({
@@ -348,6 +349,7 @@ export default async function RootLayout({
         <main id="main" className="flex-grow pt-20">
           {children}
         </main>
+        <BellereiSection />
         <Footer />
         <WhatsAppFloat />
         <NewsletterPopup />

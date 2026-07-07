@@ -11,6 +11,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/mobiles-hundetraining', label: 'Mobiles Training' },
   { href: '/ratgeber', label: 'Ratgeber' },
+  { href: '/ueber-willenskraft', label: 'Willenskraft' },
 ];
 
 const kursLinks = [

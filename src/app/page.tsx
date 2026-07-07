@@ -29,6 +29,9 @@ import Reviews from '@/components/Reviews';
 import WillenskraftSection from '@/components/WillenskraftSection';
 import GoogleBadge from '@/components/GoogleBadge';
 import JessySection from '@/components/JessySection';
+import WillenskraftTeamSection from '@/components/WillenskraftTeamSection';
+import WillenskraftReviewsSection from '@/components/WillenskraftReviewsSection';
+import AusbildungSection from '@/components/AusbildungSection';
 import CtaBanner from '@/components/CtaBanner';
 import ShortsSection from '@/components/ShortsSection';
 import { serviceLocations } from '@/lib/regionData';
@@ -468,6 +471,9 @@ export default function Home() {
 
       {/* ================= JESSY ================= */}
       <JessySection />
+
+      {/* ================= WILLENSKRAFT-TEAM ================= */}
+      <WillenskraftTeamSection />
 
       {/* ================= INTRO ================= */}
       <section id="konzept" className="wk-section">
@@ -1062,7 +1068,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= WILLENSKRAFT GESAMTBEWERTUNG (live) ================= */}
+      <WillenskraftReviewsSection />
+
       <WillenskraftSection />
+
+      {/* ================= HUNDETRAINER-AUSBILDUNG ================= */}
+      <AusbildungSection />
     </div>
   );
 }

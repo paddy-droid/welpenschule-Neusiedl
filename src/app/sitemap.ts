@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/kontakt`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/ueber-willenskraft`, lastModified, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/mobiles-hundetraining`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/kurse`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/ratgeber`, lastModified: posts[0]?.publishAt ?? lastModified, changeFrequency: 'weekly', priority: 0.7 },
