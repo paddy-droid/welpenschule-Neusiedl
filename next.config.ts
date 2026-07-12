@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'www.willenskraft.co.at',
             },
+            {
+                protocol: 'https',
+                hostname: 'www.bellerei-shop.com',
+            },
         ],
     },
 };
