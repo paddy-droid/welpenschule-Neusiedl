@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Willenskraft Neusiedl',
   ],
   alternates: { canonical: url },
-  openGraph: { title, description, url, type: 'website' },
+  openGraph: { title, description, url, type: 'website', images: [{ url: 'https://welpenschule-neusiedl.at/og-image.jpg', width: 1200, height: 630, alt: 'Welpenschule Neusiedl am See – mobile Hundeschule Willenskraft' }] },
 };
 
 export default function MobileTrainingLayout({ children }: { children: React.ReactNode }) {

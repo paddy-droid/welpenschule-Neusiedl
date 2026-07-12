@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: 'https://welpenschule-neusiedl.at/ratgeber' },
-  openGraph: { title, description, url: 'https://welpenschule-neusiedl.at/ratgeber', type: 'website' },
+  openGraph: { title, description, url: 'https://welpenschule-neusiedl.at/ratgeber', type: 'website', images: [{ url: 'https://welpenschule-neusiedl.at/og-image.jpg', width: 1200, height: 630, alt: 'Welpenschule Neusiedl am See – mobile Hundeschule Willenskraft' }] },
 };
 
 const dateFmt = new Intl.DateTimeFormat('de-AT', { day: '2-digit', month: 'short', year: 'numeric' });

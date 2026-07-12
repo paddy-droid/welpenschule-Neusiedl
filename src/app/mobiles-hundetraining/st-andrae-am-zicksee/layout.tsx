@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description,
   keywords: ['Hundeschule St. Andrä am Zicksee', 'Hundetrainer St. Andrä', 'Mobiles Hundetraining St. Andrä am Zicksee', 'Welpentraining Zicksee'],
   alternates: { canonical: url },
-  openGraph: { title, description, url, type: 'website' },
+  openGraph: { title, description, url, type: 'website', images: [{ url: 'https://welpenschule-neusiedl.at/og-image.jpg', width: 1200, height: 630, alt: 'Welpenschule Neusiedl am See – mobile Hundeschule Willenskraft' }] },
 };
 
 export default function StAndraeLayout({ children }: { children: React.ReactNode }) {

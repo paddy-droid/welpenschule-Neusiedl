@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     siteName: 'Welpenschule Neusiedl am See',
     images: [
       {
-        url: 'https://www.willenskraft.co.at/wp-content/uploads/2024/07/Welpenschule-Neusiedl-am-See.webp',
+        url: 'https://welpenschule-neusiedl.at/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Glücklicher Welpe am Neusiedlersee – Welpenschule Willenskraft',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: 'Welpenschule Neusiedl am See | Mobile Hundeschule Willenskraft',
     description:
       'Mobile Hundeschule am Neusiedlersee & im Seewinkel — wir kommen zu dir nach Hause. Welpenkurse ab 195€. Jetzt anmelden!',
-    images: ['https://www.willenskraft.co.at/wp-content/uploads/2024/07/Welpenschule-Neusiedl-am-See.webp'],
+    images: ['https://welpenschule-neusiedl.at/og-image.jpg'],
   },
   metadataBase: new URL('https://welpenschule-neusiedl.at'),
   robots: {
@@ -130,7 +130,7 @@ const jsonLd = {
       url: 'https://welpenschule-neusiedl.at',
       telephone: '+43-664-3903673',
       email: 'bruck_leitha@willenskraft.co.at',
-      image: 'https://www.willenskraft.co.at/wp-content/uploads/2024/07/Welpenschule-Neusiedl-am-See.webp',
+      image: 'https://welpenschule-neusiedl.at/og-image.jpg',
       logo: 'https://www.willenskraft.co.at/wp-content/uploads/2018/06/Final.-Logo-Hundeschule-Willenskraft.-Gute-Hundeschule-Graz-Gleisdorf.png',
       description:
         'Mobile Welpenschule & Hundeschule für die Region Neusiedl am See: Wir kommen zum Training direkt zu dir nach Hause — im gesamten Bezirk Neusiedl am See und Seewinkel. Welpen-Gruppenkurse finden an sorgfältig ausgewählten Outdoor-Treffpunkten in der Region statt. Gewaltfreies & ganzheitliches Hundetraining mit positiver Verstärkung, Kleingruppen mit max. 4 Teams. Regionaler Standort der Hundeschule Willenskraft.',
